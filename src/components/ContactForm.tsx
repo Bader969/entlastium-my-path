@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Send, Phone, Mail, MapPin, Clock, CheckCircle, Upload, X, Image, Loader2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
