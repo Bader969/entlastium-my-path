@@ -90,7 +90,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Sonner />
         <Outlet />
       </TooltipProvider>
     </QueryClientProvider>
