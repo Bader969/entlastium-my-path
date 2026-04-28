@@ -9,7 +9,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -81,56 +80,34 @@ const ContactForm = () => {
     }
     
     setIsSubmitting(true);
-    
+
     try {
-      // Get room type label for email
       const roomTypeLabel = roomTypes.find(t => t.value === formData.roomType)?.label || formData.roomType;
-      
-      // Convert images to base64 for email attachments
-      const imageAttachments = await Promise.all(
-        imagePreviews.map(async (preview, index) => {
-          const file = images[index];
-          // Extract base64 content (remove data:image/xxx;base64, prefix)
-          const base64Content = preview.split(",")[1];
-          return {
-            filename: file?.name || `bild-${index + 1}.jpg`,
-            content: base64Content,
-            contentType: file?.type || "image/jpeg",
-          };
-        })
-      );
-      
-      // Send to edge function
-      const { data, error } = await supabase.functions.invoke("send-contact-form", {
-        body: {
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone?.trim() || undefined,
-          roomType: formData.roomType,
-          roomTypeLabel: roomTypeLabel,
-          roomSizeM2: formData.roomSizeM2,
-          roomSizeM3: formData.roomSizeM3 || undefined,
-          address: formData.address?.trim() || undefined,
-          message: formData.message?.trim() || undefined,
-          images: imageAttachments.length > 0 ? imageAttachments : undefined,
-        },
-      });
-      
-      if (error) {
-        console.error("Edge function error:", error);
-        throw new Error(error.message || "Fehler beim Senden");
-      }
-      
-      if (data?.error) {
-        throw new Error(data.error);
-      }
-      
+
+      // Build a mailto: link as a backend-free fallback
+      const subject = `Neue Anfrage von ${formData.name}`;
+      const bodyLines = [
+        `Name: ${formData.name}`,
+        `E-Mail: ${formData.email}`,
+        formData.phone ? `Telefon: ${formData.phone}` : null,
+        `Raumart: ${roomTypeLabel}`,
+        `Größe (m²): ${formData.roomSizeM2}`,
+        formData.roomSizeM3 ? `Größe (m³): ${formData.roomSizeM3}` : null,
+        formData.address ? `Adresse: ${formData.address}` : null,
+        "",
+        "Nachricht:",
+        formData.message || "(keine)",
+        images.length > 0 ? `\nHinweis: ${images.length} Bild(er) ausgewählt – bitte separat per E-Mail anhängen.` : null,
+      ].filter(Boolean).join("\n");
+
+      const mailto = `mailto:info@entlastium.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines)}`;
+      window.location.href = mailto;
+
       toast({
-        title: "Anfrage erfolgreich gesendet!",
-        description: "Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+        title: "E-Mail-Programm geöffnet",
+        description: "Bitte schließen Sie das Senden in Ihrem E-Mail-Programm ab.",
       });
-      
-      // Reset form
+
       setFormData({
         name: "",
         email: "",
