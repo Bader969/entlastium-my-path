@@ -8,10 +8,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 
 const ContactForm = () => {
-  const { toast } = useToast();
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [images, setImages] = useState<File[]>([]);
@@ -72,10 +72,7 @@ const ContactForm = () => {
     e.preventDefault();
     
     if (!formData.roomType) {
-      toast({
-        title: "Bitte wählen Sie eine Raumart aus",
-        variant: "destructive",
-      });
+      toast.error("Bitte wählen Sie eine Raumart aus");
       return;
     }
     
@@ -103,8 +100,7 @@ const ContactForm = () => {
       const mailto = `mailto:info@entlastium.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines)}`;
       window.location.href = mailto;
 
-      toast({
-        title: "E-Mail-Programm geöffnet",
+      toast.success("E-Mail-Programm geöffnet", {
         description: "Bitte schließen Sie das Senden in Ihrem E-Mail-Programm ab.",
       });
 
@@ -123,10 +119,8 @@ const ContactForm = () => {
       setPrivacyAccepted(false);
     } catch (error) {
       console.error("Submit error:", error);
-      toast({
-        title: "Fehler beim Senden",
+      toast.error("Fehler beim Senden", {
         description: error instanceof Error ? error.message : "Bitte versuchen Sie es später erneut.",
-        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);

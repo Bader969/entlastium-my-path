@@ -2,8 +2,7 @@ import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-r
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
 
@@ -91,7 +90,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Sonner />
         <Outlet />
       </TooltipProvider>
     </QueryClientProvider>
