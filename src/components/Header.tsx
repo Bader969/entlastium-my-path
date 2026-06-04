@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpeg";
+import logoAsset from "@/assets/entlastium-logo-icon.png.asset.json";
+const logo = logoAsset.url;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
