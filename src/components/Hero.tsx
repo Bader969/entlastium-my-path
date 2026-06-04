@@ -1,8 +1,7 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoMark from "@/assets/logo-mark.png.asset.json";
-
-const logoIcon = logoMark.url;
+import heroBg from "@/assets/hero-bg.jpg";
+import logoIcon from "@/assets/logo-icon.png";
 
 const Hero = () => {
   const benefits = [
@@ -13,11 +12,16 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 z-0 gradient-hero">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={heroBg} 
+          alt="Sauberer Raum nach Entrümpelung" 
+          className="w-full h-full object-cover scale-105"
+        />
+        <div className="absolute inset-0 gradient-hero opacity-90" />
         <div className="absolute inset-0 mesh-bg opacity-50" />
       </div>
-
 
       {/* Animated glow orbs */}
       <div className="absolute top-1/4 -left-20 w-[400px] h-[400px] rounded-full bg-secondary/30 blur-3xl animate-pulse-glow pointer-events-none" />
