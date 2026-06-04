@@ -1,51 +1,66 @@
 ## Ziel
-Webseite "Entlastium" aufräumen: Preisrechner komplett entfernen, Top-Navigation neu strukturieren und alle gefundenen Responsive-Bugs (Mobile, Tablet, Desktop) beheben.
+Neues Logo überall einsetzen und die Seite auf ein seriöses "Slate & Steel"-Niveau heben (Enterprise-Look, ruhig, sachlich, hochwertig).
 
-## 1. Preisrechner entfernen
-- `src/components/PriceCalculator.tsx` löschen
-- Import + Render aus `src/pages/Index.tsx` entfernen
-- Nav-Eintrag "Preisrechner" aus `Header.tsx` entfernen
-- Sekundären CTA "Preis berechnen" im `Hero.tsx` ersetzen durch "Mehr erfahren" (Anker zu `#services`)
-- Im `ContactForm` / FAQ Erwähnungen prüfen und ggf. anpassen
+## 1. Logo-Konvertierung
+- EPS (`download.eps`) via Ghostscript/ImageMagick (nix) in zwei Varianten rendern:
+  - `logo-full.png` (1600×1600, transparent) — Hauptlogo
+  - `logo-mark.png` (512×512, transparent) — Icon-Variante
+- Via `lovable-assets` zu CDN-Pointern (`*.asset.json`) machen
+- Alte Logos (`logo.jpeg`, `logo-icon.png`, `logo-full.png`) ersetzen bzw. entfernen
 
-## 2. Header-Navigation reparieren
-Aktuelles Problem: Desktop-Nav erscheint erst ab `lg` (1024 px), CTA + Telefon aber schon ab `md` (768 px). Zwischen 768–1023 px steht das Hamburger-Icon **neben** Telefon + Button → unübersichtlich. Zusätzlich quetschen sich 7 Nav-Items im Desktop-Layout.
+## 2. Farbsystem auf Slate & Steel umstellen (`src/styles.css`)
+Neue Tokens (oklch-Äquivalente):
+- `--background`: nahezu weiß mit leichtem kühlen Ton (`#f8fafc`)
+- `--foreground` / `--primary`: tiefes Slate (`#1e293b`)
+- `--secondary`: Slate-500 (`#475569`)
+- `--accent`: gedämpftes Steel-Blau statt Sand-Gold (`#64748b` → Hover `#334155`)
+- Sand/Gold/Teal-Tokens entfernen oder neutralisieren
+- Gradients & Glow auf kühles Slate/Steel umstellen, Glow deutlich reduzieren (Seriösität statt Glanz)
+- Schatten weicher und subtiler
 
-Fixes:
-- Breakpoints vereinheitlichen: Desktop-Nav + Telefon + CTA gemeinsam ab `lg`, darunter nur Logo + Burger.
-- Telefonnummer auf Desktop kompakter (Icon + Text), auf Mobile in Burger-Menü verschoben.
-- Nav-Items optisch konsistent (gleicher Spacing-Rhythmus, Hover-Underline).
-- Mobile-Menü: Vollbild-Overlay mit größeren Tap-Targets statt eingeklemmt im Header.
-- Logo-Subtitle „Entrümpelung & Haushaltsauflösungen" auf < `xl` ausblenden (verhindert Umbruch).
-- Smooth-Scroll-Verhalten für Anker-Links sicherstellen (`scroll-behavior: smooth` in `body` / `html`).
+## 3. Typografie & Tonalität
+- Heading-Font auf `Instrument Serif` oder behalten, aber `font-weight` reduzieren
+- Body bleibt Inter
+- `text-gradient-animated` im Hero durch ruhigen statischen Akzent ersetzen (kein Regenbogen-Shift)
+- `animate-float`, Pulse-Glow im Hintergrund stark reduzieren oder entfernen
 
-## 3. Responsive-Audit & Fixes
-Pro Sektion durchgehen und prüfen / fixen:
+## 4. Header (`Header.tsx`)
+- Hintergrund von `primary/85` auf seriöses dunkles Slate mit dünnem Border
+- Logo-Bild durch neues `logo-mark` ersetzen, dezent (h-10)
+- Accent-Button → neutraler primärer Slate-Button mit feinem Border statt Gold
 
-**Hero**
-- Floating Logo-Icon (650 px) auf Mobile zu groß → mobil 280 px, Tablet 400 px, Desktop 600 px.
-- Headline `text-7xl` auf Tablet zu groß → Klassen entschärfen (`text-4xl sm:text-5xl lg:text-6xl xl:text-7xl`).
-- Benefit-Chips Wrap-Verhalten und Button-Stack auf < `sm` prüfen.
+## 5. Hero (`Hero.tsx`)
+- Großes schwebendes Hintergrund-Logo entfernen (wirkt unseriös) → ersetzen durch dezente Mesh-Layer
+- Headline: ruhig, kein animierter Farbverlauf
+- Neues Logo dezent links neben/über der Headline als kleiner Brand-Mark
+- Trust-Row hinzufügen: "Versichert · Festpreis · DSGVO-konform · 4,9★ Bewertung" (statisch, schlicht)
+- CTAs: ein primärer Slate-Button + ein outline-Button
 
-**ServicesDashboard / ProcessTimeline / AboutUs / FAQ / ContactForm / Footer**
-- Grids auf `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3` normalisieren wo nötig.
-- Padding/Margins über `section-padding` konsistent halten.
-- Bilder mit `w-full h-auto object-cover` und sinnvollen `aspect-ratio`.
-- Lange Texte: `break-words`, kein horizontales Scrollen.
-- Footer-Spalten auf Mobile gestapelt, Links als Tap-Targets ≥ 44 px.
-- FAQ-Accordion: volle Breite, Icon nicht abgeschnitten.
-- ContactForm: Inputs `w-full`, Labels lesbar, Button volle Breite auf Mobile.
+## 6. Section-Components Politur
+- `ServicesDashboard`, `ProcessTimeline`, `AboutUs`, `FAQ`, `ContactForm`, `Footer`:
+  - Cards: dünner Border, geringere Border-Radius (von 1rem auf 0.75rem), subtilere Schatten
+  - Icon-Container: monochrom Slate statt Gold
+  - Hover-Effekte abdämpfen (kein "glow")
+- Footer: neues Logo + zusätzliche Seriositäts-Elemente (Zahlungsmethoden-Hinweis, Versicherungs-Badge optional)
 
-**Globale Checks**
-- `overflow-x: hidden` auf `body` ergänzen, um horizontales Scrollen durch Glow-Orbs zu verhindern.
-- `html { scroll-padding-top: 5rem }` damit Anker-Scroll nicht hinter dem Fixed-Header landet.
-- Legal-Seiten (Impressum/Datenschutz/AGB): Lesbreite + Padding auf Mobile prüfen.
+## 7. Favicon
+- `public/favicon.png` aus neuem Logo neu generieren (64×64)
 
-## 4. Verifikation
-- Preview in 3 Viewports prüfen: 375 px (Mobile), 820 px (Tablet), 1440 px (Desktop).
-- Konsole + Netzwerk-Tab auf Fehler prüfen.
-- Visueller Sanity-Check je Sektion.
+## Technische Details
+```
+nix run nixpkgs#imagemagick -- convert -density 600 -background none \
+  /mnt/user-uploads/download.eps -resize 1600x1600 /tmp/logo-full.png
+```
+Dann `lovable-assets create --file /tmp/logo-full.png ...` → JSON-Pointer in `src/assets/`.
 
-## Geänderte / gelöschte Dateien (geplant)
-- gelöscht: `src/components/PriceCalculator.tsx`
-- bearbeitet: `src/pages/Index.tsx`, `src/components/Header.tsx`, `src/components/Hero.tsx`, `src/components/ServicesDashboard.tsx`, `src/components/ProcessTimeline.tsx`, `src/components/AboutUs.tsx`, `src/components/FAQ.tsx`, `src/components/ContactForm.tsx`, `src/components/Footer.tsx`, `src/components/LegalPageLayout.tsx`, `src/styles.css`
+Imports im Code umstellen von `@/assets/logo.jpeg` etc. auf die neuen Asset-JSON-Pointer.
+
+## Betroffene Dateien
+- neu: `src/assets/logo-full.png.asset.json`, `src/assets/logo-mark.png.asset.json`
+- gelöscht: `src/assets/logo.jpeg`, alte `logo-icon.png`, alte `logo-full.png`
+- edit: `src/styles.css`, `src/components/Header.tsx`, `src/components/Hero.tsx`, `src/components/ServicesDashboard.tsx`, `src/components/ProcessTimeline.tsx`, `src/components/AboutUs.tsx`, `src/components/FAQ.tsx`, `src/components/ContactForm.tsx`, `src/components/Footer.tsx`, `public/favicon.png`
+
+## QA
+- Preview auf Desktop, Tablet, Mobile prüfen
+- Konsole/Network auf Fehler checken
+- Kontrast (WCAG AA) der neuen Slate/Steel-Kombination bestätigen
