@@ -43,8 +43,9 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/30">
-      <div className="container-custom section-padding">
+    <section id="faq" className="section-padding bg-gradient-to-b from-background to-muted/30">
+      <div className="container-custom">
+
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
