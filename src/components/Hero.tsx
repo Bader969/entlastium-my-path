@@ -1,7 +1,8 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
-import logoIcon from "@/assets/logo-icon.png";
+import logoIconAsset from "@/assets/entlastium-logo-icon.png.asset.json";
+const logoIcon = logoIconAsset.url;
 
 const Hero = () => {
   const benefits = [
