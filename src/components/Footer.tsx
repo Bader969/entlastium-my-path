@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.jpeg";
+import logoAsset from "@/assets/entlastium-logo-icon.png.asset.json";
+const logo = logoAsset.url;
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
