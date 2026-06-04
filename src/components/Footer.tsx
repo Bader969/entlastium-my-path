@@ -1,6 +1,6 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Shield } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.jpeg";
+import logoMark from "@/assets/logo-mark.png.asset.json";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
