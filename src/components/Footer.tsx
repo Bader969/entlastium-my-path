@@ -1,6 +1,6 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Shield } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.jpeg";
+import logoMark from "@/assets/logo-mark.png.asset.json";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -27,14 +27,14 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src={logo} 
-                alt="Entlastium Logo" 
-                className="h-12 w-12 rounded-full object-cover"
+              <img
+                src={logoMark.url}
+                alt="Entlastium Logo"
+                className="h-12 w-12 object-contain"
               />
               <div>
-                <h3 className="text-xl font-serif font-bold">Entlastium</h3>
-                <p className="text-xs text-primary-foreground/70">Entrümpelung & Haushaltsauflösungen</p>
+                <h3 className="text-xl font-serif font-semibold">Entlastium</h3>
+                <p className="text-[11px] uppercase tracking-[0.14em] text-primary-foreground/60 mt-0.5">Entrümpelung &amp; Haushaltsauflösungen</p>
               </div>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
