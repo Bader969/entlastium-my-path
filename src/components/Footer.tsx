@@ -31,7 +31,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="Entlastium Logo" 
-                className="h-12 w-12 rounded-full object-cover"
+                className="h-12 w-12 object-contain"
               />
               <div>
                 <h3 className="text-xl font-serif font-bold">Entlastium</h3>
