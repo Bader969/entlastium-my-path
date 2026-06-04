@@ -42,7 +42,7 @@ const Header = () => {
               <img
                 src={logo}
                 alt="Entlastium Logo"
-                className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-accent/0 group-hover:ring-accent/60 transition-all duration-300"
+                className="relative h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300"
               />
             </div>
             <div className="min-w-0">
