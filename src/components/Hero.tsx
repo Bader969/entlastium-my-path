@@ -1,92 +1,94 @@
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, BadgeCheck, Leaf, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
-import logoIcon from "@/assets/logo-icon.png";
+import logoMark from "@/assets/logo-mark.png.asset.json";
 
 const Hero = () => {
-  const benefits = [
-    "Kostenlose Besichtigung",
-    "Faire Festpreise",
-    "Nachhaltige Entsorgung",
+  const trust = [
+    { icon: Shield, label: "Voll versichert" },
+    { icon: BadgeCheck, label: "Faire Festpreise" },
+    { icon: Leaf, label: "Nachhaltige Entsorgung" },
+    { icon: Star, label: "4,9 / 5 Bewertung" },
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroBg} 
-          alt="Sauberer Raum nach Entrümpelung" 
-          className="w-full h-full object-cover scale-105"
-        />
-        <div className="absolute inset-0 gradient-hero opacity-90" />
-        <div className="absolute inset-0 mesh-bg opacity-50" />
-      </div>
+    <section
+      id="home"
+      className="relative min-h-[92vh] flex items-center pt-28 pb-16 overflow-hidden bg-background"
+    >
+      {/* Subtle mesh background */}
+      <div className="absolute inset-0 mesh-bg pointer-events-none" aria-hidden="true" />
+      {/* Hairline divider at bottom for definition */}
+      <div className="absolute inset-x-0 bottom-0 h-px bg-border" aria-hidden="true" />
 
-      {/* Animated glow orbs */}
-      <div className="absolute top-1/4 -left-20 w-[400px] h-[400px] rounded-full bg-secondary/30 blur-3xl animate-pulse-glow pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-accent/20 blur-3xl pointer-events-none" style={{ animation: "pulse-glow 4s ease-in-out infinite", animationDelay: "1s" }} />
-
-      {/* Logo Background Element */}
-      <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none">
-        <img
-          src={logoIcon}
-          alt=""
-          aria-hidden="true"
-          className="w-[260px] sm:w-[360px] md:w-[460px] lg:w-[560px] xl:w-[640px] opacity-20 object-contain animate-float"
-        />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 container-custom section-padding">
+      <div className="relative z-10 container-custom px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center">
+        {/* Left: copy */}
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full glass border border-secondary/40 mb-6 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-primary-foreground text-xs sm:text-sm font-medium">
-              Ihr Partner für stressfreie Entrümpelung
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-card mb-6 animate-fade-in">
+            <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+            <span className="text-foreground/80 text-xs sm:text-sm font-medium tracking-wide">
+              Entrümpelung &amp; Haushaltsauflösungen · Bochum &amp; NRW
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary-foreground leading-[1.1] mb-6">
-            Ihre neue Freiheit{" "}
-            <span className="block text-gradient-animated">beginnt hier.</span>
+          <h1 className="text-[2.5rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[4.25rem] font-serif font-normal text-foreground mb-6">
+            Ordnung schaffen,{" "}
+            <span className="italic text-secondary">mit Verantwortung.</span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-primary-foreground/85 mb-8 leading-relaxed max-w-xl">
-            Entlastium – Professionelle Entrümpelung & Raumtransformation.
-            Wir koordinieren Ihre Entrümpelung von A bis Z und schaffen Platz für Neues.
+          <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
+            Entlastium übernimmt Ihre Entrümpelung diskret, termingerecht und zum
+            vereinbarten Festpreis — von der kostenlosen Besichtigung bis zur
+            besenreinen Übergabe.
           </p>
 
-          {/* Benefits */}
-          <div className="flex flex-wrap gap-2 sm:gap-3 mb-10">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-primary-foreground/20 text-primary-foreground/95 hover:border-accent/60 transition-colors"
-              >
-                <CheckCircle className="h-4 w-4 text-accent shrink-0" />
-                <span className="text-xs sm:text-sm font-medium">{benefit}</span>
-              </div>
-            ))}
-          </div>
-
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <Button variant="accent" size="xl" asChild className="group magnetic-btn w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10">
+            <Button variant="default" size="xl" asChild className="magnetic-btn w-full sm:w-auto group">
               <a href="#contact">
                 Kostenlose Besichtigung
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-1 h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </Button>
-            <Button variant="outline-light" size="xl" asChild className="w-full sm:w-auto">
-              <a href="#services">Leistungen entdecken</a>
+            <Button variant="outline" size="xl" asChild className="w-full sm:w-auto">
+              <a href="#services">Leistungen ansehen</a>
             </Button>
+          </div>
+
+          {/* Trust row */}
+          <div className="pt-6 border-t border-border">
+            <ul className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-3">
+              {trust.map((t) => (
+                <li
+                  key={t.label}
+                  className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground"
+                >
+                  <t.icon className="h-4 w-4 text-secondary shrink-0" />
+                  <span className="font-medium text-foreground/80">{t.label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Right: logo lockup */}
+        <div className="relative hidden lg:flex items-center justify-center">
+          <div className="relative w-full max-w-md aspect-square">
+            <div className="absolute inset-0 rounded-full bg-mist/60 blur-2xl" aria-hidden="true" />
+            <div className="relative h-full w-full rounded-3xl border border-border bg-card shadow-custom-lg flex items-center justify-center p-10">
+              <img
+                src={logoMark.url}
+                alt="Entlastium Markenzeichen"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            {/* Corner credential badge */}
+            <div className="absolute -bottom-4 -left-4 bg-primary text-primary-foreground rounded-lg px-4 py-2.5 shadow-custom-md flex items-center gap-2">
+              <Shield className="h-4 w-4" />
+              <span className="text-xs font-semibold tracking-wide">Geprüfter Fachbetrieb</span>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 };
