@@ -40,8 +40,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Falls der Build fehlschlägt, passen wir diesen Pfad gleich an
-          path: './dist' 
+          # TanStack Start exportiert die statischen Dateien standardmäßig hierhin:
+          path: './.output/public' 
 
       - name: Deploy to GitHub Pages
         id: deployment
