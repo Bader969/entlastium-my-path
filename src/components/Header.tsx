@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/entlastium-logo-icon.png.asset.json";
+import logoAsset from "@/assets/logo-full.png.asset.json";
 const logo = logoAsset.url;
 
 const Header = () => {
@@ -42,7 +42,7 @@ const Header = () => {
               <img
                 src={logo}
                 alt="Entlastium Logo"
-                className="relative h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300"
+                className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-accent/0 group-hover:ring-accent/60 transition-all duration-300"
               />
             </div>
             <div className="min-w-0">

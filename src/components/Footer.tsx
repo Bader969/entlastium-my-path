@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/entlastium-logo-icon.png.asset.json";
+import logoAsset from "@/assets/logo-full.png.asset.json";
 const logo = logoAsset.url;
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="Entlastium Logo" 
-                className="h-12 w-12 object-contain"
+                className="h-12 w-12 rounded-full object-cover"
               />
               <div>
                 <h3 className="text-xl font-serif font-bold">Entlastium</h3>
