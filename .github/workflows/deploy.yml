@@ -40,8 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # TanStack Start exportiert die statischen Dateien standardmäßig hierhin:
-          path: './.output/public' 
+          path: './dist' # Lädt jetzt den sauberen, statischen Vite-Build hoch
 
       - name: Deploy to GitHub Pages
         id: deployment
