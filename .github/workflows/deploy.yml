@@ -17,7 +17,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps: deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Falls TanStack Start/Vite den Output in 'dist' oder '.output/public' generiert, hier anpassen:
+          # Falls der Build fehlschlägt, passen wir diesen Pfad gleich an
           path: './dist' 
 
       - name: Deploy to GitHub Pages
