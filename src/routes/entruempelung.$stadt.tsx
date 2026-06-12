@@ -201,7 +201,7 @@ function StadtPage() {
           Wir sind auch in der Nähe von {city.name} aktiv
         </h2>
         <div className="flex flex-wrap gap-2">
-          {neighbors.map((n) => (
+          {neighbors.map((n: typeof neighbors[number]) => (
             <a
               key={n.slug}
               href={`/entruempelung/${n.slug}`}
