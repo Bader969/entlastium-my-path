@@ -224,7 +224,7 @@ function KostenGuide() {
                 Klavier, Tresor, Wasserbett: 150–400 € je nach Stockwerk &amp; Demontage.
               </span>
             </li>
-            <li className="flex itemsedi-start gap-3">
+            <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Anfahrt:</span>
               <span className="text-muted-foreground">
                 Innerhalb NRW bei Entlastium <strong>kostenfrei</strong>.
