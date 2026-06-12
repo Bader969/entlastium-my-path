@@ -53,6 +53,12 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Entlastium" },
+      { name: "twitter:title", content: "Entlastium – Professionelle Entrümpelung & Haushaltsauflösungen" },
+      { name: "description", content: "Entlastium: My Path is a personal project management and goal-tracking application." },
+      { property: "og:description", content: "Entlastium: My Path is a personal project management and goal-tracking application." },
+      { name: "twitter:description", content: "Entlastium: My Path is a personal project management and goal-tracking application." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/i8ED00UhOoc83SvQVMAVnqsTzxi1/social-images/social-1781304354338-Bild.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/i8ED00UhOoc83SvQVMAVnqsTzxi1/social-images/social-1781304354338-Bild.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
