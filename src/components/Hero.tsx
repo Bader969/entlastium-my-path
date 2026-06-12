@@ -44,8 +44,8 @@ const Hero = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-primary-foreground leading-[1.1] mb-6">
-            Ihre neue Freiheit{" "}
-            <span className="block text-gradient-animated">beginnt hier.</span>
+            Professionelle Entrümpelung &amp; Haushaltsauflösung{" "}
+            <span className="block text-gradient-animated">in Bochum &amp; NRW</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-primary-foreground/85 mb-8 leading-relaxed max-w-xl">

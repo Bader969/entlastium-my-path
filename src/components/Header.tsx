@@ -41,14 +41,14 @@ const Header = () => {
               <div className="absolute inset-0 rounded-full bg-accent/40 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src={logo}
-                alt="Entlastium Logo"
+                alt="Entlastium"
                 className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-accent/0 group-hover:ring-accent/60 transition-all duration-300"
               />
             </div>
             <div className="min-w-0">
-              <h1 className="text-lg sm:text-xl lg:text-2xl font-serif font-bold text-primary-foreground leading-none truncate">
+              <span className="block text-lg sm:text-xl lg:text-2xl font-serif font-bold text-primary-foreground leading-none truncate">
                 Entlastium
-              </h1>
+              </span>
               <p className="hidden xl:block text-xs text-primary-foreground/70 mt-1">
                 Entrümpelung & Haushaltsauflösungen
               </p>
