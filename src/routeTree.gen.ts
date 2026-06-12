@@ -16,6 +16,7 @@ import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as AgbRouteImport } from './routes/agb'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LeistungenHaushaltsaufloesungRouteImport } from './routes/leistungen.haushaltsaufloesung'
 import { Route as EntruempelungStadtRouteImport } from './routes/entruempelung.$stadt'
 
 const StaedteRoute = StaedteRouteImport.update({
@@ -53,6 +54,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LeistungenHaushaltsaufloesungRoute =
+  LeistungenHaushaltsaufloesungRouteImport.update({
+    id: '/haushaltsaufloesung',
+    path: '/haushaltsaufloesung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
 const EntruempelungStadtRoute = EntruempelungStadtRouteImport.update({
   id: '/entruempelung/$stadt',
   path: '/entruempelung/$stadt',
@@ -64,20 +71,22 @@ export interface FileRoutesByFullPath {
   '/agb': typeof AgbRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
-  '/leistungen': typeof LeistungenRoute
+  '/leistungen': typeof LeistungenRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
+  '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agb': typeof AgbRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
-  '/leistungen': typeof LeistungenRoute
+  '/leistungen': typeof LeistungenRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
+  '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -85,10 +94,11 @@ export interface FileRoutesById {
   '/agb': typeof AgbRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
-  '/leistungen': typeof LeistungenRoute
+  '/leistungen': typeof LeistungenRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
+  '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +111,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/staedte'
     | '/entruempelung/$stadt'
+    | '/leistungen/haushaltsaufloesung'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +122,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/staedte'
     | '/entruempelung/$stadt'
+    | '/leistungen/haushaltsaufloesung'
   id:
     | '__root__'
     | '/'
@@ -121,6 +133,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/staedte'
     | '/entruempelung/$stadt'
+    | '/leistungen/haushaltsaufloesung'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -128,7 +141,7 @@ export interface RootRouteChildren {
   AgbRoute: typeof AgbRoute
   DatenschutzRoute: typeof DatenschutzRoute
   ImpressumRoute: typeof ImpressumRoute
-  LeistungenRoute: typeof LeistungenRoute
+  LeistungenRoute: typeof LeistungenRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StaedteRoute: typeof StaedteRoute
   EntruempelungStadtRoute: typeof EntruempelungStadtRoute
@@ -185,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/leistungen/haushaltsaufloesung': {
+      id: '/leistungen/haushaltsaufloesung'
+      path: '/haushaltsaufloesung'
+      fullPath: '/leistungen/haushaltsaufloesung'
+      preLoaderRoute: typeof LeistungenHaushaltsaufloesungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
     '/entruempelung/$stadt': {
       id: '/entruempelung/$stadt'
       path: '/entruempelung/$stadt'
@@ -195,12 +215,24 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface LeistungenRouteChildren {
+  LeistungenHaushaltsaufloesungRoute: typeof LeistungenHaushaltsaufloesungRoute
+}
+
+const LeistungenRouteChildren: LeistungenRouteChildren = {
+  LeistungenHaushaltsaufloesungRoute: LeistungenHaushaltsaufloesungRoute,
+}
+
+const LeistungenRouteWithChildren = LeistungenRoute._addFileChildren(
+  LeistungenRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgbRoute: AgbRoute,
   DatenschutzRoute: DatenschutzRoute,
   ImpressumRoute: ImpressumRoute,
-  LeistungenRoute: LeistungenRoute,
+  LeistungenRoute: LeistungenRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StaedteRoute: StaedteRoute,
   EntruempelungStadtRoute: EntruempelungStadtRoute,
@@ -208,3 +240,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
