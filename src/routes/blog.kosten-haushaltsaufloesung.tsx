@@ -1,0 +1,268 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import PageLayout from "@/components/PageLayout";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, Euro, Home, Truck, Recycle, ArrowRight } from "lucide-react";
+
+const CANONICAL = "https://entlastium.de/blog/kosten-haushaltsaufloesung";
+
+const PRICE_TABLE = [
+  { size: "1-Zimmer-Wohnung", sqm: "ca. 20–35 m²", price: "590 – 1.290 €", days: "1 Tag" },
+  { size: "2-Zimmer-Wohnung", sqm: "ca. 40–60 m²", price: "990 – 1.890 €", days: "1 Tag" },
+  { size: "3-Zimmer-Wohnung", sqm: "ca. 65–85 m²", price: "1.490 – 2.690 €", days: "1–2 Tage" },
+  { size: "4-Zimmer-Wohnung", sqm: "ca. 85–110 m²", price: "1.990 – 3.490 €", days: "2 Tage" },
+  { size: "Einfamilienhaus", sqm: "ab 120 m² + Keller", price: "2.890 – 5.900 €", days: "2–4 Tage" },
+];
+
+const FACTORS = [
+  { icon: Home, title: "Wohnungsgröße & Stockwerk", text: "Mehr Quadratmeter und höhere Etagen ohne Aufzug erhöhen Personal- und Zeitaufwand." },
+  { icon: Truck, title: "Müllmenge & Containergröße", text: "Die Entsorgungsmenge (in m³) bestimmt Container­miete und Deponiegebühren – oft 20–35 % der Endkosten." },
+  { icon: Recycle, title: "Sondermüll & Sperrgut", text: "Elektrogeräte, Farben, Öle oder Klaviere müssen separat fachgerecht entsorgt werden." },
+  { icon: Euro, title: "Wertanrechnung", text: "Verwertbare Möbel, Antiquitäten oder Elektronik reduzieren Ihren Endpreis – manchmal um mehrere hundert Euro." },
+];
+
+const FAQS = [
+  {
+    q: "Was kostet eine Wohnungsauflösung in NRW im Schnitt?",
+    a: "Für eine durchschnittliche 2- bis 3-Zimmer-Wohnung in NRW liegen die Kosten typischerweise zwischen 1.200 € und 2.500 € inklusive Entsorgung, besenrein und mit transparenter Festpreis-Garantie.",
+  },
+  {
+    q: "Wie funktioniert die Wertanrechnung?",
+    a: "Bei der Besichtigung bewerten wir verwertbare Gegenstände wie Möbel, Schmuck, Sammlerstücke oder hochwertige Elektronik. Der ermittelte Restwert wird direkt vom Angebot abgezogen – Sie zahlen also nur die Differenz.",
+  },
+  {
+    q: "Sind Entsorgungskosten im Festpreis enthalten?",
+    a: "Bei Entlastium ja. Container, Deponiegebühren, Personal, Fahrzeuge und besenreine Übergabe sind im Festpreis enthalten. Keine versteckten Zusatzkosten.",
+  },
+  {
+    q: "Wann zahlt das Sozialamt eine Haushaltsauflösung?",
+    a: "Bei Bedürftigkeit (z. B. nach Todesfall mittelloser Personen oder bei Sozialhilfe-Bezug) übernimmt das Sozialamt die Kosten ganz oder teilweise. Wir stellen gerne entsprechende Kostenvoranschläge aus.",
+  },
+];
+
+export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung")({
+  component: KostenGuide,
+  head: () => ({
+    meta: [
+      { title: "Was kostet eine Wohnungsauflösung? Preise 2026 in NRW" },
+      {
+        name: "description",
+        content:
+          "Transparenter Preisguide 2026: Was kostet eine Wohnungsauflösung oder Haushaltsauflösung in NRW? Festpreise nach Wohnungsgröße, Kostenfaktoren & Wertanrechnung erklärt.",
+      },
+      { property: "og:title", content: "Was kostet eine Wohnungsauflösung? Preise 2026 in NRW" },
+      {
+        property: "og:description",
+        content:
+          "Festpreise nach Wohnungsgröße, alle Kostenfaktoren und wie die Wertanrechnung Ihren Preis senkt – der Ratgeber von Entlastium.",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: CANONICAL },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "Was kostet eine Wohnungsauflösung? Preise 2026 in NRW",
+          description:
+            "Transparenter Preisguide 2026 für Wohnungsauflösungen und Haushaltsauflösungen in NRW.",
+          author: { "@type": "Organization", name: "Entlastium" },
+          publisher: {
+            "@type": "Organization",
+            name: "Entlastium",
+            logo: { "@type": "ImageObject", url: "https://entlastium.de/favicon.png" },
+          },
+          datePublished: "2026-06-12",
+          dateModified: "2026-06-12",
+          mainEntityOfPage: CANONICAL,
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
+    ],
+  }),
+});
+
+function KostenGuide() {
+  return (
+    <PageLayout
+      eyebrow="Ratgeber"
+      title="Was kostet eine Wohnungsauflösung? Preise 2026 in NRW"
+      intro="Transparenter Preisguide: Festpreise nach Wohnungsgröße, die wichtigsten Kostenfaktoren und wie die Wertanrechnung Ihren Endpreis spürbar senkt."
+      breadcrumbs={[
+        { label: "Start", href: "/" },
+        { label: "Blog" },
+        { label: "Kosten Haushaltsauflösung" },
+      ]}
+    >
+      <article className="prose prose-lg max-w-4xl mx-auto">
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
+            Kurz &amp; ehrlich: So viel kostet eine Wohnungsauflösung
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Eine professionelle Wohnungsauflösung in NRW kostet im Jahr 2026 zwischen
+            <strong> 590 € für ein 1-Zimmer-Apartment </strong> und
+            <strong> 5.900 € für ein voll möbliertes Einfamilienhaus</strong>.
+            Der exakte Preis hängt von vier Faktoren ab: Wohnungsgröße, Müllmenge,
+            Sondermüll und der möglichen Wertanrechnung verwertbarer Gegenstände.
+            Entlastium arbeitet ausschließlich mit transparenten Festpreisen – nach
+            der kostenlosen Besichtigung wissen Sie genau, was Sie zahlen.
+          </p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
+            Preistabelle nach Wohnungsgröße (NRW 2026)
+          </h2>
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-left">
+              <thead className="bg-muted">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">Objektgröße</th>
+                  <th className="px-4 py-3 font-semibold">Fläche</th>
+                  <th className="px-4 py-3 font-semibold">Festpreis (von – bis)</th>
+                  <th className="px-4 py-3 font-semibold">Dauer</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PRICE_TABLE.map((row) => (
+                  <tr key={row.size} className="border-t border-border">
+                    <td className="px-4 py-3 font-medium">{row.size}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.sqm}</td>
+                    <td className="px-4 py-3 font-semibold text-primary">{row.price}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.days}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-muted-foreground mt-3">
+            Preise inkl. Personal, Fahrzeuge, Containermiete, Deponiegebühren und
+            besenreine Übergabe. Stand: Juni 2026, gültig für ganz NRW.
+          </p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
+            Die 4 wichtigsten Kostenfaktoren
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {FACTORS.map((f) => (
+              <Card key={f.title} className="p-6">
+                <f.icon className="h-8 w-8 text-accent mb-3" />
+                <h3 className="font-serif text-xl font-bold mb-2">{f.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{f.text}</p>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
+            So funktioniert die Wertanrechnung
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Viele Wohnungen enthalten Gegenstände mit Restwert – ohne dass die
+            Bewohner es wissen. Bei der Besichtigung prüfen unsere Gutachter
+            systematisch jeden Raum auf verwertbare Substanz:
+          </p>
+          <ul className="space-y-2 mb-4">
+            {[
+              "Hochwertige Möbel (Massivholz, Designerstücke, Antiquitäten)",
+              "Elektronik & Haushaltsgeräte unter 5 Jahren",
+              "Schmuck, Uhren, Münzsammlungen",
+              "Werkzeug, Fahrräder, E-Bikes",
+              "Bücher, Schallplatten, Kunst & Porzellan",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-muted-foreground leading-relaxed">
+            Der ermittelte Restwert wird <strong>direkt vom Angebot abgezogen</strong>.
+            In Einzelfällen reduziert sich der Endpreis um 30–60 % – bei nachlassreichen
+            Haushalten gelegentlich sogar auf 0 €.
+          </p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
+            Typische Zusatzkosten – und wie Sie sie vermeiden
+          </h2>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-3">
+              <span className="font-semibold text-primary min-w-[180px]">Sondermüll:</span>
+              <span className="text-muted-foreground">
+                Farben, Lacke, Altöl, Asbest – ca. 1,50–4 € pro Kilo, je nach Stoff.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="font-semibold text-primary min-w-[180px]">Elektrogroßgeräte:</span>
+              <span className="text-muted-foreground">
+                Kühlschrank, Waschmaschine: 25–60 € pro Gerät bei separater Entsorgung.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="font-semibold text-primary min-w-[180px]">Schwerlasten:</span>
+              <span className="text-muted-foreground">
+                Klavier, Tresor, Wasserbett: 150–400 € je nach Stockwerk &amp; Demontage.
+              </span>
+            </li>
+            <li className="flex itemsedi-start gap-3">
+              <span className="font-semibold text-primary min-w-[180px]">Anfahrt:</span>
+              <span className="text-muted-foreground">
+                Innerhalb NRW bei Entlastium <strong>kostenfrei</strong>.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
+            Häufig gestellte Fragen zu den Kosten
+          </h2>
+          <div className="space-y-4">
+            {FAQS.map((f) => (
+              <Card key={f.q} className="p-6">
+                <h3 className="font-serif text-lg font-bold mb-2">{f.q}</h3>
+                <p className="text-muted-foreground leading-relaxed">{f.a}</p>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12 text-center">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
+            Holen Sie Ihren persönlichen Festpreis
+          </h2>
+          <p className="text-primary-foreground mb-6 max-w-2xl mx-auto">
+            Kostenlose Besichtigung in ganz NRW – mit transparenter Wertanrechnung
+            und schriftlichem Festpreis-Angebot innerhalb von 24 Stunden.
+          </p>
+          <Button variant="accent" size="xl" asChild>
+            <Link to="/kontakt">
+              Jetzt kostenlos anfragen
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </section>
+      </article>
+    </PageLayout>
+  );
+}
