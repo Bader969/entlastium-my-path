@@ -11,12 +11,12 @@ const Header = () => {
   const isHomePage = location.pathname === "/";
 
   const navItems = [
-    { label: "Home", href: isHomePage ? "#home" : "/" },
-    { label: "Services", href: isHomePage ? "#services" : "/#services" },
-    { label: "Ablauf", href: isHomePage ? "#process" : "/#process" },
-    { label: "Über uns", href: isHomePage ? "#about" : "/#about" },
-    { label: "FAQ", href: isHomePage ? "#faq" : "/#faq" },
-    { label: "Kontakt", href: isHomePage ? "#contact" : "/#contact" },
+    { label: "Leistungen", href: "/leistungen" },
+    { label: "Ablauf", href: "/ablauf" },
+    { label: "Städte", href: "/staedte" },
+    { label: "Über uns", href: "/ueber-uns" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Kontakt", href: "/kontakt" },
   ];
 
   // Lock body scroll when mobile menu is open
@@ -81,7 +81,7 @@ const Header = () => {
               </span>
             </a>
             <Button variant="accent" size="default" asChild>
-              <a href={isHomePage ? "#contact" : "/#contact"}>Anfragen</a>
+              <a href="/kontakt">Anfragen</a>
             </Button>
           </div>
 
@@ -131,7 +131,7 @@ const Header = () => {
             </a>
             <Button variant="accent" size="lg" className="w-full" asChild>
               <a
-                href={isHomePage ? "#contact" : "/#contact"}
+                href="/kontakt"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Kostenlos anfragen
