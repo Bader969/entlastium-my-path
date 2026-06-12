@@ -33,7 +33,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Entlastium – Professionelle Entrümpelung & Haushaltsauflösungen" },
+      { title: "Entlastium – Entrümpelung & Haushaltsauflösung NRW" },
       {
         name: "description",
         content:
@@ -45,20 +45,17 @@ export const Route = createRootRoute({
         content:
           "Entrümpelung, Haushaltsauflösung, Bochum, NRW, Kellerentrümpelung, Wohnungsräumung, Gartenräumung",
       },
-      { property: "og:title", content: "Entlastium – Professionelle Entrümpelung & Haushaltsauflösungen" },
+      { property: "og:site_name", content: "Entlastium" },
+      { property: "og:title", content: "Entlastium – Entrümpelung & Haushaltsauflösung NRW" },
       {
         property: "og:description",
-        content: "Schnelle, kostengünstige und fachgerechte Entrümpelung. Kostenlose Besichtigung & faire Festpreise.",
+        content: "Schnelle, kostengünstige und fachgerechte Entrümpelung in Bochum und ganz NRW. Kostenlose Besichtigung & faire Festpreise.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Entlastium" },
-      { name: "twitter:title", content: "Entlastium – Professionelle Entrümpelung & Haushaltsauflösungen" },
-      { name: "description", content: "Entlastium: My Path is a personal project management and goal-tracking application." },
-      { property: "og:description", content: "Entlastium: My Path is a personal project management and goal-tracking application." },
-      { name: "twitter:description", content: "Entlastium: My Path is a personal project management and goal-tracking application." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/i8ED00UhOoc83SvQVMAVnqsTzxi1/social-images/social-1781304354338-Bild.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/i8ED00UhOoc83SvQVMAVnqsTzxi1/social-images/social-1781304354338-Bild.webp" },
+      { name: "twitter:title", content: "Entlastium – Entrümpelung & Haushaltsauflösung NRW" },
+      { name: "twitter:description", content: "Schnelle, kostengünstige und fachgerechte Entrümpelung in Bochum und ganz NRW. Kostenlose Besichtigung & faire Festpreise." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -75,21 +72,43 @@ export const Route = createRootRoute({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "Entlastium",
-          description:
-            "Professionelle Entrümpelung & Haushaltsauflösungen in Bochum und ganz NRW. Kostenlose Besichtigung, faire Festpreise.",
-          url: "https://entlastium.de",
-          telephone: "+49-123-45678",
-          email: "info@entlastium.de",
-          areaServed: { "@type": "State", name: "Nordrhein-Westfalen" },
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Bochum",
-            addressRegion: "NRW",
-            addressCountry: "DE",
-          },
-          priceRange: "€€",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://entlastium.de/#organization",
+              name: "Entlastium",
+              url: "https://entlastium.de",
+              logo: "https://entlastium.de/favicon.png",
+              email: "info@entlastium.de",
+              telephone: "+49-123-45678",
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://entlastium.de/#website",
+              url: "https://entlastium.de",
+              name: "Entlastium",
+              publisher: { "@id": "https://entlastium.de/#organization" },
+              inLanguage: "de-DE",
+            },
+            {
+              "@type": "LocalBusiness",
+              "@id": "https://entlastium.de/#localbusiness",
+              name: "Entlastium",
+              description:
+                "Professionelle Entrümpelung & Haushaltsauflösungen in Bochum und ganz NRW. Kostenlose Besichtigung, faire Festpreise.",
+              url: "https://entlastium.de",
+              telephone: "+49-123-45678",
+              email: "info@entlastium.de",
+              areaServed: { "@type": "State", name: "Nordrhein-Westfalen" },
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Bochum",
+                addressRegion: "NRW",
+                addressCountry: "DE",
+              },
+              priceRange: "€€",
+            },
+          ],
         }),
       },
     ],
