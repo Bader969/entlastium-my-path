@@ -9,16 +9,30 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
 import { Route as StaedteRouteImport } from './routes/staedte'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LeistungenRouteImport } from './routes/leistungen'
+import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as ImpressumRouteImport } from './routes/impressum'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as AgbRouteImport } from './routes/agb'
+import { Route as AblaufRouteImport } from './routes/ablauf'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LeistungenWohnungsuebergabeRouteImport } from './routes/leistungen.wohnungsuebergabe'
+import { Route as LeistungenKellerraeumungRouteImport } from './routes/leistungen.kellerraeumung'
 import { Route as LeistungenHaushaltsaufloesungRouteImport } from './routes/leistungen.haushaltsaufloesung'
+import { Route as LeistungenGartenraeumungRouteImport } from './routes/leistungen.gartenraeumung'
+import { Route as LeistungenEntruempelungRouteImport } from './routes/leistungen.entruempelung'
+import { Route as LeistungenEndreinigungRouteImport } from './routes/leistungen.endreinigung'
 import { Route as EntruempelungStadtRouteImport } from './routes/entruempelung.$stadt'
 
+const UeberUnsRoute = UeberUnsRouteImport.update({
+  id: '/ueber-uns',
+  path: '/ueber-uns',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StaedteRoute = StaedteRouteImport.update({
   id: '/staedte',
   path: '/staedte',
@@ -34,9 +48,19 @@ const LeistungenRoute = LeistungenRouteImport.update({
   path: '/leistungen',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImpressumRoute = ImpressumRouteImport.update({
   id: '/impressum',
   path: '/impressum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DatenschutzRoute = DatenschutzRouteImport.update({
@@ -49,17 +73,50 @@ const AgbRoute = AgbRouteImport.update({
   path: '/agb',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AblaufRoute = AblaufRouteImport.update({
+  id: '/ablauf',
+  path: '/ablauf',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LeistungenWohnungsuebergabeRoute =
+  LeistungenWohnungsuebergabeRouteImport.update({
+    id: '/wohnungsuebergabe',
+    path: '/wohnungsuebergabe',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenKellerraeumungRoute =
+  LeistungenKellerraeumungRouteImport.update({
+    id: '/kellerraeumung',
+    path: '/kellerraeumung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
 const LeistungenHaushaltsaufloesungRoute =
   LeistungenHaushaltsaufloesungRouteImport.update({
     id: '/haushaltsaufloesung',
     path: '/haushaltsaufloesung',
     getParentRoute: () => LeistungenRoute,
   } as any)
+const LeistungenGartenraeumungRoute =
+  LeistungenGartenraeumungRouteImport.update({
+    id: '/gartenraeumung',
+    path: '/gartenraeumung',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenEntruempelungRoute = LeistungenEntruempelungRouteImport.update({
+  id: '/entruempelung',
+  path: '/entruempelung',
+  getParentRoute: () => LeistungenRoute,
+} as any)
+const LeistungenEndreinigungRoute = LeistungenEndreinigungRouteImport.update({
+  id: '/endreinigung',
+  path: '/endreinigung',
+  getParentRoute: () => LeistungenRoute,
+} as any)
 const EntruempelungStadtRoute = EntruempelungStadtRouteImport.update({
   id: '/entruempelung/$stadt',
   path: '/entruempelung/$stadt',
@@ -68,87 +125,152 @@ const EntruempelungStadtRoute = EntruempelungStadtRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ablauf': typeof AblaufRoute
   '/agb': typeof AgbRoute
   '/datenschutz': typeof DatenschutzRoute
+  '/faq': typeof FaqRoute
   '/impressum': typeof ImpressumRoute
+  '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
+  '/ueber-uns': typeof UeberUnsRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
+  '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
+  '/leistungen/entruempelung': typeof LeistungenEntruempelungRoute
+  '/leistungen/gartenraeumung': typeof LeistungenGartenraeumungRoute
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
+  '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
+  '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ablauf': typeof AblaufRoute
   '/agb': typeof AgbRoute
   '/datenschutz': typeof DatenschutzRoute
+  '/faq': typeof FaqRoute
   '/impressum': typeof ImpressumRoute
+  '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
+  '/ueber-uns': typeof UeberUnsRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
+  '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
+  '/leistungen/entruempelung': typeof LeistungenEntruempelungRoute
+  '/leistungen/gartenraeumung': typeof LeistungenGartenraeumungRoute
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
+  '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
+  '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ablauf': typeof AblaufRoute
   '/agb': typeof AgbRoute
   '/datenschutz': typeof DatenschutzRoute
+  '/faq': typeof FaqRoute
   '/impressum': typeof ImpressumRoute
+  '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
+  '/ueber-uns': typeof UeberUnsRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
+  '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
+  '/leistungen/entruempelung': typeof LeistungenEntruempelungRoute
+  '/leistungen/gartenraeumung': typeof LeistungenGartenraeumungRoute
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
+  '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
+  '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/ablauf'
     | '/agb'
     | '/datenschutz'
+    | '/faq'
     | '/impressum'
+    | '/kontakt'
     | '/leistungen'
     | '/sitemap.xml'
     | '/staedte'
+    | '/ueber-uns'
     | '/entruempelung/$stadt'
+    | '/leistungen/endreinigung'
+    | '/leistungen/entruempelung'
+    | '/leistungen/gartenraeumung'
     | '/leistungen/haushaltsaufloesung'
+    | '/leistungen/kellerraeumung'
+    | '/leistungen/wohnungsuebergabe'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/ablauf'
     | '/agb'
     | '/datenschutz'
+    | '/faq'
     | '/impressum'
+    | '/kontakt'
     | '/leistungen'
     | '/sitemap.xml'
     | '/staedte'
+    | '/ueber-uns'
     | '/entruempelung/$stadt'
+    | '/leistungen/endreinigung'
+    | '/leistungen/entruempelung'
+    | '/leistungen/gartenraeumung'
     | '/leistungen/haushaltsaufloesung'
+    | '/leistungen/kellerraeumung'
+    | '/leistungen/wohnungsuebergabe'
   id:
     | '__root__'
     | '/'
+    | '/ablauf'
     | '/agb'
     | '/datenschutz'
+    | '/faq'
     | '/impressum'
+    | '/kontakt'
     | '/leistungen'
     | '/sitemap.xml'
     | '/staedte'
+    | '/ueber-uns'
     | '/entruempelung/$stadt'
+    | '/leistungen/endreinigung'
+    | '/leistungen/entruempelung'
+    | '/leistungen/gartenraeumung'
     | '/leistungen/haushaltsaufloesung'
+    | '/leistungen/kellerraeumung'
+    | '/leistungen/wohnungsuebergabe'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AblaufRoute: typeof AblaufRoute
   AgbRoute: typeof AgbRoute
   DatenschutzRoute: typeof DatenschutzRoute
+  FaqRoute: typeof FaqRoute
   ImpressumRoute: typeof ImpressumRoute
+  KontaktRoute: typeof KontaktRoute
   LeistungenRoute: typeof LeistungenRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StaedteRoute: typeof StaedteRoute
+  UeberUnsRoute: typeof UeberUnsRoute
   EntruempelungStadtRoute: typeof EntruempelungStadtRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/ueber-uns': {
+      id: '/ueber-uns'
+      path: '/ueber-uns'
+      fullPath: '/ueber-uns'
+      preLoaderRoute: typeof UeberUnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/staedte': {
       id: '/staedte'
       path: '/staedte'
@@ -170,11 +292,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LeistungenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/impressum': {
       id: '/impressum'
       path: '/impressum'
       fullPath: '/impressum'
       preLoaderRoute: typeof ImpressumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/datenschutz': {
@@ -191,6 +327,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AgbRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ablauf': {
+      id: '/ablauf'
+      path: '/ablauf'
+      fullPath: '/ablauf'
+      preLoaderRoute: typeof AblaufRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -198,11 +341,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/leistungen/wohnungsuebergabe': {
+      id: '/leistungen/wohnungsuebergabe'
+      path: '/wohnungsuebergabe'
+      fullPath: '/leistungen/wohnungsuebergabe'
+      preLoaderRoute: typeof LeistungenWohnungsuebergabeRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/kellerraeumung': {
+      id: '/leistungen/kellerraeumung'
+      path: '/kellerraeumung'
+      fullPath: '/leistungen/kellerraeumung'
+      preLoaderRoute: typeof LeistungenKellerraeumungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
     '/leistungen/haushaltsaufloesung': {
       id: '/leistungen/haushaltsaufloesung'
       path: '/haushaltsaufloesung'
       fullPath: '/leistungen/haushaltsaufloesung'
       preLoaderRoute: typeof LeistungenHaushaltsaufloesungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/gartenraeumung': {
+      id: '/leistungen/gartenraeumung'
+      path: '/gartenraeumung'
+      fullPath: '/leistungen/gartenraeumung'
+      preLoaderRoute: typeof LeistungenGartenraeumungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/entruempelung': {
+      id: '/leistungen/entruempelung'
+      path: '/entruempelung'
+      fullPath: '/leistungen/entruempelung'
+      preLoaderRoute: typeof LeistungenEntruempelungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
+    '/leistungen/endreinigung': {
+      id: '/leistungen/endreinigung'
+      path: '/endreinigung'
+      fullPath: '/leistungen/endreinigung'
+      preLoaderRoute: typeof LeistungenEndreinigungRouteImport
       parentRoute: typeof LeistungenRoute
     }
     '/entruempelung/$stadt': {
@@ -216,11 +394,21 @@ declare module '@tanstack/react-router' {
 }
 
 interface LeistungenRouteChildren {
+  LeistungenEndreinigungRoute: typeof LeistungenEndreinigungRoute
+  LeistungenEntruempelungRoute: typeof LeistungenEntruempelungRoute
+  LeistungenGartenraeumungRoute: typeof LeistungenGartenraeumungRoute
   LeistungenHaushaltsaufloesungRoute: typeof LeistungenHaushaltsaufloesungRoute
+  LeistungenKellerraeumungRoute: typeof LeistungenKellerraeumungRoute
+  LeistungenWohnungsuebergabeRoute: typeof LeistungenWohnungsuebergabeRoute
 }
 
 const LeistungenRouteChildren: LeistungenRouteChildren = {
+  LeistungenEndreinigungRoute: LeistungenEndreinigungRoute,
+  LeistungenEntruempelungRoute: LeistungenEntruempelungRoute,
+  LeistungenGartenraeumungRoute: LeistungenGartenraeumungRoute,
   LeistungenHaushaltsaufloesungRoute: LeistungenHaushaltsaufloesungRoute,
+  LeistungenKellerraeumungRoute: LeistungenKellerraeumungRoute,
+  LeistungenWohnungsuebergabeRoute: LeistungenWohnungsuebergabeRoute,
 }
 
 const LeistungenRouteWithChildren = LeistungenRoute._addFileChildren(
@@ -229,23 +417,18 @@ const LeistungenRouteWithChildren = LeistungenRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AblaufRoute: AblaufRoute,
   AgbRoute: AgbRoute,
   DatenschutzRoute: DatenschutzRoute,
+  FaqRoute: FaqRoute,
   ImpressumRoute: ImpressumRoute,
+  KontaktRoute: KontaktRoute,
   LeistungenRoute: LeistungenRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StaedteRoute: StaedteRoute,
+  UeberUnsRoute: UeberUnsRoute,
   EntruempelungStadtRoute: EntruempelungStadtRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

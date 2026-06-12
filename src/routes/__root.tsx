@@ -70,6 +70,29 @@ export const Route = createRootRoute({
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Entlastium",
+          description:
+            "Professionelle Entrümpelung & Haushaltsauflösungen in Bochum und ganz NRW. Kostenlose Besichtigung, faire Festpreise.",
+          url: "https://entlastium.de",
+          telephone: "+49-123-45678",
+          email: "info@entlastium.de",
+          areaServed: { "@type": "State", name: "Nordrhein-Westfalen" },
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Bochum",
+            addressRegion: "NRW",
+            addressCountry: "DE",
+          },
+          priceRange: "€€",
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
