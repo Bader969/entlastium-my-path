@@ -27,6 +27,7 @@ import { Route as LeistungenGartenraeumungRouteImport } from './routes/leistunge
 import { Route as LeistungenEntruempelungRouteImport } from './routes/leistungen.entruempelung'
 import { Route as LeistungenEndreinigungRouteImport } from './routes/leistungen.endreinigung'
 import { Route as EntruempelungStadtRouteImport } from './routes/entruempelung.$stadt'
+import { Route as BlogKostenHaushaltsaufloesungRouteImport } from './routes/blog.kosten-haushaltsaufloesung'
 
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
@@ -122,6 +123,12 @@ const EntruempelungStadtRoute = EntruempelungStadtRouteImport.update({
   path: '/entruempelung/$stadt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogKostenHaushaltsaufloesungRoute =
+  BlogKostenHaushaltsaufloesungRouteImport.update({
+    id: '/blog/kosten-haushaltsaufloesung',
+    path: '/blog/kosten-haushaltsaufloesung',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -135,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
   '/ueber-uns': typeof UeberUnsRoute
+  '/blog/kosten-haushaltsaufloesung': typeof BlogKostenHaushaltsaufloesungRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
   '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
   '/leistungen/entruempelung': typeof LeistungenEntruempelungRoute
@@ -155,6 +163,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
   '/ueber-uns': typeof UeberUnsRoute
+  '/blog/kosten-haushaltsaufloesung': typeof BlogKostenHaushaltsaufloesungRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
   '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
   '/leistungen/entruempelung': typeof LeistungenEntruempelungRoute
@@ -176,6 +185,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
   '/ueber-uns': typeof UeberUnsRoute
+  '/blog/kosten-haushaltsaufloesung': typeof BlogKostenHaushaltsaufloesungRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
   '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
   '/leistungen/entruempelung': typeof LeistungenEntruempelungRoute
@@ -198,6 +208,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/staedte'
     | '/ueber-uns'
+    | '/blog/kosten-haushaltsaufloesung'
     | '/entruempelung/$stadt'
     | '/leistungen/endreinigung'
     | '/leistungen/entruempelung'
@@ -218,6 +229,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/staedte'
     | '/ueber-uns'
+    | '/blog/kosten-haushaltsaufloesung'
     | '/entruempelung/$stadt'
     | '/leistungen/endreinigung'
     | '/leistungen/entruempelung'
@@ -238,6 +250,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/staedte'
     | '/ueber-uns'
+    | '/blog/kosten-haushaltsaufloesung'
     | '/entruempelung/$stadt'
     | '/leistungen/endreinigung'
     | '/leistungen/entruempelung'
@@ -259,6 +272,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StaedteRoute: typeof StaedteRoute
   UeberUnsRoute: typeof UeberUnsRoute
+  BlogKostenHaushaltsaufloesungRoute: typeof BlogKostenHaushaltsaufloesungRoute
   EntruempelungStadtRoute: typeof EntruempelungStadtRoute
 }
 
@@ -390,6 +404,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EntruempelungStadtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/kosten-haushaltsaufloesung': {
+      id: '/blog/kosten-haushaltsaufloesung'
+      path: '/blog/kosten-haushaltsaufloesung'
+      fullPath: '/blog/kosten-haushaltsaufloesung'
+      preLoaderRoute: typeof BlogKostenHaushaltsaufloesungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -427,6 +448,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StaedteRoute: StaedteRoute,
   UeberUnsRoute: UeberUnsRoute,
+  BlogKostenHaushaltsaufloesungRoute: BlogKostenHaushaltsaufloesungRoute,
   EntruempelungStadtRoute: EntruempelungStadtRoute,
 }
 export const routeTree = rootRouteImport

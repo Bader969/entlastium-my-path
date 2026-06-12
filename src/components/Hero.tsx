@@ -48,7 +48,7 @@ const Hero = () => {
             <span className="block text-gradient-animated">in Bochum &amp; NRW</span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-primary-foreground/85 mb-8 leading-relaxed max-w-xl">
+          <p className="text-base sm:text-lg md:text-xl text-primary-foreground mb-8 leading-relaxed max-w-xl">
             Entlastium – Professionelle Entrümpelung & Raumtransformation.
             Wir koordinieren Ihre Entrümpelung von A bis Z und schaffen Platz für Neues.
           </p>

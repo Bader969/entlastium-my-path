@@ -118,7 +118,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-primary-foreground/60">
+          <p className="text-sm text-primary-foreground/80">
             © {currentYear} Entlastium. Alle Rechte vorbehalten.
           </p>
           <div className="flex items-center gap-2">
