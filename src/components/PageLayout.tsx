@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -6,7 +5,7 @@ interface PageLayoutProps {
   eyebrow?: string;
   title: string;
   intro?: string;
-  breadcrumbs?: { label: string; to?: string }[];
+  breadcrumbs?: { label: string; href?: string }[];
   children: React.ReactNode;
 }
 
@@ -23,13 +22,13 @@ const PageLayout = ({ eyebrow, title, intro, breadcrumbs, children }: PageLayout
               <ol className="flex flex-wrap items-center gap-2 text-sm text-primary-foreground/70">
                 {breadcrumbs.map((b, i) => (
                   <li key={i} className="flex items-center gap-2">
-                    {b.to ? (
-                      <Link
-                        to={b.to}
+                    {b.href ? (
+                      <a
+                        href={b.href}
                         className="hover:text-primary-foreground transition-colors"
                       >
                         {b.label}
-                      </Link>
+                      </a>
                     ) : (
                       <span className="text-primary-foreground">{b.label}</span>
                     )}
