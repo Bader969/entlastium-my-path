@@ -28,7 +28,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/85 backdrop-blur-xl border-b border-primary-foreground/10 shadow-[0_4px_30px_color-mix(in_oklab,var(--primary)_30%,transparent)]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md border-b border-primary-foreground/10">
       <div className="container-custom px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
@@ -37,16 +37,13 @@ const Header = () => {
             className="flex items-center gap-3 group min-w-0"
             onClick={() => setIsMenuOpen(false)}
           >
-            <div className="relative shrink-0">
-              <div className="absolute inset-0 rounded-full bg-accent/40 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <img
-                src={logo}
-                alt="Entlastium"
-                className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-accent/0 group-hover:ring-accent/60 transition-all duration-300"
-              />
-            </div>
+            <img
+              src={logo}
+              alt="Entlastium"
+              className="shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover"
+            />
             <div className="min-w-0">
-              <span className="block text-lg sm:text-xl lg:text-2xl font-serif font-bold text-primary-foreground leading-none truncate">
+              <span className="block text-lg sm:text-xl lg:text-2xl font-serif font-semibold text-primary-foreground leading-none truncate">
                 Entlastium
               </span>
               <p className="hidden xl:block text-xs text-primary-foreground/70 mt-1">
