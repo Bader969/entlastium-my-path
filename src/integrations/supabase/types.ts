@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      contact_requests: {
+        Row: {
+          address: string | null
+          created_at: string
+          email: string
+          id: string
+          image_paths: string[]
+          message: string | null
+          name: string
+          phone: string | null
+          room_size_m2: string
+          room_size_m3: string | null
+          room_type: string
+          room_type_label: string
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          image_paths?: string[]
+          message?: string | null
+          name: string
+          phone?: string | null
+          room_size_m2: string
+          room_size_m3?: string | null
+          room_type: string
+          room_type_label: string
+        }
+        Update: {
+          address?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          image_paths?: string[]
+          message?: string | null
+          name?: string
+          phone?: string | null
+          room_size_m2?: string
+          room_size_m3?: string | null
+          room_type?: string
+          room_type_label?: string
+        }
+        Relationships: []
+      }
       email_send_log: {
         Row: {
           created_at: string
