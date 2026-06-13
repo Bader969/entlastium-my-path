@@ -28,6 +28,9 @@ const Hero = () => {
           src={logoIcon}
           alt=""
           aria-hidden="true"
+          width={512}
+          height={512}
+          fetchPriority="high"
           className="w-[260px] sm:w-[360px] md:w-[460px] lg:w-[560px] xl:w-[640px] opacity-15 object-contain"
         />
       </div>
