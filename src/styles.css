@@ -200,6 +200,14 @@
 .shadow-custom-md { box-shadow: var(--shadow-md); }
 .shadow-custom-lg { box-shadow: var(--shadow-lg); }
 
+.hover-lift {
+  transition: box-shadow 0.3s var(--transition-smooth), transform 0.3s var(--transition-smooth);
+}
+.hover-lift:hover {
+  box-shadow: 0 14px 32px -12px color-mix(in oklab, var(--navy) 22%, transparent);
+  transform: translateY(-2px);
+}
+
 .text-gradient {
   background-clip: text;
   -webkit-background-clip: text;
