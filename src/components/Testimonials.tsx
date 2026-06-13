@@ -46,7 +46,7 @@ const Testimonials = () => {
           {testimonials.map((t, i) => (
             <figure
               key={i}
-              className="bg-card border border-border rounded-xl p-6 shadow-card flex flex-col"
+              className="bg-card border border-border rounded-xl p-6 shadow-card hover:shadow-custom-md transition-shadow duration-300 flex flex-col"
             >
               <Quote className="h-7 w-7 text-secondary/40 mb-3" aria-hidden="true" />
               <blockquote className="text-foreground leading-relaxed mb-5 flex-1">
