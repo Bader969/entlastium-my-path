@@ -107,7 +107,7 @@ const ServicesDashboard = () => {
           {mainBenefits.map((b) => (
             <div
               key={b.title}
-              className="reveal bg-card border border-border rounded-xl p-6 shadow-card hover:shadow-custom-md transition-shadow duration-300"
+              className="reveal bg-card border border-border rounded-xl p-6 shadow-card hover-lift"
             >
               <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
                 <b.icon className="h-7 w-7 text-secondary" />
@@ -134,7 +134,7 @@ const ServicesDashboard = () => {
                 <div
                   key={s.id}
                   className={`bg-card border border-border rounded-xl overflow-hidden transition-shadow duration-300 ${
-                    isOpen ? "shadow-custom-md" : "shadow-card"
+                    isOpen ? "shadow-custom-md" : "shadow-card hover-lift"
                   }`}
                 >
                   <button
