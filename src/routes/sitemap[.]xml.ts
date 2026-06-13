@@ -27,6 +27,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/datenschutz", changefreq: "yearly", priority: "0.3" },
           { path: "/agb", changefreq: "yearly", priority: "0.3" },
           { path: "/blog/kosten-haushaltsaufloesung", changefreq: "monthly", priority: "0.7" },
+          { path: "/blog/kosten-haushaltsaufloesung-bochum", changefreq: "monthly", priority: "0.7" },
         ];
 
         const serviceEntries: SitemapEntry[] = SERVICES.map((s) => ({
