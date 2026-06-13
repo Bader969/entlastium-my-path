@@ -11,23 +11,36 @@ const FAQS = [
 ];
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    links: [{ rel: "canonical", href: "https://entlastium.de/" }],
-    meta: [{ property: "og:url", content: "https://entlastium.de/" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: FAQS.map(([q, a]) => ({
-            "@type": "Question",
-            name: q,
-            acceptedAnswer: { "@type": "Answer", text: a },
-          })),
-        }),
-      },
-    ],
-  }),
+  head: () => {
+    const title = "Entrümpelung Bochum & NRW – Festpreis ab 250 € | Entlastium";
+    const description =
+      "Professionelle Entrümpelung & Haushaltsauflösung in Bochum und ganz NRW. Kostenlose Besichtigung, faire Festpreise, Wertanrechnung & besenreine Übergabe.";
+    return {
+      links: [{ rel: "canonical", href: "https://entlastium.de/" }],
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: "https://entlastium.de/" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: FAQS.map(([q, a]) => ({
+              "@type": "Question",
+              name: q,
+              acceptedAnswer: { "@type": "Answer", text: a },
+            })),
+          }),
+        },
+      ],
+    };
+  },
   component: Index,
 });
