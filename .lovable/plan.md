@@ -1,40 +1,51 @@
-## Problem
-Der aktuelle Hover-Effekt basiert nur auf `shadow-card` → `shadow-custom-md`. Beide Schatten nutzen Navy mit 10–12 % Deckkraft – auf dem warmen Creme-Hintergrund ist der Unterschied kaum wahrnehmbar. Daher wirkt es, als würde beim Hover „nichts passieren".
-
 ## Ziel
-Der Hover bleibt dezent und seriös (kein Glow, keine Farbänderung), wird aber spürbar – durch einen deutlich kräftigeren Schatten und ein minimales Anheben der Karte.
+Das Kontaktformular versendet beim Klick auf „Jetzt Kontakt aufnehmen" automatisch eine HTML-E-Mail mit allen Daten + Bildvorschauen/-Links an `info@entlastium.de`. Der Kunde erhält parallel eine Bestätigungs-E-Mail mit Zusammenfassung seiner Anfrage. Bilder werden in Lovable Storage hochgeladen und per signiertem Link in die E-Mail eingebettet.
 
-## Änderungen
+## Provider / Auftragsverarbeiter
+**Empfehlung: Lovable Emails (kein Resend nötig).**
+- Läuft über die in Lovable Cloud integrierte Infrastruktur (EU-Hosting, AV-konform)
+- Versand-Subdomain: `notify.entlastium.de` (NS-Records werden bei der Domain-Einrichtung vorgegeben — muss beim Domain-Registrar einmalig eingetragen werden)
+- Kein zusätzlicher Account, kein extra Vertrag bei Drittanbieter
+- Resend wäre nur sinnvoll, wenn dort schon ein Konto besteht — bringt hier keinen Mehrwert
 
-### 1. `src/styles.css` – Hover-Schatten verstärken
-Neue Utility-Klasse `.shadow-hover` mit klar sichtbarem, aber weichem Schatten (Navy ~22 %, größerer Radius/Offset). Zusätzlich eine kleine Lift-Bewegung via Transform.
+## Format der E-Mails
+**HTML-E-Mail** (kein PDF) — leichter, mobilfreundlich, durchsuchbar, klickbare Bild-Links.
 
-```css
-.shadow-hover { box-shadow: 0 14px 32px -12px color-mix(in oklab, var(--navy) 22%, transparent); }
+### Benachrichtigung an info@entlastium.de
+- Betreff: „Neue Anfrage von {Name} – {Raumart}"
+- Reply-To: Kunden-E-Mail (direkte Antwort möglich)
+- Inhalt: Alle Formularfelder (Name, E-Mail, Telefon, Raumart, m²/m³, Adresse, Nachricht)
+- Bilder: bis zu 5 inline-Thumbnails + Download-Link zum Original (Storage, signierte URLs, 30 Tage gültig)
+- Markenkonform im Entlastium-Stil
 
-.hover-lift {
-  transition: box-shadow 0.3s var(--transition-smooth), transform 0.3s var(--transition-smooth);
-}
-.hover-lift:hover {
-  box-shadow: 0 14px 32px -12px color-mix(in oklab, var(--navy) 22%, transparent);
-  transform: translateY(-2px);
-}
-```
+### Bestätigungs-E-Mail an den Kunden
+- Betreff: „Ihre Anfrage bei Entlastium – wir melden uns innerhalb von 24h"
+- Inhalt: Persönliche Anrede + Zusammenfassung der Anfrage (gleiche Felder + Bildvorschau)
+- Hinweis auf Reaktionszeit + Kontaktdaten
 
-### 2. Hover-Klassen auf den betroffenen Elementen ersetzen
-Überall `hover:shadow-custom-md transition-shadow duration-300` → `hover-lift` (kombiniert Schatten + dezentes Anheben):
+## Umsetzungsschritte
 
-- `src/components/ServicesDashboard.tsx` – Benefit-Cards (6 Stück)
-- `src/components/Testimonials.tsx` – Testimonial-Cards (3 Stück)
-- `src/components/FAQ.tsx` – Accordion-Items (`hover:shadow-md` → `hover-lift`)
+1. **Lovable Cloud aktivieren** (Datenbank, Storage, Server-Routen)
+2. **Lovable Emails einrichten** für die Subdomain `notify.entlastium.de` (DNS-Setup-Dialog — du trägst die NS-Records beim Registrar ein)
+3. **Storage-Bucket `contact-uploads`** anlegen (privat, signierte URLs)
+4. **Tabelle `contact_requests`** für die Anfragen (Audit-Trail, falls eine E-Mail mal nicht ankommt)
+5. **E-Mail-Templates** in `src/lib/email-templates/`:
+   - `contact-notification.tsx` (intern an info@)
+   - `contact-confirmation.tsx` (Bestätigung an Kunden)
+6. **Public Server-Route** `/api/public/contact-submit`:
+   - Nimmt Formulardaten + Bild-Uploads entgegen
+   - Validiert mit Zod (Längen-Limits, E-Mail-Format, max. 5 Bilder, max. 10 MB pro Bild, nur Bildtypen)
+   - Lädt Bilder in Storage hoch, generiert signierte URLs
+   - Speichert Anfrage in `contact_requests`
+   - Triggert beide E-Mails (Benachrichtigung + Bestätigung) über Lovable Emails
+   - Honeypot-Feld gegen Bots
+7. **`ContactForm.tsx` umbauen**: statt `mailto:` → echter `fetch`-Call zur Server-Route, mit Loading-State, Erfolgs-/Fehler-Toast
+8. **Test**: Formular einmal abschicken, beide E-Mails verifizieren
 
-### 3. Service-Accordion (ServicesDashboard)
-Das große Service-Accordion nutzt aktuell nur `shadow-card`/`shadow-custom-md` ohne Hover. Hier nur Hover am geschlossenen Zustand ergänzen (offen bleibt wie bisher), ebenfalls `hover-lift`-artig.
+## Was du danach noch tun musst
+- Beim Domain-Anbieter einmalig die NS-Records für `notify.entlastium.de` eintragen (Anleitung erscheint im Setup-Dialog)
+- Datenschutzerklärung ergänzen: Hinweis auf Verarbeitung über Lovable Cloud (Supabase EU) + E-Mail-Versand via Mailgun (EU). Ich kann den entsprechenden Absatz mitliefern.
 
-### 4. Extra-Chips (ServicesDashboard)
-Bleiben wie bisher (`hover:border-secondary/50`) – Border-Hover ist dort passend.
-
-## Nicht enthalten
-- Keine Glow-, Farbwechsel- oder Skalierungs-Effekte
-- Keine Layout-, Farb- oder Typografie-Änderungen
-- Keine Änderungen an anderen Komponenten (Hero, TrustBar, Header, Footer)
+## Was nicht geändert wird
+- Design, Layout und alle anderen Komponenten bleiben unverändert
+- Hover-Effekte bleiben wie zuletzt eingestellt
