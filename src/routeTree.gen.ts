@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
 import { Route as StaedteRouteImport } from './routes/staedte'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -27,9 +28,19 @@ import { Route as LeistungenGartenraeumungRouteImport } from './routes/leistunge
 import { Route as LeistungenEntruempelungRouteImport } from './routes/leistungen.entruempelung'
 import { Route as LeistungenEndreinigungRouteImport } from './routes/leistungen.endreinigung'
 import { Route as EntruempelungStadtRouteImport } from './routes/entruempelung.$stadt'
+import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as BlogKostenHaushaltsaufloesungRouteImport } from './routes/blog.kosten-haushaltsaufloesung'
+import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
+import { Route as ApiPublicContactSubmitRouteImport } from './routes/api/public/contact-submit'
+import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
+import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 
+const UnsubscribeRoute = UnsubscribeRouteImport.update({
+  id: '/unsubscribe',
+  path: '/unsubscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
   path: '/ueber-uns',
@@ -124,10 +135,37 @@ const EntruempelungStadtRoute = EntruempelungStadtRouteImport.update({
   path: '/entruempelung/$stadt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
+  id: '/email/unsubscribe',
+  path: '/email/unsubscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogKostenHaushaltsaufloesungRoute =
   BlogKostenHaushaltsaufloesungRouteImport.update({
     id: '/blog/kosten-haushaltsaufloesung',
     path: '/blog/kosten-haushaltsaufloesung',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
+  id: '/lovable/email/suppression',
+  path: '/lovable/email/suppression',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicContactSubmitRoute = ApiPublicContactSubmitRouteImport.update({
+  id: '/api/public/contact-submit',
+  path: '/api/public/contact-submit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailTransactionalSendRoute =
+  LovableEmailTransactionalSendRouteImport.update({
+    id: '/lovable/email/transactional/send',
+    path: '/lovable/email/transactional/send',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LovableEmailTransactionalPreviewRoute =
+  LovableEmailTransactionalPreviewRouteImport.update({
+    id: '/lovable/email/transactional/preview',
+    path: '/lovable/email/transactional/preview',
     getParentRoute: () => rootRouteImport,
   } as any)
 const LovableEmailQueueProcessRoute =
@@ -149,7 +187,9 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
   '/ueber-uns': typeof UeberUnsRoute
+  '/unsubscribe': typeof UnsubscribeRoute
   '/blog/kosten-haushaltsaufloesung': typeof BlogKostenHaushaltsaufloesungRoute
+  '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
   '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
   '/leistungen/entruempelung': typeof LeistungenEntruempelungRoute
@@ -157,7 +197,11 @@ export interface FileRoutesByFullPath {
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
   '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
   '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
+  '/api/public/contact-submit': typeof ApiPublicContactSubmitRoute
+  '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
+  '/lovable/email/transactional/send': typeof LovableEmailTransactionalSendRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -171,7 +215,9 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
   '/ueber-uns': typeof UeberUnsRoute
+  '/unsubscribe': typeof UnsubscribeRoute
   '/blog/kosten-haushaltsaufloesung': typeof BlogKostenHaushaltsaufloesungRoute
+  '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
   '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
   '/leistungen/entruempelung': typeof LeistungenEntruempelungRoute
@@ -179,7 +225,11 @@ export interface FileRoutesByTo {
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
   '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
   '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
+  '/api/public/contact-submit': typeof ApiPublicContactSubmitRoute
+  '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
+  '/lovable/email/transactional/send': typeof LovableEmailTransactionalSendRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -194,7 +244,9 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/staedte': typeof StaedteRoute
   '/ueber-uns': typeof UeberUnsRoute
+  '/unsubscribe': typeof UnsubscribeRoute
   '/blog/kosten-haushaltsaufloesung': typeof BlogKostenHaushaltsaufloesungRoute
+  '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
   '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
   '/leistungen/entruempelung': typeof LeistungenEntruempelungRoute
@@ -202,7 +254,11 @@ export interface FileRoutesById {
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
   '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
   '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
+  '/api/public/contact-submit': typeof ApiPublicContactSubmitRoute
+  '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
+  '/lovable/email/transactional/send': typeof LovableEmailTransactionalSendRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -218,7 +274,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/staedte'
     | '/ueber-uns'
+    | '/unsubscribe'
     | '/blog/kosten-haushaltsaufloesung'
+    | '/email/unsubscribe'
     | '/entruempelung/$stadt'
     | '/leistungen/endreinigung'
     | '/leistungen/entruempelung'
@@ -226,7 +284,11 @@ export interface FileRouteTypes {
     | '/leistungen/haushaltsaufloesung'
     | '/leistungen/kellerraeumung'
     | '/leistungen/wohnungsuebergabe'
+    | '/api/public/contact-submit'
+    | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
+    | '/lovable/email/transactional/preview'
+    | '/lovable/email/transactional/send'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -240,7 +302,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/staedte'
     | '/ueber-uns'
+    | '/unsubscribe'
     | '/blog/kosten-haushaltsaufloesung'
+    | '/email/unsubscribe'
     | '/entruempelung/$stadt'
     | '/leistungen/endreinigung'
     | '/leistungen/entruempelung'
@@ -248,7 +312,11 @@ export interface FileRouteTypes {
     | '/leistungen/haushaltsaufloesung'
     | '/leistungen/kellerraeumung'
     | '/leistungen/wohnungsuebergabe'
+    | '/api/public/contact-submit'
+    | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
+    | '/lovable/email/transactional/preview'
+    | '/lovable/email/transactional/send'
   id:
     | '__root__'
     | '/'
@@ -262,7 +330,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/staedte'
     | '/ueber-uns'
+    | '/unsubscribe'
     | '/blog/kosten-haushaltsaufloesung'
+    | '/email/unsubscribe'
     | '/entruempelung/$stadt'
     | '/leistungen/endreinigung'
     | '/leistungen/entruempelung'
@@ -270,7 +340,11 @@ export interface FileRouteTypes {
     | '/leistungen/haushaltsaufloesung'
     | '/leistungen/kellerraeumung'
     | '/leistungen/wohnungsuebergabe'
+    | '/api/public/contact-submit'
+    | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
+    | '/lovable/email/transactional/preview'
+    | '/lovable/email/transactional/send'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -285,13 +359,26 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StaedteRoute: typeof StaedteRoute
   UeberUnsRoute: typeof UeberUnsRoute
+  UnsubscribeRoute: typeof UnsubscribeRoute
   BlogKostenHaushaltsaufloesungRoute: typeof BlogKostenHaushaltsaufloesungRoute
+  EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   EntruempelungStadtRoute: typeof EntruempelungStadtRoute
+  ApiPublicContactSubmitRoute: typeof ApiPublicContactSubmitRoute
+  LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
+  LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
+  LovableEmailTransactionalSendRoute: typeof LovableEmailTransactionalSendRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/unsubscribe': {
+      id: '/unsubscribe'
+      path: '/unsubscribe'
+      fullPath: '/unsubscribe'
+      preLoaderRoute: typeof UnsubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ueber-uns': {
       id: '/ueber-uns'
       path: '/ueber-uns'
@@ -418,11 +505,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EntruempelungStadtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/email/unsubscribe': {
+      id: '/email/unsubscribe'
+      path: '/email/unsubscribe'
+      fullPath: '/email/unsubscribe'
+      preLoaderRoute: typeof EmailUnsubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/kosten-haushaltsaufloesung': {
       id: '/blog/kosten-haushaltsaufloesung'
       path: '/blog/kosten-haushaltsaufloesung'
       fullPath: '/blog/kosten-haushaltsaufloesung'
       preLoaderRoute: typeof BlogKostenHaushaltsaufloesungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/suppression': {
+      id: '/lovable/email/suppression'
+      path: '/lovable/email/suppression'
+      fullPath: '/lovable/email/suppression'
+      preLoaderRoute: typeof LovableEmailSuppressionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/contact-submit': {
+      id: '/api/public/contact-submit'
+      path: '/api/public/contact-submit'
+      fullPath: '/api/public/contact-submit'
+      preLoaderRoute: typeof ApiPublicContactSubmitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/transactional/send': {
+      id: '/lovable/email/transactional/send'
+      path: '/lovable/email/transactional/send'
+      fullPath: '/lovable/email/transactional/send'
+      preLoaderRoute: typeof LovableEmailTransactionalSendRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/transactional/preview': {
+      id: '/lovable/email/transactional/preview'
+      path: '/lovable/email/transactional/preview'
+      fullPath: '/lovable/email/transactional/preview'
+      preLoaderRoute: typeof LovableEmailTransactionalPreviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lovable/email/queue/process': {
@@ -469,9 +591,15 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StaedteRoute: StaedteRoute,
   UeberUnsRoute: UeberUnsRoute,
+  UnsubscribeRoute: UnsubscribeRoute,
   BlogKostenHaushaltsaufloesungRoute: BlogKostenHaushaltsaufloesungRoute,
+  EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   EntruempelungStadtRoute: EntruempelungStadtRoute,
+  ApiPublicContactSubmitRoute: ApiPublicContactSubmitRoute,
+  LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
+  LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
+  LovableEmailTransactionalSendRoute: LovableEmailTransactionalSendRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
