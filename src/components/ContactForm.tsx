@@ -70,38 +70,43 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.roomType) {
       toast.error("Bitte wählen Sie eine Raumart aus");
       return;
     }
-    
+
     setIsSubmitting(true);
 
     try {
-      const roomTypeLabel = roomTypes.find(t => t.value === formData.roomType)?.label || formData.roomType;
+      const roomTypeLabel =
+        roomTypes.find((t) => t.value === formData.roomType)?.label || formData.roomType;
 
-      // Build a mailto: link as a backend-free fallback
-      const subject = `Neue Anfrage von ${formData.name}`;
-      const bodyLines = [
-        `Name: ${formData.name}`,
-        `E-Mail: ${formData.email}`,
-        formData.phone ? `Telefon: ${formData.phone}` : null,
-        `Raumart: ${roomTypeLabel}`,
-        `Größe (m²): ${formData.roomSizeM2}`,
-        formData.roomSizeM3 ? `Größe (m³): ${formData.roomSizeM3}` : null,
-        formData.address ? `Adresse: ${formData.address}` : null,
-        "",
-        "Nachricht:",
-        formData.message || "(keine)",
-        images.length > 0 ? `\nHinweis: ${images.length} Bild(er) ausgewählt – bitte separat per E-Mail anhängen.` : null,
-      ].filter(Boolean).join("\n");
+      const body = new FormData();
+      body.append("name", formData.name);
+      body.append("email", formData.email);
+      body.append("phone", formData.phone);
+      body.append("roomType", formData.roomType);
+      body.append("roomTypeLabel", roomTypeLabel);
+      body.append("roomSizeM2", formData.roomSizeM2);
+      body.append("roomSizeM3", formData.roomSizeM3);
+      body.append("address", formData.address);
+      body.append("message", formData.message);
+      body.append("honeypot", "");
+      images.forEach((img) => body.append("images", img));
 
-      const mailto = `mailto:info@entlastium.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines)}`;
-      window.location.href = mailto;
+      const res = await fetch("/api/public/contact-submit", {
+        method: "POST",
+        body,
+      });
+      const data = await res.json().catch(() => ({}));
 
-      toast.success("E-Mail-Programm geöffnet", {
-        description: "Bitte schließen Sie das Senden in Ihrem E-Mail-Programm ab.",
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Anfrage konnte nicht gesendet werden.");
+      }
+
+      toast.success("Anfrage gesendet", {
+        description: "Sie erhalten in Kürze eine Bestätigungs-E-Mail. Wir melden uns innerhalb von 24 Stunden.",
       });
 
       setFormData({
