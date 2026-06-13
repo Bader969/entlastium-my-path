@@ -52,10 +52,13 @@ export const Route = createRootRoute({
         content: "Schnelle, kostengünstige und fachgerechte Entrümpelung in Bochum und ganz NRW. Kostenlose Besichtigung & faire Festpreise.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://entlastium.de/favicon.png" },
+      { property: "og:image:alt", content: "Entlastium Logo" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Entlastium" },
       { name: "twitter:title", content: "Entlastium – Entrümpelung & Haushaltsauflösung NRW" },
       { name: "twitter:description", content: "Schnelle, kostengünstige und fachgerechte Entrümpelung in Bochum und ganz NRW. Kostenlose Besichtigung & faire Festpreise." },
+      { name: "twitter:image", content: "https://entlastium.de/favicon.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
