@@ -21,8 +21,8 @@ const ServicesDashboard = () => {
 
   const mainBenefits = [
     { icon: Zap, title: "Schnell & Effektiv", description: "Lokales Team in Ihrer Nähe – oft innerhalb von 24-48 Stunden einsatzbereit." },
-    { icon: Euro, title: "Kostengünstig", description: "Transparente Festpreise. Auf Wunsch mit Wertanrechnung." },
-    { icon: Shield, title: "Fachgerecht", description: "Professionelle Entsorgung nach allen gesetzlichen Vorschriften." },
+    { icon: Euro, title: "Transparente Preise", description: "Verbindliche Festpreise nach kostenloser Besichtigung. Auf Wunsch mit Wertanrechnung." },
+    { icon: Shield, title: "Fachgerecht", description: "Professionelle Entsorgung nach allen gesetzlichen Vorschriften (KrWG)." },
     { icon: Calendar, title: "Rundum-Service", description: "Wir koordinieren Ihre Entrümpelung von A bis Z." },
     { icon: Leaf, title: "Nachhaltig", description: "Wiederverwertbare Gegenstände werden gespendet oder recycelt." },
     { icon: Users, title: "Lokales Team", description: "Als lokales Unternehmen sind wir schnell vor Ort." },
@@ -87,18 +87,15 @@ const ServicesDashboard = () => {
   ];
 
   return (
-    <section id="services" className="section-padding bg-background relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-secondary/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accent/5 blur-3xl pointer-events-none" />
-
+    <section id="services" className="section-padding bg-background relative">
       <div className="container-custom relative z-10">
         {/* Header */}
         <div ref={headerRef} className="reveal text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 rounded-full glass text-secondary text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-4">
             Unsere Leistungen
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
-            Professionelle Entrümpelung <span className="text-gradient-animated">aus einer Hand</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground mb-6">
+            Professionelle Entrümpelung <span className="text-secondary">aus einer Hand</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Von der kostenlosen Besichtigung bis zur besenreinen Übergabe – Rundum-Service für jede Situation.
@@ -108,8 +105,11 @@ const ServicesDashboard = () => {
         {/* Benefits */}
         <div ref={benefitsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {mainBenefits.map((b) => (
-            <div key={b.title} className="reveal glow-card p-6 group">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-secondary/15 to-accent/15 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div
+              key={b.title}
+              className="reveal bg-card border border-border rounded-xl p-6 shadow-card hover:shadow-custom-md transition-shadow duration-300"
+            >
+              <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
                 <b.icon className="h-7 w-7 text-secondary" />
               </div>
               <h3 className="text-xl font-serif font-semibold text-foreground mb-2">{b.title}</h3>
@@ -120,8 +120,8 @@ const ServicesDashboard = () => {
 
         {/* Accordion with images */}
         <div ref={accordionRef} className="reveal">
-          <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-3 text-center">
-            Alle Services im <span className="text-gradient-animated">Detail</span>
+          <h3 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-3 text-center">
+            Alle Services im <span className="text-secondary">Detail</span>
           </h3>
           <p className="text-center text-muted-foreground mb-10">
             Klicken Sie auf einen Service für mehr Informationen
@@ -133,8 +133,8 @@ const ServicesDashboard = () => {
               return (
                 <div
                   key={s.id}
-                  className={`glow-card overflow-hidden transition-all duration-500 ${
-                    isOpen ? "shadow-[0_0_40px_hsl(var(--glow-teal)/0.25)]" : ""
+                  className={`bg-card border border-border rounded-xl overflow-hidden transition-shadow duration-300 ${
+                    isOpen ? "shadow-custom-md" : "shadow-card"
                   }`}
                 >
                   <button
@@ -142,9 +142,9 @@ const ServicesDashboard = () => {
                     className="w-full flex items-center gap-4 p-5 md:p-6 text-left group"
                     aria-expanded={isOpen}
                   >
-                    <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                    <div className={`w-12 h-12 md:w-14 md:h-14 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
                       isOpen
-                        ? "bg-gradient-to-br from-secondary to-accent text-primary-foreground shadow-[0_0_20px_hsl(var(--glow-teal)/0.5)]"
+                        ? "bg-secondary text-primary-foreground"
                         : "bg-secondary/10 text-secondary group-hover:bg-secondary/20"
                     }`}>
                       <s.icon className="h-6 w-6 md:h-7 md:w-7" />
@@ -158,29 +158,28 @@ const ServicesDashboard = () => {
                       </p>
                     </div>
                     <ChevronDown
-                      className={`h-5 w-5 text-secondary flex-shrink-0 transition-transform duration-500 ${
+                      className={`h-5 w-5 text-secondary flex-shrink-0 transition-transform duration-300 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />
                   </button>
 
                   <div
-                    className={`grid transition-all duration-500 ease-out ${
+                    className={`grid transition-all duration-400 ease-out ${
                       isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                     }`}
                   >
                     <div className="overflow-hidden">
                       <div className="grid md:grid-cols-2 gap-6 p-5 md:p-6 pt-0 md:pt-0">
-                        <div className="relative rounded-xl overflow-hidden group">
+                        <div className="relative rounded-lg overflow-hidden">
                           <img
                             src={s.image}
                             alt={s.title}
                             loading="lazy"
                             width={1024}
                             height={640}
-                            className="w-full h-48 md:h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="w-full h-48 md:h-full object-cover"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 via-transparent to-transparent" />
                         </div>
                         <div className="flex flex-col justify-center">
                           <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -195,11 +194,11 @@ const ServicesDashboard = () => {
                             ))}
                           </ul>
                           <a
-                            href="#contact"
-                            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-accent transition-colors group/link"
+                            href="/kontakt"
+                            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-accent transition-colors"
                           >
                             Angebot anfragen
-                            <span className="transition-transform group-hover/link:translate-x-1">→</span>
+                            <span>→</span>
                           </a>
                         </div>
                       </div>
@@ -217,7 +216,7 @@ const ServicesDashboard = () => {
               {extras.map((e) => (
                 <div
                   key={e.label}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-secondary/20 text-sm text-foreground hover:border-secondary/60 hover:shadow-[0_0_15px_hsl(var(--glow-teal)/0.3)] transition-all duration-300"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border text-sm text-foreground hover:border-secondary/50 transition-colors duration-300"
                 >
                   <e.icon className="h-4 w-4 text-secondary" />
                   {e.label}

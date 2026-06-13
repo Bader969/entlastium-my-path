@@ -147,14 +147,30 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Compliance / Vertrauen */}
+        <div className="mt-12 pt-8 border-t border-primary-foreground/10 grid md:grid-cols-3 gap-4 text-xs text-primary-foreground/70">
+          <div>
+            <p className="font-semibold text-primary-foreground/90 mb-1">Entsorgungsfachbetrieb</p>
+            <p>Nachweis-Nr.: <span className="text-primary-foreground/60">[wird ergänzt]</span></p>
+          </div>
+          <div>
+            <p className="font-semibold text-primary-foreground/90 mb-1">Versicherung</p>
+            <p>Haftpflicht- und Betriebsversicherung vorhanden</p>
+          </div>
+          <div>
+            <p className="font-semibold text-primary-foreground/90 mb-1">Mitgliedschaften</p>
+            <p><span className="text-primary-foreground/60">[wird ergänzt]</span></p>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-8 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-foreground/80">
             © {currentYear} Entlastium. Alle Rechte vorbehalten.
           </p>
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-primary-foreground/40">Mit ❤️ für Ordnung</span>
-          </div>
+          <p className="text-xs text-primary-foreground/50">
+            Professionelle Entrümpelung in Bochum & ganz NRW
+          </p>
         </div>
       </div>
     </footer>
