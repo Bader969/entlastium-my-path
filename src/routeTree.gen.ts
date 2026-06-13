@@ -29,6 +29,7 @@ import { Route as LeistungenEntruempelungRouteImport } from './routes/leistungen
 import { Route as LeistungenEndreinigungRouteImport } from './routes/leistungen.endreinigung'
 import { Route as EntruempelungStadtRouteImport } from './routes/entruempelung.$stadt'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
+import { Route as BlogKostenHaushaltsaufloesungBochumRouteImport } from './routes/blog.kosten-haushaltsaufloesung-bochum'
 import { Route as BlogKostenHaushaltsaufloesungRouteImport } from './routes/blog.kosten-haushaltsaufloesung'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
 import { Route as ApiPublicContactSubmitRouteImport } from './routes/api/public/contact-submit'
@@ -140,6 +141,12 @@ const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
   path: '/email/unsubscribe',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogKostenHaushaltsaufloesungBochumRoute =
+  BlogKostenHaushaltsaufloesungBochumRouteImport.update({
+    id: '/blog/kosten-haushaltsaufloesung-bochum',
+    path: '/blog/kosten-haushaltsaufloesung-bochum',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogKostenHaushaltsaufloesungRoute =
   BlogKostenHaushaltsaufloesungRouteImport.update({
     id: '/blog/kosten-haushaltsaufloesung',
@@ -189,6 +196,7 @@ export interface FileRoutesByFullPath {
   '/ueber-uns': typeof UeberUnsRoute
   '/unsubscribe': typeof UnsubscribeRoute
   '/blog/kosten-haushaltsaufloesung': typeof BlogKostenHaushaltsaufloesungRoute
+  '/blog/kosten-haushaltsaufloesung-bochum': typeof BlogKostenHaushaltsaufloesungBochumRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
   '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
@@ -217,6 +225,7 @@ export interface FileRoutesByTo {
   '/ueber-uns': typeof UeberUnsRoute
   '/unsubscribe': typeof UnsubscribeRoute
   '/blog/kosten-haushaltsaufloesung': typeof BlogKostenHaushaltsaufloesungRoute
+  '/blog/kosten-haushaltsaufloesung-bochum': typeof BlogKostenHaushaltsaufloesungBochumRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
   '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
@@ -246,6 +255,7 @@ export interface FileRoutesById {
   '/ueber-uns': typeof UeberUnsRoute
   '/unsubscribe': typeof UnsubscribeRoute
   '/blog/kosten-haushaltsaufloesung': typeof BlogKostenHaushaltsaufloesungRoute
+  '/blog/kosten-haushaltsaufloesung-bochum': typeof BlogKostenHaushaltsaufloesungBochumRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/entruempelung/$stadt': typeof EntruempelungStadtRoute
   '/leistungen/endreinigung': typeof LeistungenEndreinigungRoute
@@ -276,6 +286,7 @@ export interface FileRouteTypes {
     | '/ueber-uns'
     | '/unsubscribe'
     | '/blog/kosten-haushaltsaufloesung'
+    | '/blog/kosten-haushaltsaufloesung-bochum'
     | '/email/unsubscribe'
     | '/entruempelung/$stadt'
     | '/leistungen/endreinigung'
@@ -304,6 +315,7 @@ export interface FileRouteTypes {
     | '/ueber-uns'
     | '/unsubscribe'
     | '/blog/kosten-haushaltsaufloesung'
+    | '/blog/kosten-haushaltsaufloesung-bochum'
     | '/email/unsubscribe'
     | '/entruempelung/$stadt'
     | '/leistungen/endreinigung'
@@ -332,6 +344,7 @@ export interface FileRouteTypes {
     | '/ueber-uns'
     | '/unsubscribe'
     | '/blog/kosten-haushaltsaufloesung'
+    | '/blog/kosten-haushaltsaufloesung-bochum'
     | '/email/unsubscribe'
     | '/entruempelung/$stadt'
     | '/leistungen/endreinigung'
@@ -361,6 +374,7 @@ export interface RootRouteChildren {
   UeberUnsRoute: typeof UeberUnsRoute
   UnsubscribeRoute: typeof UnsubscribeRoute
   BlogKostenHaushaltsaufloesungRoute: typeof BlogKostenHaushaltsaufloesungRoute
+  BlogKostenHaushaltsaufloesungBochumRoute: typeof BlogKostenHaushaltsaufloesungBochumRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   EntruempelungStadtRoute: typeof EntruempelungStadtRoute
   ApiPublicContactSubmitRoute: typeof ApiPublicContactSubmitRoute
@@ -512,6 +526,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmailUnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/kosten-haushaltsaufloesung-bochum': {
+      id: '/blog/kosten-haushaltsaufloesung-bochum'
+      path: '/blog/kosten-haushaltsaufloesung-bochum'
+      fullPath: '/blog/kosten-haushaltsaufloesung-bochum'
+      preLoaderRoute: typeof BlogKostenHaushaltsaufloesungBochumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/kosten-haushaltsaufloesung': {
       id: '/blog/kosten-haushaltsaufloesung'
       path: '/blog/kosten-haushaltsaufloesung'
@@ -593,6 +614,8 @@ const rootRouteChildren: RootRouteChildren = {
   UeberUnsRoute: UeberUnsRoute,
   UnsubscribeRoute: UnsubscribeRoute,
   BlogKostenHaushaltsaufloesungRoute: BlogKostenHaushaltsaufloesungRoute,
+  BlogKostenHaushaltsaufloesungBochumRoute:
+    BlogKostenHaushaltsaufloesungBochumRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   EntruempelungStadtRoute: EntruempelungStadtRoute,
   ApiPublicContactSubmitRoute: ApiPublicContactSubmitRoute,
@@ -604,12 +627,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
