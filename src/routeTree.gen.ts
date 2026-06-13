@@ -28,6 +28,7 @@ import { Route as LeistungenEntruempelungRouteImport } from './routes/leistungen
 import { Route as LeistungenEndreinigungRouteImport } from './routes/leistungen.endreinigung'
 import { Route as EntruempelungStadtRouteImport } from './routes/entruempelung.$stadt'
 import { Route as BlogKostenHaushaltsaufloesungRouteImport } from './routes/blog.kosten-haushaltsaufloesung'
+import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
@@ -129,6 +130,12 @@ const BlogKostenHaushaltsaufloesungRoute =
     path: '/blog/kosten-haushaltsaufloesung',
     getParentRoute: () => rootRouteImport,
   } as any)
+const LovableEmailQueueProcessRoute =
+  LovableEmailQueueProcessRouteImport.update({
+    id: '/lovable/email/queue/process',
+    path: '/lovable/email/queue/process',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -150,6 +157,7 @@ export interface FileRoutesByFullPath {
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
   '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
   '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
+  '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -171,6 +179,7 @@ export interface FileRoutesByTo {
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
   '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
   '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
+  '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -193,6 +202,7 @@ export interface FileRoutesById {
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
   '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
   '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
+  '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -216,6 +226,7 @@ export interface FileRouteTypes {
     | '/leistungen/haushaltsaufloesung'
     | '/leistungen/kellerraeumung'
     | '/leistungen/wohnungsuebergabe'
+    | '/lovable/email/queue/process'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -237,6 +248,7 @@ export interface FileRouteTypes {
     | '/leistungen/haushaltsaufloesung'
     | '/leistungen/kellerraeumung'
     | '/leistungen/wohnungsuebergabe'
+    | '/lovable/email/queue/process'
   id:
     | '__root__'
     | '/'
@@ -258,6 +270,7 @@ export interface FileRouteTypes {
     | '/leistungen/haushaltsaufloesung'
     | '/leistungen/kellerraeumung'
     | '/leistungen/wohnungsuebergabe'
+    | '/lovable/email/queue/process'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -274,6 +287,7 @@ export interface RootRouteChildren {
   UeberUnsRoute: typeof UeberUnsRoute
   BlogKostenHaushaltsaufloesungRoute: typeof BlogKostenHaushaltsaufloesungRoute
   EntruempelungStadtRoute: typeof EntruempelungStadtRoute
+  LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -411,6 +425,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogKostenHaushaltsaufloesungRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lovable/email/queue/process': {
+      id: '/lovable/email/queue/process'
+      path: '/lovable/email/queue/process'
+      fullPath: '/lovable/email/queue/process'
+      preLoaderRoute: typeof LovableEmailQueueProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -450,6 +471,7 @@ const rootRouteChildren: RootRouteChildren = {
   UeberUnsRoute: UeberUnsRoute,
   BlogKostenHaushaltsaufloesungRoute: BlogKostenHaushaltsaufloesungRoute,
   EntruempelungStadtRoute: EntruempelungStadtRoute,
+  LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
