@@ -1,24 +1,20 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/logo-full.png.asset.json";
+import { NRW_CITIES } from "@/data/nrw-cities";
+import { SERVICES } from "@/data/services";
 const logo = logoAsset.url;
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const services = [
-    "Haushaltsauflösung",
-    "Entrümpelung",
-    "Kellerräumung",
-    "Gartenräumung",
-    "Endreinigung",
-    "Wohnungsübergabe",
-  ];
+  // Top 20 Städte nach Einwohnerzahl (Daten sind bereits absteigend sortiert)
+  const topCities = NRW_CITIES.slice(0, 20);
 
   const links = [
-    { label: "Impressum", href: "/impressum" },
-    { label: "Datenschutz", href: "/datenschutz" },
-    { label: "AGB", href: "/agb" },
+    { label: "Impressum", href: "/impressum" as const },
+    { label: "Datenschutz", href: "/datenschutz" as const },
+    { label: "AGB", href: "/agb" as const },
   ];
 
   return (
@@ -28,9 +24,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src={logo} 
-                alt="Entlastium" 
+              <img
+                src={logo}
+                alt="Entlastium"
                 className="h-12 w-12 rounded-full object-cover"
               />
               <div>
@@ -39,17 +35,17 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
-              Ihr Partner für professionelle Entrümpelung in Bochum, Umgebung und ganz NRW. 
+              Ihr Partner für professionelle Entrümpelung in Bochum, Umgebung und ganz NRW.
               Schnell, fair und nachhaltig.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-secondary/30 transition-colors">
+              <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-secondary/30 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-secondary/30 transition-colors">
+              <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-secondary/30 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-secondary/30 transition-colors">
+              <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-secondary/30 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -59,13 +55,24 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-serif font-semibold mb-4">Leistungen</h4>
             <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service}>
-                  <a href="#services" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-                    {service}
+              {SERVICES.map((service) => (
+                <li key={service.slug}>
+                  <a
+                    href={`/leistungen/${service.slug}`}
+                    className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  >
+                    {service.shortTitle}
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/leistungen"
+                  className="text-sm text-accent hover:text-accent/80 transition-colors font-medium"
+                >
+                  Alle Leistungen →
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -91,28 +98,52 @@ const Footer = () => {
                   </a>
                 </div>
               </li>
-               <li className="flex items-start gap-3">
-                 <MapPin className="h-5 w-5 text-accent mt-0.5" />
-                 <div>
-                   <p className="text-sm text-primary-foreground/70">Einsatzgebiet</p>
-                   <p className="text-sm font-medium">Bochum & ganz NRW</p>
-                 </div>
-               </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-accent mt-0.5" />
+                <div>
+                  <p className="text-sm text-primary-foreground/70">Einsatzgebiet</p>
+                  <p className="text-sm font-medium">Bochum & ganz NRW</p>
+                </div>
+              </li>
             </ul>
-          </div>
 
-          {/* Legal */}
-          <div>
-            <h4 className="text-lg font-serif font-semibold mb-4">Rechtliches</h4>
+            <h4 className="text-lg font-serif font-semibold mt-8 mb-4">Rechtliches</h4>
             <ul className="space-y-3">
               {links.map((link) => (
                 <li key={link.label}>
-                  <Link to={link.href as "/impressum" | "/datenschutz" | "/agb"} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                  <Link to={link.href} className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Städte */}
+          <div>
+            <h4 className="text-lg font-serif font-semibold mb-2">Entrümpelung in NRW</h4>
+            <p className="text-xs text-primary-foreground/60 mb-4">
+              Wir sind in über {NRW_CITIES.length} Städten aktiv:
+            </p>
+            <ul className="grid grid-cols-2 gap-x-3 gap-y-2">
+              {topCities.map((city) => (
+                <li key={city.slug}>
+                  <a
+                    href={`/entruempelung/${city.slug}`}
+                    className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+                  >
+                    {city.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/staedte"
+              className="inline-flex items-center gap-1 mt-4 text-sm font-medium text-accent hover:text-accent/80 transition-colors"
+            >
+              Alle {NRW_CITIES.length} Städte ansehen
+              <ArrowRight className="h-3 w-3" />
+            </a>
           </div>
         </div>
 
