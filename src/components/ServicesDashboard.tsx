@@ -134,7 +134,7 @@ const ServicesDashboard = () => {
                 <div
                   key={s.id}
                   className={`bg-card border border-border rounded-xl overflow-hidden transition-shadow duration-300 ${
-                    isOpen ? "shadow-custom-md" : "shadow-card"
+                    isOpen ? "shadow-custom-md" : "shadow-card hover-lift"
                   }`}
                 >
                   <button
