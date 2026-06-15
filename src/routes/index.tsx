@@ -17,7 +17,10 @@ export const Route = createFileRoute("/")({
     const description =
       "Professionelle Entrümpelung & Haushaltsauflösung in Bochum und ganz NRW. Kostenlose Besichtigung, faire Festpreise, Wertanrechnung & besenreine Übergabe.";
     return {
-      links: [{ rel: "canonical", href: "https://entlastium.de/" }],
+      links: [
+        { rel: "canonical", href: "https://entlastium.de/" },
+        { rel: "preload", as: "image", href: logoMark.url, fetchpriority: "high" },
+      ],
       meta: [
         { title },
         { name: "description", content: description },
