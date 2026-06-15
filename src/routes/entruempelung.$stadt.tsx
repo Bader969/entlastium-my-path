@@ -159,7 +159,7 @@ function StadtPage() {
               </h3>
               <p className="text-sm text-muted-foreground">{s.description}</p>
               <span className="inline-flex items-center gap-1 text-sm text-accent mt-2">
-                Mehr erfahren <ArrowRight className="h-3 w-3" />
+                Details zu {s.shortTitle} in {city.name} <ArrowRight className="h-3 w-3" />
               </span>
             </a>
           ))}

@@ -26,6 +26,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/impressum", changefreq: "yearly", priority: "0.3" },
           { path: "/datenschutz", changefreq: "yearly", priority: "0.3" },
           { path: "/agb", changefreq: "yearly", priority: "0.3" },
+          { path: "/unsubscribe", changefreq: "yearly", priority: "0.1" },
           { path: "/blog/kosten-haushaltsaufloesung", changefreq: "monthly", priority: "0.7" },
           { path: "/blog/kosten-haushaltsaufloesung-bochum", changefreq: "monthly", priority: "0.7" },
         ];
