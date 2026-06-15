@@ -17,7 +17,7 @@ export const Route = createFileRoute("/entruempelung/$stadt")({
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
     const { city } = loaderData;
-    const title = `Entrümpelung ${city.name} – Festpreis ab 250 € | Entlastium`;
+    const title = `Entrümpelung ${city.name} ab 250 € – Entlastium`;
     const description = `Professionelle Entrümpelung & Haushaltsauflösung in ${city.name}. ✓ Kostenlose Besichtigung ✓ Faire Festpreise ✓ Wertanrechnung ✓ 24h erreichbar. Jetzt anfragen!`;
     const url = `${BASE_URL}/entruempelung/${params.stadt}`;
     return {
