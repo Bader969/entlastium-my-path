@@ -42,6 +42,7 @@ const Header = () => {
               alt="Entlastium"
               width={817}
               height={959}
+              fetchPriority="high"
               className="shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover"
             />
             <div className="min-w-0">

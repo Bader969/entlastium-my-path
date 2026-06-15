@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Index from "@/pages/Index";
+import logoMark from "@/assets/logo-mark.png.asset.json";
 
 const FAQS = [
   ["Was kostet eine Entrümpelung oder Haushaltsauflösung?", "Die Kosten variieren je nach Objektgröße, Menge des zu entsorgenden Materials und Zugänglichkeit. Nach einer kostenlosen Vor-Ort-Besichtigung erstellen wir Ihnen ein transparentes Festpreisangebot – ohne versteckte Kosten. Kleinere Entrümpelungen beginnen oft schon ab 200€."],
@@ -16,7 +17,10 @@ export const Route = createFileRoute("/")({
     const description =
       "Professionelle Entrümpelung & Haushaltsauflösung in Bochum und ganz NRW. Kostenlose Besichtigung, faire Festpreise, Wertanrechnung & besenreine Übergabe.";
     return {
-      links: [{ rel: "canonical", href: "https://entlastium.de/" }],
+      links: [
+        { rel: "canonical", href: "https://entlastium.de/" },
+        { rel: "preload", as: "image", href: logoMark.url, fetchpriority: "high" },
+      ],
       meta: [
         { title },
         { name: "description", content: description },
