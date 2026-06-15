@@ -45,7 +45,7 @@ function LeistungenPage() {
             </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">{s.description}</p>
             <span className="inline-flex items-center gap-2 text-sm font-semibold text-accent">
-              Mehr erfahren <ArrowRight className="h-4 w-4" />
+              {s.shortTitle} im Detail <ArrowRight className="h-4 w-4" />
             </span>
           </a>
         ))}
