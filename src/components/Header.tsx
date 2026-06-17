@@ -39,7 +39,7 @@ const Header = () => {
           >
             <img
               src={logo}
-              alt="Entlastium"
+              alt="Entlastium Entrümpelung Logo"
               width={817}
               height={959}
               fetchPriority="high"

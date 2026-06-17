@@ -26,7 +26,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <img
                 src={logo}
-                alt="Entlastium"
+                alt="Entlastium Entrümpelung Logo"
                 className="h-12 w-12 rounded-full object-cover"
               />
               <div>
