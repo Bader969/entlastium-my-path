@@ -183,15 +183,32 @@ const ServicesDashboard = () => {
                   >
                     <div className="overflow-hidden">
                       <div className="grid md:grid-cols-2 gap-6 p-5 md:p-6 pt-0 md:pt-0">
-                        <div className="relative rounded-lg overflow-hidden">
+                        <div className="group relative rounded-lg overflow-hidden h-48 md:h-full min-h-[12rem]">
                           <img
-                            src={s.image}
-                            alt={s.title}
+                            src={s.imageBefore}
+                            alt={`${s.title} – vorher`}
                             loading="lazy"
                             width={1024}
                             height={640}
-                            className="w-full h-48 md:h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
                           />
+                          <img
+                            src={s.image}
+                            alt={`${s.title} – nachher`}
+                            loading="lazy"
+                            width={1024}
+                            height={640}
+                            className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                          />
+                          <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-background/85 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground shadow-sm transition-opacity duration-300 group-hover:opacity-0">
+                            Vorher
+                          </span>
+                          <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground shadow-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            Nachher
+                          </span>
+                          <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-background/85 backdrop-blur px-3 py-1 text-[11px] font-medium text-muted-foreground shadow-sm transition-opacity duration-300 group-hover:opacity-0">
+                            Zeiger drüber
+                          </span>
                         </div>
                         <div className="flex flex-col justify-center">
                           <p className="text-muted-foreground mb-4 leading-relaxed">
