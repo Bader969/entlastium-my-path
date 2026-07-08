@@ -6,11 +6,17 @@ import {
 } from "lucide-react";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 import imgHaushalt from "@/assets/service-haushalt.jpg";
+import imgHaushaltBefore from "@/assets/service-haushalt-before.jpg";
 import imgKeller from "@/assets/service-keller.jpg";
+import imgKellerBefore from "@/assets/service-keller-before.jpg";
 import imgKueche from "@/assets/service-kueche.jpg";
+import imgKuecheBefore from "@/assets/service-kueche-before.jpg";
 import imgGarten from "@/assets/service-garten.jpg";
+import imgGartenBefore from "@/assets/service-garten-before.jpg";
 import imgDachboden from "@/assets/service-dachboden.jpg";
+import imgDachbodenBefore from "@/assets/service-dachboden-before.jpg";
 import imgReinigung from "@/assets/service-reinigung.jpg";
+import imgReinigungBefore from "@/assets/service-reinigung-before.jpg";
 
 const ServicesDashboard = () => {
   const [openId, setOpenId] = useState<string | null>("haushalt");
@@ -33,6 +39,7 @@ const ServicesDashboard = () => {
       id: "haushalt",
       icon: Trash2,
       image: imgHaushalt,
+      imageBefore: imgHaushaltBefore,
       title: "Haushaltsauflösung",
       description: "Komplette Räumung von Haushalten bei Umzug, Erbschaft oder Verkleinerung.",
       features: ["Wertanrechnung möglich", "Diskret & respektvoll", "Komplette Entsorgung", "Besenrein"],
@@ -41,6 +48,7 @@ const ServicesDashboard = () => {
       id: "keller",
       icon: Building,
       image: imgKeller,
+      imageBefore: imgKellerBefore,
       title: "Keller & Dachboden",
       description: "Befreiung von überfüllten Kellern, Dachböden und Speichern.",
       features: ["Auch enge Zugänge", "Schwere Gegenstände", "Sortierung vor Ort", "Sicherer Abtransport"],
@@ -49,6 +57,7 @@ const ServicesDashboard = () => {
       id: "kueche",
       icon: Home,
       image: imgKueche,
+      imageBefore: imgKuecheBefore,
       title: "Küchen- & Möbeldemontage",
       description: "Komplette Küchendemontage inklusive Elektro- und Wasseranschlüsse.",
       features: ["Einbauküchen", "Elektrogeräte", "Sichere Demontage", "Fachgerechte Entsorgung"],
@@ -57,6 +66,7 @@ const ServicesDashboard = () => {
       id: "garten",
       icon: TreePine,
       image: imgGarten,
+      imageBefore: imgGartenBefore,
       title: "Garten & Gartenlaube",
       description: "Gartenabfälle, alte Möbel, Schuppen-Inhalte – wir räumen Ihren Garten auf.",
       features: ["Grünschnitt-Entsorgung", "Lauben-Räumung", "Auf Wunsch Abriss", "Komplettservice"],
@@ -65,6 +75,7 @@ const ServicesDashboard = () => {
       id: "dachboden",
       icon: Layers,
       image: imgDachboden,
+      imageBefore: imgDachbodenBefore,
       title: "Deckenplatten & Teppiche",
       description: "Fachgerechte Demontage von Deckenverkleidungen, Teppichen und Bodenbelägen.",
       features: ["Styropor-Decken", "Holzverkleidungen", "Kleberreste entfernen", "Renovierungsbereit"],
@@ -73,6 +84,7 @@ const ServicesDashboard = () => {
       id: "reinigung",
       icon: Paintbrush,
       image: imgReinigung,
+      imageBefore: imgReinigungBefore,
       title: "Endreinigung & Wohnungsübergabe",
       description: "Professionelle Grundreinigung und Übergabe an Vermieter oder Hausverwaltung.",
       features: ["Besenrein oder Endreinigung", "Kleine Reparaturen", "Übergabeprotokoll", "Termin-Koordination"],
@@ -171,15 +183,32 @@ const ServicesDashboard = () => {
                   >
                     <div className="overflow-hidden">
                       <div className="grid md:grid-cols-2 gap-6 p-5 md:p-6 pt-0 md:pt-0">
-                        <div className="relative rounded-lg overflow-hidden">
+                        <div className="group relative rounded-lg overflow-hidden h-48 md:h-full min-h-[12rem]">
                           <img
-                            src={s.image}
-                            alt={s.title}
+                            src={s.imageBefore}
+                            alt={`${s.title} – vorher`}
                             loading="lazy"
                             width={1024}
                             height={640}
-                            className="w-full h-48 md:h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
                           />
+                          <img
+                            src={s.image}
+                            alt={`${s.title} – nachher`}
+                            loading="lazy"
+                            width={1024}
+                            height={640}
+                            className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                          />
+                          <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-background/85 backdrop-blur px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground shadow-sm transition-opacity duration-300 group-hover:opacity-0">
+                            Vorher
+                          </span>
+                          <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground shadow-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            Nachher
+                          </span>
+                          <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-background/85 backdrop-blur px-3 py-1 text-[11px] font-medium text-muted-foreground shadow-sm transition-opacity duration-300 group-hover:opacity-0">
+                            Zeiger drüber
+                          </span>
                         </div>
                         <div className="flex flex-col justify-center">
                           <p className="text-muted-foreground mb-4 leading-relaxed">
