@@ -6,8 +6,21 @@ export const Route = createFileRoute('/unsubscribe')({
   head: () => ({
     meta: [
       { title: 'Abmelden – Entlastium' },
+      {
+        name: 'description',
+        content:
+          'Melden Sie sich sicher von E-Mail-Benachrichtigungen von Entlastium ab. Bestätigen Sie Ihre Abmeldung über den Link in Ihrer E-Mail.',
+      },
       { name: 'robots', content: 'noindex,nofollow' },
+      { property: 'og:title', content: 'Abmelden – Entlastium' },
+      {
+        property: 'og:description',
+        content:
+          'Melden Sie sich von E-Mail-Benachrichtigungen von Entlastium ab.',
+      },
+      { property: 'og:url', content: 'https://entlastium.de/unsubscribe' },
     ],
+    links: [{ rel: 'canonical', href: 'https://entlastium.de/unsubscribe' }],
   }),
 })
 
