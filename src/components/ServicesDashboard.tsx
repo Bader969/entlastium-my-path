@@ -6,11 +6,17 @@ import {
 } from "lucide-react";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 import imgHaushalt from "@/assets/service-haushalt.jpg";
+import imgHaushaltBefore from "@/assets/service-haushalt-before.jpg";
 import imgKeller from "@/assets/service-keller.jpg";
+import imgKellerBefore from "@/assets/service-keller-before.jpg";
 import imgKueche from "@/assets/service-kueche.jpg";
+import imgKuecheBefore from "@/assets/service-kueche-before.jpg";
 import imgGarten from "@/assets/service-garten.jpg";
+import imgGartenBefore from "@/assets/service-garten-before.jpg";
 import imgDachboden from "@/assets/service-dachboden.jpg";
+import imgDachbodenBefore from "@/assets/service-dachboden-before.jpg";
 import imgReinigung from "@/assets/service-reinigung.jpg";
+import imgReinigungBefore from "@/assets/service-reinigung-before.jpg";
 
 const ServicesDashboard = () => {
   const [openId, setOpenId] = useState<string | null>("haushalt");
