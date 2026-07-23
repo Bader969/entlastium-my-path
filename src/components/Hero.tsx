@@ -37,15 +37,15 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container-custom section-padding">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl xl:max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full glass border border-secondary/40 mb-6 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-accent" />
-            <span className="text-primary-foreground text-xs sm:text-sm font-medium">
+            <span className="text-primary-foreground text-xs sm:text-sm font-medium tracking-wide">
               Ihr Partner für stressfreie Entrümpelung
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-semibold text-primary-foreground leading-[1.1] mb-6">
+          <h1 className="display-1 font-serif font-semibold text-primary-foreground mb-6">
             Professionelle Entrümpelung &amp; Haushaltsauflösung{" "}
             <span className="block text-gradient">in Bochum &amp; NRW</span>
           </h1>

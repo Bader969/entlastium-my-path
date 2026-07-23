@@ -103,25 +103,23 @@ const ServicesDashboard = () => {
       <div className="container-custom relative z-10">
         {/* Header */}
         <div ref={headerRef} className="reveal text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-4">
-            Unsere Leistungen
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground mb-6">
+          <span className="eyebrow mb-4">Unsere Leistungen</span>
+          <h2 className="display-2 font-serif font-semibold text-foreground mt-4 mb-6">
             Professionelle Entrümpelung <span className="text-secondary">aus einer Hand</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Von der kostenlosen Besichtigung bis zur besenreinen Übergabe – Rundum-Service für jede Situation.
           </p>
         </div>
 
         {/* Benefits */}
-        <div ref={benefitsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+        <div ref={benefitsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20 lg:mb-28">
           {mainBenefits.map((b) => (
             <div
               key={b.title}
-              className="reveal bg-card border border-border rounded-xl p-6 shadow-card hover-lift"
+              className="reveal bg-card border border-border rounded-2xl p-7 shadow-card hover-lift"
             >
-              <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-5">
                 <b.icon className="h-7 w-7 text-secondary" />
               </div>
               <h3 className="text-xl font-serif font-semibold text-foreground mb-2">{b.title}</h3>
@@ -132,10 +130,10 @@ const ServicesDashboard = () => {
 
         {/* Accordion with images */}
         <div ref={accordionRef} className="reveal">
-          <h3 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-3 text-center">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-foreground mb-3 text-center">
             Alle Services im <span className="text-secondary">Detail</span>
           </h3>
-          <p className="text-center text-muted-foreground mb-10">
+          <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto">
             Klicken Sie auf einen Service für mehr Informationen
           </p>
 
