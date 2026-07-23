@@ -15,10 +15,10 @@ const PageLayout = ({ eyebrow, title, intro, breadcrumbs, children }: PageLayout
       <Header />
 
       {/* Hero */}
-      <div className="bg-primary pt-28 pb-12 md:pt-36 md:pb-16">
+      <div className="bg-primary pt-28 pb-14 md:pt-36 md:pb-20">
         <div className="container-custom">
           {breadcrumbs && breadcrumbs.length > 0 && (
-            <nav aria-label="Breadcrumb" className="mb-4">
+            <nav aria-label="Breadcrumb" className="mb-5">
               <ol className="flex flex-wrap items-center gap-2 text-sm text-primary-foreground/70">
                 {breadcrumbs.map((b, i) => (
                   <li key={i} className="flex items-center gap-2">
@@ -39,15 +39,15 @@ const PageLayout = ({ eyebrow, title, intro, breadcrumbs, children }: PageLayout
             </nav>
           )}
           {eyebrow && (
-            <span className="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-4">
+            <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-5 border border-accent/30">
               {eyebrow}
             </span>
           )}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary-foreground">
+          <h1 className="display-2 font-serif font-semibold text-primary-foreground">
             {title}
           </h1>
           {intro && (
-            <p className="text-primary-foreground/80 mt-4 text-lg max-w-3xl leading-relaxed">
+            <p className="text-primary-foreground/85 mt-5 text-lg max-w-3xl leading-relaxed">
               {intro}
             </p>
           )}
