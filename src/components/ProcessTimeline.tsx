@@ -36,13 +36,11 @@ const ProcessTimeline = () => {
     <section id="process" className="section-padding relative bg-muted/30">
       <div className="container-custom relative z-10">
         <div ref={headerRef} className="reveal text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-4">
-            So einfach geht's
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground mb-6">
+          <span className="eyebrow mb-4">So einfach geht's</span>
+          <h2 className="display-2 font-serif font-semibold text-foreground mt-4 mb-6">
             In <span className="text-secondary">4 Schritten</span> zur entrümpelten Immobilie
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Klar definierter Ablauf – keine versteckten Kosten, keine Überraschungen.
           </p>
         </div>
