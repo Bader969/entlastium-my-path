@@ -145,10 +145,10 @@ const ContactForm = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Side - Info */}
           <div className="text-primary-foreground">
-            <span className="inline-block px-4 py-2 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-semibold mb-6">
+            <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-semibold mb-6 border border-secondary/30">
               Kontakt aufnehmen
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">
+            <h2 className="display-2 font-serif font-semibold mb-6">
               Lassen Sie uns beim <span className="text-accent">Neuanfang</span> helfen
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-8 leading-relaxed">
