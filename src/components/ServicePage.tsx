@@ -7,7 +7,7 @@ import { NRW_CITIES } from "@/data/nrw-cities";
 const BASE_URL = "https://entlastium.de";
 
 export function buildServiceHead(service: ServiceData) {
-  const title = `${service.title} in NRW – Festpreis & kostenlose Besichtigung | Entlastium`;
+  const title = `${service.title} NRW | Entlastium`;
   const description = service.description;
   const url = `${BASE_URL}/leistungen/${service.slug}`;
   return {

@@ -47,5 +47,9 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /email/
+Disallow: /lovable/
+Disallow: /unsubscribe
 
 Sitemap: https://entlastium.de/sitemap.xml
