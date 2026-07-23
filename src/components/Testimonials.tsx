@@ -31,13 +31,11 @@ const Testimonials = () => {
     <section id="kundenstimmen" className="section-padding bg-background">
       <div className="container-custom">
         <div ref={ref} className="reveal text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-4">
-            Kundenstimmen
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground mb-4">
+          <span className="eyebrow mb-4">Kundenstimmen</span>
+          <h2 className="display-2 font-serif font-semibold text-foreground mt-4 mb-4">
             Vertrauen, das aus Erfahrung wächst
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Was unsere Auftraggeber über die Zusammenarbeit sagen.
           </p>
         </div>
