@@ -20,8 +20,8 @@ const Impressum = () => {
             <p className="text-muted-foreground leading-relaxed">
               Entlastium<br />
               Entrümpelung & Haushaltsauflösungen<br />
-              [Straße und Hausnummer]<br />
-              [PLZ] Bochum
+              Adlerstr. 14<br />
+              44577 Castrop-Rauxel
             </p>
           </div>
         </section>
