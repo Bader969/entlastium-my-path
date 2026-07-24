@@ -36,7 +36,7 @@ const Impressum = () => {
               Kontakt
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Telefon: <a href="tel:+4912345678" className="text-secondary hover:underline">+49 123 456 78</a><br />
+              Telefon: <a href="tel:+491637948428" className="text-secondary hover:underline">+49 163 7948428</a><br />
               E-Mail: <a href="mailto:info@entlastium.de" className="text-secondary hover:underline">info@entlastium.de</a>
             </p>
           </div>
