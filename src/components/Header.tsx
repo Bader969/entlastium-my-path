@@ -71,13 +71,13 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
             <a
-              href="tel:+4912345678"
+              href="tel:+491637948428"
               className="flex items-center gap-2 text-primary-foreground/85 hover:text-primary-foreground transition-colors"
               aria-label="Telefonnummer anrufen"
             >
               <Phone className="h-4 w-4" />
               <span className="hidden xl:inline text-sm font-medium">
-                +49 123 456 78
+                +49 163 7948428
               </span>
             </a>
             <Button variant="accent" size="default" asChild>
@@ -122,12 +122,12 @@ const Header = () => {
 
           <div className="mt-8 space-y-4">
             <a
-              href="tel:+4912345678"
+              href="tel:+491637948428"
               className="flex items-center justify-center gap-2 text-primary-foreground py-3 rounded-xl border border-primary-foreground/20"
               onClick={() => setIsMenuOpen(false)}
             >
               <Phone className="h-5 w-5" />
-              <span className="font-medium">+49 123 456 78</span>
+              <span className="font-medium">+49 163 7948428</span>
             </a>
             <Button variant="accent" size="lg" className="w-full" asChild>
               <a

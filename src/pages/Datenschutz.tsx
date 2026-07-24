@@ -54,9 +54,9 @@ const Datenschutz = () => {
             <p>
               <strong>Entlastium</strong><br />
               Entrümpelung & Haushaltsauflösungen<br />
-              [Straße und Hausnummer]<br />
-              [PLZ] Bochum<br /><br />
-              Telefon: +49 123 456 78<br />
+              Adlerstr. 14<br />
+              44577 Castrop-Rauxel<br /><br />
+              Telefon: +49 163 7948428<br />
               E-Mail: info@entlastium.de
             </p>
           </div>

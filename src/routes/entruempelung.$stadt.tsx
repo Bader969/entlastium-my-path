@@ -233,8 +233,8 @@ function StadtPage() {
             </a>
           </Button>
           <Button variant="outline-light" size="lg" asChild>
-            <a href="tel:+4912345678">
-              <Phone className="mr-2 h-4 w-4" /> +49 123 456 78
+            <a href="tel:+491637948428">
+              <Phone className="mr-2 h-4 w-4" /> +49 163 7948428
             </a>
           </Button>
           <Button variant="outline-light" size="lg" asChild>

@@ -78,7 +78,7 @@ function StaedtePage() {
         <div className="rounded-xl border border-border bg-card p-8 text-center">
           <p className="text-muted-foreground">
             Keine Stadt für „{query}" gefunden. Rufen Sie uns an —{" "}
-            <a href="tel:+4912345678" className="text-primary hover:underline">
+            <a href="tel:+491637948428" className="text-primary hover:underline">
               wir kommen trotzdem.
             </a>
           </p>

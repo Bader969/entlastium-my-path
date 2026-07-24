@@ -20,8 +20,8 @@ const Impressum = () => {
             <p className="text-muted-foreground leading-relaxed">
               Entlastium<br />
               Entrümpelung & Haushaltsauflösungen<br />
-              [Straße und Hausnummer]<br />
-              [PLZ] Bochum
+              Adlerstr. 14<br />
+              44577 Castrop-Rauxel
             </p>
           </div>
         </section>
@@ -36,7 +36,7 @@ const Impressum = () => {
               Kontakt
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Telefon: <a href="tel:+4912345678" className="text-secondary hover:underline">+49 123 456 78</a><br />
+              Telefon: <a href="tel:+491637948428" className="text-secondary hover:underline">+49 163 7948428</a><br />
               E-Mail: <a href="mailto:info@entlastium.de" className="text-secondary hover:underline">info@entlastium.de</a>
             </p>
           </div>
@@ -52,8 +52,8 @@ const Impressum = () => {
               Umsatzsteuer-ID
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-              DE [Ihre USt-IdNr.]
+              Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG:<br />
+              wird auf Anfrage mitgeteilt.
             </p>
           </div>
         </section>
@@ -68,7 +68,7 @@ const Impressum = () => {
               Gewerbeanmeldung
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Die Gewerbeanmeldung erfolgte bei der zuständigen Behörde der Stadt Bochum.
+              Die Gewerbeanmeldung erfolgte bei der zuständigen Behörde der Stadt Castrop-Rauxel.
             </p>
           </div>
         </section>
@@ -83,9 +83,9 @@ const Impressum = () => {
               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              [Name des Verantwortlichen]<br />
-              [Straße und Hausnummer]<br />
-              [PLZ] Bochum
+              Inhaber, Entlastium<br />
+              Adlerstr. 14<br />
+              44577 Castrop-Rauxel
             </p>
           </div>
         </section>
