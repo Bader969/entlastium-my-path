@@ -148,18 +148,10 @@ const Footer = () => {
         </div>
 
         {/* Compliance / Vertrauen */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10 grid md:grid-cols-3 gap-4 text-xs text-primary-foreground/70">
-          <div>
-            <p className="font-semibold text-primary-foreground/90 mb-1">Entsorgungsfachbetrieb</p>
-            <p>Nachweis-Nr.: <span className="text-primary-foreground/60">[wird ergänzt]</span></p>
-          </div>
+        <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-xs text-primary-foreground/70">
           <div>
             <p className="font-semibold text-primary-foreground/90 mb-1">Versicherung</p>
             <p>Haftpflicht- und Betriebsversicherung vorhanden</p>
-          </div>
-          <div>
-            <p className="font-semibold text-primary-foreground/90 mb-1">Mitgliedschaften</p>
-            <p><span className="text-primary-foreground/60">[wird ergänzt]</span></p>
           </div>
         </div>
 
