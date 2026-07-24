@@ -68,7 +68,7 @@ const Impressum = () => {
               Gewerbeanmeldung
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Die Gewerbeanmeldung erfolgte bei der zuständigen Behörde der Stadt Bochum.
+              Die Gewerbeanmeldung erfolgte bei der zuständigen Behörde der Stadt Castrop-Rauxel.
             </p>
           </div>
         </section>
