@@ -179,7 +179,7 @@ const ContactForm = () => {
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-sm font-medium text-primary-foreground">{info.value}</p>
+                      <p className="text-sm font-medium text-primary-foreground whitespace-pre-line">{info.value}</p>
                     )}
                   </div>
                 </div>
