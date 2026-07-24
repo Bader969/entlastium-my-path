@@ -136,7 +136,7 @@ const ContactForm = () => {
     { icon: Phone, label: "Telefon", value: "+49 123 456 78", href: "tel:+4912345678" },
     { icon: Mail, label: "E-Mail", value: "info@entlastium.de", href: "mailto:info@entlastium.de" },
     { icon: MapPin, label: "Einsatzgebiet", value: "Bochum & ganz NRW", href: null },
-    { icon: Clock, label: "Erreichbar", value: "Mo-Fr 8:00-18:00", href: null },
+    { icon: Clock, label: "Erreichbar", value: "Mo-Fr 8:00-18:00\nSa 10:00-14:00", href: null },
   ];
 
   return (
@@ -179,7 +179,7 @@ const ContactForm = () => {
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-sm font-medium text-primary-foreground">{info.value}</p>
+                      <p className="text-sm font-medium text-primary-foreground whitespace-pre-line">{info.value}</p>
                     )}
                   </div>
                 </div>
