@@ -83,9 +83,9 @@ const Impressum = () => {
               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              [Name des Verantwortlichen]<br />
-              [Straße und Hausnummer]<br />
-              [PLZ] Bochum
+              Inhaber, Entlastium<br />
+              Adlerstr. 14<br />
+              44577 Castrop-Rauxel
             </p>
           </div>
         </section>
