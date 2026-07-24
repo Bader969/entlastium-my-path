@@ -133,9 +133,9 @@ const ContactForm = () => {
   };
 
   const contactInfo = [
-    { icon: Phone, label: "Telefon", value: "+49 123 456 78", href: "tel:+4912345678" },
+    { icon: Phone, label: "Telefon", value: "+49 163 7948428", href: "tel:+491637948428" },
     { icon: Mail, label: "E-Mail", value: "info@entlastium.de", href: "mailto:info@entlastium.de" },
-    { icon: MapPin, label: "Einsatzgebiet", value: "Bochum & ganz NRW", href: null },
+    { icon: MapPin, label: "Einsatzgebiet", value: "Castrop-Rauxel & ganz NRW", href: null },
     { icon: Clock, label: "Erreichbar", value: "Mo-Fr 8:00-18:00\nSa 10:00-14:00", href: null },
   ];
 
