@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/logo-full.png.asset.json";
 import { NRW_CITIES } from "@/data/nrw-cities";
