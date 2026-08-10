@@ -41,7 +41,7 @@ export const Route = createFileRoute("/entruempelung/$stadt")({
             name: `Entlastium – Entrümpelung ${city.name}`,
             description,
             url,
-            telephone: "+49-123-45678",
+            telephone: "+49 163 7948428",
             email: "info@entlastium.de",
             areaServed: { "@type": "City", name: city.name },
             address: {
