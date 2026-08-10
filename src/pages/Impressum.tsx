@@ -42,21 +42,8 @@ const Impressum = () => {
           </div>
         </section>
 
-        {/* Umsatzsteuer */}
-        <section className="flex gap-4">
-          <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
-            <FileText className="h-6 w-6 text-secondary" />
-          </div>
-          <div>
-            <h2 className="text-xl font-serif font-semibold text-foreground mb-3">
-              Umsatzsteuer-ID
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG:<br />
-              wird auf Anfrage mitgeteilt.
-            </p>
-          </div>
-        </section>
+
+
 
         {/* Gewerbeanmeldung */}
         <section className="flex gap-4">
