@@ -28,7 +28,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md border-b border-primary-foreground/10">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-dark">
       <div className="container-custom px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
@@ -43,15 +43,12 @@ const Header = () => {
               width={817}
               height={959}
               fetchPriority="high"
-              className="shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover"
+              className="shrink-0 h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover"
             />
             <div className="min-w-0">
-              <span className="block text-lg sm:text-xl lg:text-2xl font-serif font-semibold text-primary-foreground leading-none truncate">
+              <span className="block text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-primary-foreground leading-none truncate">
                 Entlastium
               </span>
-              <p className="hidden xl:block text-xs text-primary-foreground/70 mt-1">
-                Entrümpelung & Haushaltsauflösungen
-              </p>
             </div>
           </Link>
 
