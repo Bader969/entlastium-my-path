@@ -33,12 +33,6 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Entlastium – Entrümpelung & Haushaltsauflösung NRW" },
-      {
-        name: "description",
-        content:
-          "Entlastium bietet schnelle, kostengünstige und fachgerechte Entrümpelung in Bochum, Umgebung und ganz NRW. Kostenlose Besichtigung & faire Festpreise.",
-      },
       { name: "author", content: "Entlastium" },
       {
         name: "keywords",
@@ -46,19 +40,10 @@ export const Route = createRootRoute({
           "Entrümpelung, Haushaltsauflösung, Bochum, NRW, Kellerentrümpelung, Wohnungsräumung, Gartenräumung",
       },
       { property: "og:site_name", content: "Entlastium" },
-      { property: "og:title", content: "Entlastium – Entrümpelung & Haushaltsauflösung NRW" },
-      {
-        property: "og:description",
-        content: "Schnelle, kostengünstige und fachgerechte Entrümpelung in Bochum und ganz NRW. Kostenlose Besichtigung & faire Festpreise.",
-      },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://entlastium.de/favicon.png" },
-      { property: "og:image:alt", content: "Entlastium Logo" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Entlastium" },
-      { name: "twitter:title", content: "Entlastium – Entrümpelung & Haushaltsauflösung NRW" },
-      { name: "twitter:description", content: "Schnelle, kostengünstige und fachgerechte Entrümpelung in Bochum und ganz NRW. Kostenlose Besichtigung & faire Festpreise." },
-      { name: "twitter:image", content: "https://entlastium.de/favicon.png" },
+
     ],
     links: [
       { rel: "stylesheet", href: appCss },
