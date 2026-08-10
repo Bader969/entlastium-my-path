@@ -1,5 +1,5 @@
 import LegalPageLayout from "@/components/LegalPageLayout";
-import { Building2, Phone, Mail, Scale, Globe, FileText } from "lucide-react";
+import { Building2, Phone, Mail, Scale, Globe } from "lucide-react";
 
 const Impressum = () => {
   return (
@@ -43,8 +43,6 @@ const Impressum = () => {
         </section>
 
 
-
-
         {/* Gewerbeanmeldung */}
         <section className="flex gap-4">
           <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
@@ -70,7 +68,7 @@ const Impressum = () => {
               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Inhaber, Entlastium<br />
+              Bader Lababidi, Entlastium<br />
               Adlerstr. 14<br />
               44577 Castrop-Rauxel
             </p>
