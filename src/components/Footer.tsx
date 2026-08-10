@@ -45,9 +45,6 @@ const Footer = () => {
               <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-secondary/30 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-secondary/30 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
             </div>
           </div>
 
