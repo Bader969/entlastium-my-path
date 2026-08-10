@@ -39,21 +39,6 @@ const AboutUs = () => {
           ))}
         </div>
 
-        {/* Reviews Section - Placeholder for future Google Reviews integration */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-4">
-              Das sagen unsere <span className="text-secondary">Kunden</span>
-            </h3>
-          </div>
-
-          {/* Google Reviews will be integrated here */}
-          <div className="text-center py-12 bg-card rounded-2xl shadow-card">
-            <p className="text-muted-foreground">
-              Kundenbewertungen werden bald hier angezeigt.
-            </p>
-          </div>
-        </div>
 
         {/* Story Section */}
         <div className="mt-20 p-8 md:p-12 rounded-3xl gradient-hero text-primary-foreground">
