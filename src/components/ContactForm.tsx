@@ -337,6 +337,7 @@ const ContactForm = () => {
                           </div>
                           <button
                             type="button"
+                            aria-label={`Bild ${index + 1} entfernen`}
                             onClick={() => removeImage(index)}
                             className="absolute -top-2 -right-2 w-6 h-6 bg-destructive text-destructive-foreground rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                           >
