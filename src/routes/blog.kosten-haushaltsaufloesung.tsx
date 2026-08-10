@@ -48,7 +48,8 @@ export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung")({
       {
         name: "description",
         content:
-          "Transparenter Preisguide 2026: Was kostet eine Wohnungsauflösung oder Haushaltsauflösung in NRW? Festpreise nach Wohnungsgröße, Kostenfaktoren & Wertanrechnung erklärt.",
+          "Preisguide 2026: Was kostet eine Wohnungs- oder Haushaltsauflösung in NRW? Festpreise nach Wohnungsgröße, Kostenfaktoren & Wertanrechnung.",
+
       },
       { property: "og:title", content: "Was kostet eine Wohnungsauflösung? Preise 2026 in NRW" },
       {
