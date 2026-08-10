@@ -31,7 +31,7 @@ const Hero = () => {
           width={512}
           height={512}
           fetchPriority="high"
-          className="w-[340px] sm:w-[480px] md:w-[620px] lg:w-[780px] xl:w-[960px] 2xl:w-[1100px] opacity-[0.22] object-contain drop-shadow-2xl contrast-[1.05]"
+          className="w-[340px] sm:w-[480px] md:w-[620px] lg:w-[780px] xl:w-[960px] 2xl:w-[1100px] opacity-[0.38] object-contain drop-shadow-2xl contrast-[1.08] brightness-110"
         />
       </div>
 
