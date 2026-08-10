@@ -61,7 +61,8 @@ export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung-bochum")(
       {
         name: "description",
         content:
-          "Was kostet eine Haushaltsauflösung oder Entrümpelung in Bochum? Transparente Festpreise nach Wohnungsgröße, Kostenfaktoren, USB-Gebühren & Wertanrechnung im Ratgeber.",
+          "Was kostet eine Haushaltsauflösung in Bochum? Festpreise nach Wohnungsgröße, Kostenfaktoren, USB-Gebühren & Wertanrechnung im Ratgeber.",
+
       },
       { property: "og:title", content: "Haushaltsauflösung Bochum: Kosten & Preise 2026" },
       {
