@@ -249,9 +249,26 @@
 
 .glass {
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   background-color: color-mix(in oklab, var(--color-card) 70%, transparent);
   border: 1px solid color-mix(in oklab, var(--color-border) 50%, transparent);
+}
+
+/* Stronger glassmorphism for hero content panels */
+.glass-strong {
+  backdrop-filter: blur(24px) saturate(140%);
+  background-color: color-mix(in oklab, var(--color-card) 78%, transparent);
+  border: 1px solid color-mix(in oklab, var(--warm-white) 22%, transparent);
+  box-shadow:
+    0 24px 48px -16px color-mix(in oklab, var(--navy) 22%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, var(--warm-white) 18%, transparent);
+}
+
+/* Dark frosted glass for header overlay */
+.glass-dark {
+  backdrop-filter: blur(20px) saturate(130%);
+  background-color: color-mix(in oklab, var(--primary) 68%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--primary-foreground) 12%, transparent);
+  box-shadow: 0 1px 0 0 color-mix(in oklab, var(--warm-white) 6%, transparent);
 }
 
 .reveal {
