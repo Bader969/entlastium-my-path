@@ -28,7 +28,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-dark">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md">
       <div className="container-custom px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
@@ -43,7 +43,7 @@ const Header = () => {
               width={817}
               height={959}
               fetchPriority="high"
-              className="shrink-0 h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover"
+              className="shrink-0 h-14 w-14 sm:h-16 sm:w-16 object-contain"
             />
             <div className="min-w-0">
               <span className="block text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-primary-foreground leading-none truncate">

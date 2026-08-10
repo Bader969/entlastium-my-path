@@ -31,14 +31,14 @@ const Hero = () => {
           width={512}
           height={512}
           fetchPriority="high"
-          className="w-[340px] sm:w-[480px] md:w-[620px] lg:w-[780px] xl:w-[960px] 2xl:w-[1100px] opacity-[0.72] object-contain brightness-[1.55] contrast-[1.12]"
+          className="w-[320px] sm:w-[440px] md:w-[560px] lg:w-[700px] xl:w-[820px] opacity-20 object-contain"
         />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container-custom section-padding">
-        <div className="max-w-2xl xl:max-w-3xl glass-strong rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full glass border border-secondary/40 mb-6 animate-fade-in">
+        <div className="max-w-2xl xl:max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-primary-foreground/10 border border-secondary/40 mb-6 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-primary-foreground text-xs sm:text-sm font-medium tracking-wide">
               Ihr Partner für stressfreie Entrümpelung
@@ -60,7 +60,7 @@ const Hero = () => {
             {benefits.map((benefit) => (
               <div
                 key={benefit}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-primary-foreground/20 text-primary-foreground/95"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground/95"
               >
                 <CheckCircle className="h-4 w-4 text-accent shrink-0" />
                 <span className="text-xs sm:text-sm font-medium">{benefit}</span>
