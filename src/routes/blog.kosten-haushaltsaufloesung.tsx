@@ -204,34 +204,36 @@ function KostenGuide() {
           </ul>
           <p className="text-muted-foreground leading-relaxed">
             Der ermittelte Restwert wird <strong>direkt vom Angebot abgezogen</strong>.
-            In Einzelfällen reduziert sich der Endpreis um 30–60 % – bei nachlassreichen
-            Haushalten gelegentlich sogar auf 0 €.
+            Bei nachlassreichen Haushalten kann das den Endpreis deutlich senken –
+            in seltenen Fällen bis zur vollständigen Verrechnung.
           </p>
         </section>
 
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-            Typische Zusatzkosten – und wie Sie sie vermeiden
+            Typische Zusatzposten – und wie Sie sie vermeiden
           </h2>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Sondermüll:</span>
               <span className="text-muted-foreground">
-                Farben, Lacke, Altöl, Asbest – ca. 1,50–4 € pro Kilo, je nach Stoff.
+                Farben, Lacke, Altöl, Asbest – Abrechnung nach Menge und Stoffart.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Elektrogroßgeräte:</span>
               <span className="text-muted-foreground">
-                Kühlschrank, Waschmaschine: 25–60 € pro Gerät bei separater Entsorgung.
+                Kühlschrank, Waschmaschine &amp; Co. erfordern getrennte, fachgerechte
+                Entsorgung.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Schwerlasten:</span>
               <span className="text-muted-foreground">
-                Klavier, Tresor, Wasserbett: 150–400 € je nach Stockwerk &amp; Demontage.
+                Klavier, Tresor, Wasserbett: zusätzlicher Demontage- und Trageaufwand.
               </span>
             </li>
+
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Anfahrt:</span>
               <span className="text-muted-foreground">
