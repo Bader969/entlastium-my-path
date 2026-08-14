@@ -70,7 +70,7 @@ export const Route = createRootRoute({
               url: "https://entlastium.de",
               logo: "https://entlastium.de/favicon.png",
               email: "info@entlastium.de",
-              telephone: "+49-123-45678",
+              telephone: "+49 163 7948428",
             },
             {
               "@type": "WebSite",
@@ -87,7 +87,7 @@ export const Route = createRootRoute({
               description:
                 "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.",
               url: "https://entlastium.de",
-              telephone: "+49-123-45678",
+              telephone: "+49 163 7948428",
               email: "info@entlastium.de",
               areaServed: { "@type": "State", name: "Nordrhein-Westfalen" },
               address: {
