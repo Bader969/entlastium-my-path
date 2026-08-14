@@ -30,12 +30,13 @@ const BOCHUM_DISTRICTS = [
 const FAQS = [
   {
     q: "Was kostet eine Haushaltsauflösung in Bochum?",
-    a: "Für eine durchschnittliche 2- bis 3-Zimmer-Wohnung in Bochum liegen die Kosten 2026 zwischen 1.200 € und 2.500 € inklusive Entsorgung, besenrein und mit transparenter Festpreis-Garantie. Bei Wertanrechnung verwertbarer Gegenstände kann sich der Preis deutlich reduzieren.",
+    a: "Einen pauschalen Preis gibt es nicht – entscheidend sind Wohnungsgröße, Müllmenge, Sondermüllanteil und Zugänglichkeit. Nach einer kostenlosen Besichtigung in Bochum erhalten Sie ein schriftliches Festpreisangebot inklusive Entsorgung und besenreiner Übergabe.",
   },
   {
-    q: "Was kostet eine Entrümpelung in Bochum pro m²?",
-    a: "Als grober Richtwert: Eine Entrümpelung in Bochum kostet zwischen 25 € und 45 € pro m² – abhängig vom Füllgrad, Stockwerk und Sondermüllanteil. Bei wenig Müllvolumen kann der Preis darunter liegen.",
+    q: "Wie wird der Preis für eine Entrümpelung in Bochum berechnet?",
+    a: "Wir kalkulieren nach Aufwand: Füllgrad der Räume, Volumen des zu entsorgenden Materials, Stockwerk und Zugang, Sondermüll sowie der Restwert verwertbarer Gegenstände. Daraus entsteht ein Festpreis – keine Stundenabrechnung.",
   },
+
   {
     q: "Wie funktioniert die Wertanrechnung bei einer Haushaltsauflösung in Bochum?",
     a: "Bei der kostenlosen Besichtigung in Bochum bewerten wir verwertbare Gegenstände wie Möbel, Schmuck, Sammlerstücke oder hochwertige Elektronik. Der ermittelte Restwert wird direkt vom Angebot abgezogen – Sie zahlen also nur die Differenz.",
