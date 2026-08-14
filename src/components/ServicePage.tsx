@@ -7,8 +7,9 @@ import { NRW_CITIES } from "@/data/nrw-cities";
 const BASE_URL = "https://entlastium.de";
 
 export function buildServiceHead(service: ServiceData) {
-  const title = `${service.title} NRW | Entlastium`;
-  const description = service.description;
+  const title = `${service.title} | Entlastium Entrümpelung & Haushaltsauflösungen`;
+  const description =
+    "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.";
   const url = `${BASE_URL}/leistungen/${service.slug}`;
   return {
     meta: [
