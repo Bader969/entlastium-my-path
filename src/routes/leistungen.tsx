@@ -9,7 +9,7 @@ export const Route = createFileRoute("/leistungen")({
   head: () => {
     const title = "Leistungen | Entlastium Entrümpelung & Haushaltsauflösungen";
     const description =
-      "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.";
+      "Alle Leistungen von Entlastium im Überblick: Entrümpelung, Haushaltsauflösung, Kellerräumung, Gartenräumung, Endreinigung und Wohnungsübergabe in NRW.";
     const url = `${BASE_URL}/leistungen`;
     return {
       meta: [

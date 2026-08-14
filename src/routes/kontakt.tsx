@@ -8,7 +8,7 @@ export const Route = createFileRoute("/kontakt")({
   head: () => {
     const title = "Kontakt | Entlastium Entrümpelung & Haushaltsauflösungen";
     const description =
-      "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.";
+      "Kontakt zu Entlastium: kostenlose Besichtigung anfragen, telefonisch oder per Formular. Adlerstr. 14, 44577 Castrop-Rauxel – Mo–Fr 8–18 Uhr, Sa 10–14 Uhr.";
     const url = `${BASE_URL}/kontakt`;
     return {
       meta: [

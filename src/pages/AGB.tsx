@@ -47,7 +47,7 @@ const AGB = () => {
         <Section icon={<FileText className="h-6 w-6 text-secondary" />} number="1" title="Geltungsbereich und Vertragsgegenstand">
           <Paragraph num="1">
             Die nachfolgenden Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Rechtsgeschäfte 
-            zwischen Entlastium (Inhaber: [Dein Vor- und Nachname]), nachfolgend „Auftragnehmer" genannt, 
+            zwischen Entlastium (Inhaber: Bader Lababidi), nachfolgend „Auftragnehmer" genannt, 
             und dem Vertragspartner, nachfolgend „Auftraggeber" genannt.
           </Paragraph>
           <Paragraph num="2">

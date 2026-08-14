@@ -49,14 +49,14 @@ export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung")({
       {
         name: "description",
         content:
-          "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.",
+          "Ratgeber: Was beeinflusst den Aufwand einer Haushaltsauflösung in NRW? Fläche, Entsorgungsvolumen, Teamgröße und Dauer im Überblick – plus Wertanrechnung.",
 
       },
       { property: "og:title", content: "Preise 2026 | Entlastium Entrümpelung & Haushaltsauflösungen" },
       {
         property: "og:description",
         content:
-          "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.",
+          "Ratgeber: Was beeinflusst den Aufwand einer Haushaltsauflösung in NRW? Fläche, Entsorgungsvolumen, Teamgröße und Dauer im Überblick – plus Wertanrechnung.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: CANONICAL },
@@ -70,7 +70,7 @@ export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung")({
           "@type": "Article",
           headline: "Preise 2026 | Entlastium Entrümpelung & Haushaltsauflösungen",
           description:
-            "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.",
+            "Ratgeber: Was beeinflusst den Aufwand einer Haushaltsauflösung in NRW? Fläche, Entsorgungsvolumen, Teamgröße und Dauer im Überblick – plus Wertanrechnung.",
           author: { "@type": "Organization", name: "Entlastium" },
           publisher: {
             "@type": "Organization",

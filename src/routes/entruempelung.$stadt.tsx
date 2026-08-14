@@ -18,8 +18,7 @@ export const Route = createFileRoute("/entruempelung/$stadt")({
     if (!loaderData) return { meta: [] };
     const { city } = loaderData;
     const title = `Entrümpelung ${city.name} | Entlastium Entrümpelung & Haushaltsauflösungen`;
-    const description =
-      "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.";
+    const description = `Entrümpelung & Haushaltsauflösung in ${city.name} (PLZ ${city.plzPrefix}): kostenlose Besichtigung, transparentes Festpreisangebot, Wertanrechnung und besenreine Übergabe – lokales Team im ${city.region}.`;
     const url = `${BASE_URL}/entruempelung/${params.stadt}`;
     return {
       meta: [
