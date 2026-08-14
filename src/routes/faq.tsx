@@ -7,9 +7,9 @@ const BASE_URL = "https://entlastium.de";
 
 export const Route = createFileRoute("/faq")({
   head: () => {
-    const title = "FAQ – Häufige Fragen zur Entrümpelung | Entlastium";
+    const title = "FAQ | Entlastium Entrümpelung & Haushaltsauflösungen";
     const description =
-      "Antworten auf die häufigsten Fragen zu Entrümpelung, Haushaltsauflösung, Kosten, Ablauf und Entsorgung in NRW.";
+      "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.";
     const url = `${BASE_URL}/faq`;
     return {
       meta: [

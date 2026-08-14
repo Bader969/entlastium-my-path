@@ -6,9 +6,9 @@ const BASE_URL = "https://entlastium.de";
 
 export const Route = createFileRoute("/ablauf")({
   head: () => {
-    const title = "Ablauf – So einfach geht's in 4 Schritten | Entlastium";
+    const title = "Ablauf | Entlastium Entrümpelung & Haushaltsauflösungen";
     const description =
-      "So läuft Ihre Entrümpelung ab: Anfrage, kostenlose Besichtigung, professionelle Räumung und besenreine Übergabe. Klar und transparent.";
+      "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.";
     const url = `${BASE_URL}/ablauf`;
     return {
       meta: [
