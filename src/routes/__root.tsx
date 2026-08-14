@@ -92,7 +92,7 @@ export const Route = createRootRoute({
               areaServed: { "@type": "State", name: "Nordrhein-Westfalen" },
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Bochum",
+                addressLocality: "Castrop-Rauxel",
                 addressRegion: "NRW",
                 addressCountry: "DE",
               },
