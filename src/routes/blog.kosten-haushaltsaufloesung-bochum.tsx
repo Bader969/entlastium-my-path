@@ -223,34 +223,35 @@ function KostenBochumGuide() {
           </ul>
           <p className="text-muted-foreground leading-relaxed">
             Der ermittelte Restwert wird <strong>direkt vom Angebot abgezogen</strong>.
-            In Einzelfällen reduziert sich der Endpreis um 30–60 % – bei
-            nachlassreichen Haushalten in Bochum gelegentlich sogar auf 0 €.
+            Bei nachlassreichen Haushalten in Bochum kann das den Endpreis deutlich
+            senken – in seltenen Fällen bis zur vollständigen Verrechnung.
           </p>
         </section>
 
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-            Typische Zusatzkosten in Bochum – und wie Sie sie vermeiden
+            Typische Zusatzposten in Bochum – und wie Sie sie vermeiden
           </h2>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Sondermüll:</span>
               <span className="text-muted-foreground">
-                Farben, Lacke, Altöl, Asbest – ca. 1,50–4 € pro Kilo, Abgabe am
-                USB-Wertstoffhof Bochum.
+                Farben, Lacke, Altöl, Asbest – gesonderte Abgabe am
+                USB-Wertstoffhof Bochum, wird nach Menge und Stoffart berechnet.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Elektrogroßgeräte:</span>
               <span className="text-muted-foreground">
-                Kühlschrank, Waschmaschine: 25–60 € pro Gerät bei separater Entsorgung.
+                Kühlschrank, Waschmaschine &amp; Co. erfordern getrennte, fachgerechte
+                Entsorgung.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Schwerlasten:</span>
               <span className="text-muted-foreground">
-                Klavier, Tresor, Wasserbett: 150–400 € je nach Stockwerk &amp; Demontage –
-                in Bochumer Altbauten ohne Aufzug öfter relevant.
+                Klavier, Tresor, Wasserbett: zusätzlicher Demontage- und
+                Trageaufwand – in Bochumer Altbauten ohne Aufzug öfter relevant.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -262,11 +263,12 @@ function KostenBochumGuide() {
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Halteverbotszone:</span>
               <span className="text-muted-foreground">
-                In engen Straßen (z. B. Bermuda3Eck, Innenstadt) ca. 80–150 € –
-                wir kümmern uns um die Beantragung beim Ordnungsamt Bochum.
+                In engen Straßen (z. B. Bermuda3Eck, Innenstadt) nötig – wir
+                kümmern uns um die Beantragung beim Ordnungsamt Bochum.
               </span>
             </li>
           </ul>
+
         </section>
 
         <section className="mb-12">
