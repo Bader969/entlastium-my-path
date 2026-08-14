@@ -6,25 +6,25 @@ import { CheckCircle, Euro, Home, Truck, Recycle, ArrowRight } from "lucide-reac
 
 const CANONICAL = "https://entlastium.de/blog/kosten-haushaltsaufloesung";
 
-const PRICE_TABLE = [
-  { size: "1-Zimmer-Wohnung", sqm: "ca. 20–35 m²", price: "590 – 1.290 €", days: "1 Tag" },
-  { size: "2-Zimmer-Wohnung", sqm: "ca. 40–60 m²", price: "990 – 1.890 €", days: "1 Tag" },
-  { size: "3-Zimmer-Wohnung", sqm: "ca. 65–85 m²", price: "1.490 – 2.690 €", days: "1–2 Tage" },
-  { size: "4-Zimmer-Wohnung", sqm: "ca. 85–110 m²", price: "1.990 – 3.490 €", days: "2 Tage" },
-  { size: "Einfamilienhaus", sqm: "ab 120 m² + Keller", price: "2.890 – 5.900 €", days: "2–4 Tage" },
+const EFFORT_TABLE = [
+  { size: "1-Zimmer-Wohnung", sqm: "ca. 20–35 m²", volume: "kleiner Container", team: "2 Personen", days: "1 Tag" },
+  { size: "2-Zimmer-Wohnung", sqm: "ca. 40–60 m²", volume: "mittlerer Container", team: "2–3 Personen", days: "1 Tag" },
+  { size: "3-Zimmer-Wohnung", sqm: "ca. 65–85 m²", volume: "großer Container", team: "3 Personen", days: "1–2 Tage" },
+  { size: "4-Zimmer-Wohnung", sqm: "ca. 85–110 m²", volume: "großer Container", team: "3–4 Personen", days: "2 Tage" },
+  { size: "Einfamilienhaus", sqm: "ab 120 m² + Keller", volume: "mehrere Container", team: "4+ Personen", days: "2–4 Tage" },
 ];
 
 const FACTORS = [
   { icon: Home, title: "Wohnungsgröße & Stockwerk", text: "Mehr Quadratmeter und höhere Etagen ohne Aufzug erhöhen Personal- und Zeitaufwand." },
-  { icon: Truck, title: "Müllmenge & Containergröße", text: "Die Entsorgungsmenge (in m³) bestimmt Container­miete und Deponiegebühren – oft 20–35 % der Endkosten." },
+  { icon: Truck, title: "Müllmenge & Containergröße", text: "Die Entsorgungsmenge (in m³) bestimmt Container­miete und Deponiegebühren – einer der größten Einzelposten." },
   { icon: Recycle, title: "Sondermüll & Sperrgut", text: "Elektrogeräte, Farben, Öle oder Klaviere müssen separat fachgerecht entsorgt werden." },
-  { icon: Euro, title: "Wertanrechnung", text: "Verwertbare Möbel, Antiquitäten oder Elektronik reduzieren Ihren Endpreis – manchmal um mehrere hundert Euro." },
+  { icon: Euro, title: "Wertanrechnung", text: "Verwertbare Möbel, Antiquitäten oder Elektronik reduzieren Ihren Endpreis spürbar." },
 ];
 
 const FAQS = [
   {
-    q: "Was kostet eine Wohnungsauflösung in NRW im Schnitt?",
-    a: "Für eine durchschnittliche 2- bis 3-Zimmer-Wohnung in NRW liegen die Kosten typischerweise zwischen 1.200 € und 2.500 € inklusive Entsorgung, besenrein und mit transparenter Festpreis-Garantie.",
+    q: "Was kostet eine Wohnungsauflösung in NRW?",
+    a: "Einen Pauschalpreis gibt es nicht: Größe, Müllmenge, Sondermüll und Zugänglichkeit bestimmen den Aufwand. Nach der kostenlosen Besichtigung erhalten Sie ein schriftliches Festpreisangebot inklusive Entsorgung und besenreiner Übergabe.",
   },
   {
     q: "Wie funktioniert die Wertanrechnung?",
@@ -39,6 +39,7 @@ const FAQS = [
     a: "Bei Bedürftigkeit (z. B. nach Todesfall mittelloser Personen oder bei Sozialhilfe-Bezug) übernimmt das Sozialamt die Kosten ganz oder teilweise. Wir stellen gerne entsprechende Kostenvoranschläge aus.",
   },
 ];
+
 
 export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung")({
   component: KostenGuide,
