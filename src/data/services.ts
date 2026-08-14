@@ -28,7 +28,7 @@ export const SERVICES: ServiceData[] = [
     ],
     faq: [
       { q: "Wie schnell können Sie eine Haushaltsauflösung durchführen?", a: "In dringenden Fällen innerhalb von 48 Stunden. Standardtermine sind in 5–10 Tagen verfügbar." },
-      { q: "Was kostet eine Haushaltsauflösung?", a: "Die Kosten richten sich nach Größe und Aufwand. Eine 3-Zimmer-Wohnung liegt typischerweise zwischen 800 € und 2.500 € — Wertanrechnung kann den Preis deutlich reduzieren." },
+      { q: "Was kostet eine Haushaltsauflösung?", a: "Die Kosten richten sich nach Größe und Aufwand des Objekts. Nach einer kostenlosen Besichtigung erhalten Sie ein verbindliches Festpreisangebot – Wertanrechnung kann den Preis reduzieren." },
       { q: "Werden Wertsachen anerkannt?", a: "Ja, alle verwertbaren Gegenstände werden transparent bewertet und gegen die Rechnung verrechnet." },
     ],
   },
@@ -70,7 +70,7 @@ export const SERVICES: ServiceData[] = [
     ],
     faq: [
       { q: "Wie lange dauert eine Kellerräumung?", a: "Ein durchschnittlicher Kellerraum (10–15 m²) ist in 2–4 Stunden geräumt." },
-      { q: "Was kostet die Kellerräumung?", a: "Festpreise starten bei ca. 250 € für kleine Räume. Genauer Preis nach kostenloser Besichtigung." },
+      { q: "Was kostet die Kellerräumung?", a: "Wir kalkulieren individuell nach Menge und Zugänglichkeit. Den genauen Festpreis nennen wir nach der kostenlosen Besichtigung." },
     ],
   },
   {
@@ -110,7 +110,7 @@ export const SERVICES: ServiceData[] = [
     ],
     faq: [
       { q: "Reicht eine besenreine Übergabe nicht?", a: "Im Mietvertrag steht oft 'besenrein', viele Vermieter fordern jedoch faktisch eine Endreinigung. Wir empfehlen sie zur Vermeidung von Streitigkeiten." },
-      { q: "Was kostet die Endreinigung?", a: "Ab ca. 3–5 € pro m². Genauer Preis nach Besichtigung." },
+      { q: "Was kostet die Endreinigung?", a: "Der Preis richtet sich nach Fläche und Verschmutzungsgrad. Genauer Festpreis nach Besichtigung." },
     ],
   },
   {

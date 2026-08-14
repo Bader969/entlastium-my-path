@@ -10,7 +10,7 @@ const FAQ = () => {
   const faqItems = [
     {
       question: "Was kostet eine Entrümpelung oder Haushaltsauflösung?",
-      answer: "Die Kosten variieren je nach Objektgröße, Menge des zu entsorgenden Materials und Zugänglichkeit. Nach einer kostenlosen Vor-Ort-Besichtigung erstellen wir Ihnen ein transparentes Festpreisangebot – ohne versteckte Kosten. Kleinere Entrümpelungen beginnen oft schon ab 200€."
+      answer: "Die Kosten variieren je nach Objektgröße, Menge des zu entsorgenden Materials und Zugänglichkeit. Nach einer kostenlosen Vor-Ort-Besichtigung erstellen wir Ihnen ein transparentes Festpreisangebot – ohne versteckte Kosten."
     },
     {
       question: "Wie schnell können Sie mit der Entrümpelung beginnen?",
