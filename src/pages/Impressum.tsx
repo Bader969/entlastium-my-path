@@ -18,7 +18,7 @@ const Impressum = () => {
               Unternehmen
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Entlastium<br />
+              Bader Lababidi, Entlastium<br />
               Entrümpelung & Haushaltsauflösungen<br />
               Adlerstr. 14<br />
               44577 Castrop-Rauxel
