@@ -131,10 +131,8 @@ function KostenBochumGuide() {
             Kurz &amp; ehrlich: Haushaltsauflösung in Bochum
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Eine professionelle Haushaltsauflösung in Bochum kostet 2026 zwischen
-            <strong> 590 € für ein 1-Zimmer-Apartment </strong> und
-            <strong> 5.900 € für ein voll möbliertes Einfamilienhaus</strong>.
-            Der exakte Preis hängt von vier Faktoren ab: Wohnungsgröße, Müllmenge,
+            Die Kosten einer Haushaltsauflösung in Bochum lassen sich nicht pauschal
+            benennen – sie hängen von vier Faktoren ab: Wohnungsgröße, Müllmenge,
             Sondermüll und der möglichen Wertanrechnung verwertbarer Gegenstände.
             Entlastium arbeitet in Bochum ausschließlich mit transparenten
             Festpreisen – nach der kostenlosen Besichtigung wissen Sie genau, was
@@ -144,24 +142,30 @@ function KostenBochumGuide() {
 
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
-            Preistabelle: Entrümpelung &amp; Haushaltsauflösung Bochum 2026
+            Aufwands-Übersicht: Entrümpelung &amp; Haushaltsauflösung in Bochum
           </h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Statt Pauschalpreisen zeigen wir Ihnen, welcher Aufwand hinter einem
+            Objekt steckt – genau daraus entsteht Ihr individueller Festpreis.
+          </p>
           <div className="overflow-x-auto rounded-xl border border-border">
             <table className="w-full text-left">
               <thead className="bg-muted">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Objektgröße</th>
                   <th className="px-4 py-3 font-semibold">Fläche</th>
-                  <th className="px-4 py-3 font-semibold">Festpreis (von – bis)</th>
+                  <th className="px-4 py-3 font-semibold">Entsorgungsvolumen</th>
+                  <th className="px-4 py-3 font-semibold">Team</th>
                   <th className="px-4 py-3 font-semibold">Dauer</th>
                 </tr>
               </thead>
               <tbody>
-                {PRICE_TABLE.map((row) => (
+                {EFFORT_TABLE.map((row) => (
                   <tr key={row.size} className="border-t border-border">
                     <td className="px-4 py-3 font-medium">{row.size}</td>
                     <td className="px-4 py-3 text-muted-foreground">{row.sqm}</td>
-                    <td className="px-4 py-3 font-semibold text-primary">{row.price}</td>
+                    <td className="px-4 py-3 font-semibold text-primary">{row.volume}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.team}</td>
                     <td className="px-4 py-3 text-muted-foreground">{row.days}</td>
                   </tr>
                 ))}
@@ -169,11 +173,12 @@ function KostenBochumGuide() {
             </table>
           </div>
           <p className="text-sm text-muted-foreground mt-3">
-            Preise inkl. Personal, Fahrzeuge, Containermiete, USB-Deponiegebühren
-            und besenreine Übergabe. Stand: Juni 2026, gültig für Bochum und das
+            Im Festpreis enthalten: Personal, Fahrzeuge, Containermiete,
+            USB-Deponiegebühren und besenreine Übergabe. Gültig für Bochum und das
             gesamte Ruhrgebiet.
           </p>
         </section>
+
 
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
