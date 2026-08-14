@@ -6,25 +6,25 @@ import { CheckCircle, Euro, Home, Truck, Recycle, ArrowRight } from "lucide-reac
 
 const CANONICAL = "https://entlastium.de/blog/kosten-haushaltsaufloesung";
 
-const PRICE_TABLE = [
-  { size: "1-Zimmer-Wohnung", sqm: "ca. 20–35 m²", price: "590 – 1.290 €", days: "1 Tag" },
-  { size: "2-Zimmer-Wohnung", sqm: "ca. 40–60 m²", price: "990 – 1.890 €", days: "1 Tag" },
-  { size: "3-Zimmer-Wohnung", sqm: "ca. 65–85 m²", price: "1.490 – 2.690 €", days: "1–2 Tage" },
-  { size: "4-Zimmer-Wohnung", sqm: "ca. 85–110 m²", price: "1.990 – 3.490 €", days: "2 Tage" },
-  { size: "Einfamilienhaus", sqm: "ab 120 m² + Keller", price: "2.890 – 5.900 €", days: "2–4 Tage" },
+const EFFORT_TABLE = [
+  { size: "1-Zimmer-Wohnung", sqm: "ca. 20–35 m²", volume: "kleiner Container", team: "2 Personen", days: "1 Tag" },
+  { size: "2-Zimmer-Wohnung", sqm: "ca. 40–60 m²", volume: "mittlerer Container", team: "2–3 Personen", days: "1 Tag" },
+  { size: "3-Zimmer-Wohnung", sqm: "ca. 65–85 m²", volume: "großer Container", team: "3 Personen", days: "1–2 Tage" },
+  { size: "4-Zimmer-Wohnung", sqm: "ca. 85–110 m²", volume: "großer Container", team: "3–4 Personen", days: "2 Tage" },
+  { size: "Einfamilienhaus", sqm: "ab 120 m² + Keller", volume: "mehrere Container", team: "4+ Personen", days: "2–4 Tage" },
 ];
 
 const FACTORS = [
   { icon: Home, title: "Wohnungsgröße & Stockwerk", text: "Mehr Quadratmeter und höhere Etagen ohne Aufzug erhöhen Personal- und Zeitaufwand." },
-  { icon: Truck, title: "Müllmenge & Containergröße", text: "Die Entsorgungsmenge (in m³) bestimmt Container­miete und Deponiegebühren – oft 20–35 % der Endkosten." },
+  { icon: Truck, title: "Müllmenge & Containergröße", text: "Die Entsorgungsmenge (in m³) bestimmt Container­miete und Deponiegebühren – einer der größten Einzelposten." },
   { icon: Recycle, title: "Sondermüll & Sperrgut", text: "Elektrogeräte, Farben, Öle oder Klaviere müssen separat fachgerecht entsorgt werden." },
-  { icon: Euro, title: "Wertanrechnung", text: "Verwertbare Möbel, Antiquitäten oder Elektronik reduzieren Ihren Endpreis – manchmal um mehrere hundert Euro." },
+  { icon: Euro, title: "Wertanrechnung", text: "Verwertbare Möbel, Antiquitäten oder Elektronik reduzieren Ihren Endpreis spürbar." },
 ];
 
 const FAQS = [
   {
-    q: "Was kostet eine Wohnungsauflösung in NRW im Schnitt?",
-    a: "Für eine durchschnittliche 2- bis 3-Zimmer-Wohnung in NRW liegen die Kosten typischerweise zwischen 1.200 € und 2.500 € inklusive Entsorgung, besenrein und mit transparenter Festpreis-Garantie.",
+    q: "Was kostet eine Wohnungsauflösung in NRW?",
+    a: "Einen Pauschalpreis gibt es nicht: Größe, Müllmenge, Sondermüll und Zugänglichkeit bestimmen den Aufwand. Nach der kostenlosen Besichtigung erhalten Sie ein schriftliches Festpreisangebot inklusive Entsorgung und besenreiner Übergabe.",
   },
   {
     q: "Wie funktioniert die Wertanrechnung?",
@@ -39,6 +39,7 @@ const FAQS = [
     a: "Bei Bedürftigkeit (z. B. nach Todesfall mittelloser Personen oder bei Sozialhilfe-Bezug) übernimmt das Sozialamt die Kosten ganz oder teilweise. Wir stellen gerne entsprechende Kostenvoranschläge aus.",
   },
 ];
+
 
 export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung")({
   component: KostenGuide,
@@ -112,39 +113,44 @@ function KostenGuide() {
       <article className="prose prose-lg max-w-4xl mx-auto">
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-            Kurz &amp; ehrlich: So viel kostet eine Wohnungsauflösung
+            Kurz &amp; ehrlich: Was den Preis bestimmt
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Eine professionelle Wohnungsauflösung in NRW kostet im Jahr 2026 zwischen
-            <strong> 590 € für ein 1-Zimmer-Apartment </strong> und
-            <strong> 5.900 € für ein voll möbliertes Einfamilienhaus</strong>.
-            Der exakte Preis hängt von vier Faktoren ab: Wohnungsgröße, Müllmenge,
-            Sondermüll und der möglichen Wertanrechnung verwertbarer Gegenstände.
-            Entlastium arbeitet ausschließlich mit transparenten Festpreisen – nach
-            der kostenlosen Besichtigung wissen Sie genau, was Sie zahlen.
+            Die Kosten einer Wohnungsauflösung in NRW lassen sich nicht pauschal
+            beziffern. Der Preis hängt von vier Faktoren ab: Wohnungsgröße,
+            Müllmenge, Sondermüll und der möglichen Wertanrechnung verwertbarer
+            Gegenstände. Entlastium arbeitet ausschließlich mit transparenten
+            Festpreisen – nach der kostenlosen Besichtigung wissen Sie genau, was
+            Sie zahlen.
           </p>
         </section>
 
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
-            Preistabelle nach Wohnungsgröße (NRW 2026)
+            Aufwands-Übersicht nach Wohnungsgröße (NRW)
           </h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Statt Pauschalpreisen zeigen wir Ihnen, welcher Aufwand hinter einem
+            Objekt steckt – genau daraus entsteht Ihr individueller Festpreis.
+          </p>
           <div className="overflow-x-auto rounded-xl border border-border">
             <table className="w-full text-left">
               <thead className="bg-muted">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Objektgröße</th>
                   <th className="px-4 py-3 font-semibold">Fläche</th>
-                  <th className="px-4 py-3 font-semibold">Festpreis (von – bis)</th>
+                  <th className="px-4 py-3 font-semibold">Entsorgungsvolumen</th>
+                  <th className="px-4 py-3 font-semibold">Team</th>
                   <th className="px-4 py-3 font-semibold">Dauer</th>
                 </tr>
               </thead>
               <tbody>
-                {PRICE_TABLE.map((row) => (
+                {EFFORT_TABLE.map((row) => (
                   <tr key={row.size} className="border-t border-border">
                     <td className="px-4 py-3 font-medium">{row.size}</td>
                     <td className="px-4 py-3 text-muted-foreground">{row.sqm}</td>
-                    <td className="px-4 py-3 font-semibold text-primary">{row.price}</td>
+                    <td className="px-4 py-3 font-semibold text-primary">{row.volume}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.team}</td>
                     <td className="px-4 py-3 text-muted-foreground">{row.days}</td>
                   </tr>
                 ))}
@@ -152,10 +158,11 @@ function KostenGuide() {
             </table>
           </div>
           <p className="text-sm text-muted-foreground mt-3">
-            Preise inkl. Personal, Fahrzeuge, Containermiete, Deponiegebühren und
-            besenreine Übergabe. Stand: Juni 2026, gültig für ganz NRW.
+            Im Festpreis enthalten: Personal, Fahrzeuge, Containermiete,
+            Deponiegebühren und besenreine Übergabe. Gültig für ganz NRW.
           </p>
         </section>
+
 
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
@@ -197,34 +204,36 @@ function KostenGuide() {
           </ul>
           <p className="text-muted-foreground leading-relaxed">
             Der ermittelte Restwert wird <strong>direkt vom Angebot abgezogen</strong>.
-            In Einzelfällen reduziert sich der Endpreis um 30–60 % – bei nachlassreichen
-            Haushalten gelegentlich sogar auf 0 €.
+            Bei nachlassreichen Haushalten kann das den Endpreis deutlich senken –
+            in seltenen Fällen bis zur vollständigen Verrechnung.
           </p>
         </section>
 
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-            Typische Zusatzkosten – und wie Sie sie vermeiden
+            Typische Zusatzposten – und wie Sie sie vermeiden
           </h2>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Sondermüll:</span>
               <span className="text-muted-foreground">
-                Farben, Lacke, Altöl, Asbest – ca. 1,50–4 € pro Kilo, je nach Stoff.
+                Farben, Lacke, Altöl, Asbest – Abrechnung nach Menge und Stoffart.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Elektrogroßgeräte:</span>
               <span className="text-muted-foreground">
-                Kühlschrank, Waschmaschine: 25–60 € pro Gerät bei separater Entsorgung.
+                Kühlschrank, Waschmaschine &amp; Co. erfordern getrennte, fachgerechte
+                Entsorgung.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Schwerlasten:</span>
               <span className="text-muted-foreground">
-                Klavier, Tresor, Wasserbett: 150–400 € je nach Stockwerk &amp; Demontage.
+                Klavier, Tresor, Wasserbett: zusätzlicher Demontage- und Trageaufwand.
               </span>
             </li>
+
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Anfahrt:</span>
               <span className="text-muted-foreground">

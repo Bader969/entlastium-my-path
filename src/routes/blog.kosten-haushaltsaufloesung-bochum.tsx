@@ -6,20 +6,21 @@ import { CheckCircle, Euro, Home, Truck, Recycle, MapPin, ArrowRight } from "luc
 
 const CANONICAL = "https://entlastium.de/blog/kosten-haushaltsaufloesung-bochum";
 
-const PRICE_TABLE = [
-  { size: "1-Zimmer-Wohnung", sqm: "ca. 20–35 m²", price: "590 – 1.290 €", days: "1 Tag" },
-  { size: "2-Zimmer-Wohnung", sqm: "ca. 40–60 m²", price: "990 – 1.890 €", days: "1 Tag" },
-  { size: "3-Zimmer-Wohnung", sqm: "ca. 65–85 m²", price: "1.490 – 2.690 €", days: "1–2 Tage" },
-  { size: "4-Zimmer-Wohnung", sqm: "ca. 85–110 m²", price: "1.990 – 3.490 €", days: "2 Tage" },
-  { size: "Einfamilienhaus", sqm: "ab 120 m² + Keller", price: "2.890 – 5.900 €", days: "2–4 Tage" },
+const EFFORT_TABLE = [
+  { size: "1-Zimmer-Wohnung", sqm: "ca. 20–35 m²", volume: "kleiner Container", days: "1 Tag", team: "2 Personen" },
+  { size: "2-Zimmer-Wohnung", sqm: "ca. 40–60 m²", volume: "mittlerer Container", days: "1 Tag", team: "2–3 Personen" },
+  { size: "3-Zimmer-Wohnung", sqm: "ca. 65–85 m²", volume: "großer Container", days: "1–2 Tage", team: "3 Personen" },
+  { size: "4-Zimmer-Wohnung", sqm: "ca. 85–110 m²", volume: "großer Container", days: "2 Tage", team: "3–4 Personen" },
+  { size: "Einfamilienhaus", sqm: "ab 120 m² + Keller", volume: "mehrere Container", days: "2–4 Tage", team: "4+ Personen" },
 ];
 
 const FACTORS = [
   { icon: Home, title: "Wohnungsgröße & Stockwerk", text: "Altbauten in Bochum-Ehrenfeld oder im Stahlhauser Viertel haben oft kein Aufzug – das erhöht Personal- und Zeitaufwand." },
-  { icon: Truck, title: "Müllmenge & Containergröße", text: "Die Entsorgungsmenge bestimmt Containermiete sowie Gebühren beim USB Bochum – oft 20–35 % der Endkosten." },
+  { icon: Truck, title: "Müllmenge & Containergröße", text: "Die Entsorgungsmenge bestimmt Containermiete sowie Gebühren beim USB Bochum – einer der größten Einzelposten." },
   { icon: Recycle, title: "Sondermüll & Sperrgut", text: "Elektrogeräte, Farben, Öle oder Klaviere müssen über zertifizierte Entsorger im Ruhrgebiet fachgerecht entsorgt werden." },
-  { icon: Euro, title: "Wertanrechnung", text: "Verwertbare Möbel, Antiquitäten oder Elektronik reduzieren Ihren Endpreis in Bochum – oft um mehrere hundert Euro." },
+  { icon: Euro, title: "Wertanrechnung", text: "Verwertbare Möbel, Antiquitäten oder Elektronik reduzieren Ihren Endpreis in Bochum spürbar." },
 ];
+
 
 const BOCHUM_DISTRICTS = [
   "Bochum-Mitte", "Wattenscheid", "Langendreer", "Werne", "Querenburg",
@@ -29,12 +30,13 @@ const BOCHUM_DISTRICTS = [
 const FAQS = [
   {
     q: "Was kostet eine Haushaltsauflösung in Bochum?",
-    a: "Für eine durchschnittliche 2- bis 3-Zimmer-Wohnung in Bochum liegen die Kosten 2026 zwischen 1.200 € und 2.500 € inklusive Entsorgung, besenrein und mit transparenter Festpreis-Garantie. Bei Wertanrechnung verwertbarer Gegenstände kann sich der Preis deutlich reduzieren.",
+    a: "Einen pauschalen Preis gibt es nicht – entscheidend sind Wohnungsgröße, Müllmenge, Sondermüllanteil und Zugänglichkeit. Nach einer kostenlosen Besichtigung in Bochum erhalten Sie ein schriftliches Festpreisangebot inklusive Entsorgung und besenreiner Übergabe.",
   },
   {
-    q: "Was kostet eine Entrümpelung in Bochum pro m²?",
-    a: "Als grober Richtwert: Eine Entrümpelung in Bochum kostet zwischen 25 € und 45 € pro m² – abhängig vom Füllgrad, Stockwerk und Sondermüllanteil. Bei wenig Müllvolumen kann der Preis darunter liegen.",
+    q: "Wie wird der Preis für eine Entrümpelung in Bochum berechnet?",
+    a: "Wir kalkulieren nach Aufwand: Füllgrad der Räume, Volumen des zu entsorgenden Materials, Stockwerk und Zugang, Sondermüll sowie der Restwert verwertbarer Gegenstände. Daraus entsteht ein Festpreis – keine Stundenabrechnung.",
   },
+
   {
     q: "Wie funktioniert die Wertanrechnung bei einer Haushaltsauflösung in Bochum?",
     a: "Bei der kostenlosen Besichtigung in Bochum bewerten wir verwertbare Gegenstände wie Möbel, Schmuck, Sammlerstücke oder hochwertige Elektronik. Der ermittelte Restwert wird direkt vom Angebot abgezogen – Sie zahlen also nur die Differenz.",
@@ -129,10 +131,8 @@ function KostenBochumGuide() {
             Kurz &amp; ehrlich: Haushaltsauflösung in Bochum
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Eine professionelle Haushaltsauflösung in Bochum kostet 2026 zwischen
-            <strong> 590 € für ein 1-Zimmer-Apartment </strong> und
-            <strong> 5.900 € für ein voll möbliertes Einfamilienhaus</strong>.
-            Der exakte Preis hängt von vier Faktoren ab: Wohnungsgröße, Müllmenge,
+            Die Kosten einer Haushaltsauflösung in Bochum lassen sich nicht pauschal
+            benennen – sie hängen von vier Faktoren ab: Wohnungsgröße, Müllmenge,
             Sondermüll und der möglichen Wertanrechnung verwertbarer Gegenstände.
             Entlastium arbeitet in Bochum ausschließlich mit transparenten
             Festpreisen – nach der kostenlosen Besichtigung wissen Sie genau, was
@@ -142,24 +142,30 @@ function KostenBochumGuide() {
 
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
-            Preistabelle: Entrümpelung &amp; Haushaltsauflösung Bochum 2026
+            Aufwands-Übersicht: Entrümpelung &amp; Haushaltsauflösung in Bochum
           </h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Statt Pauschalpreisen zeigen wir Ihnen, welcher Aufwand hinter einem
+            Objekt steckt – genau daraus entsteht Ihr individueller Festpreis.
+          </p>
           <div className="overflow-x-auto rounded-xl border border-border">
             <table className="w-full text-left">
               <thead className="bg-muted">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Objektgröße</th>
                   <th className="px-4 py-3 font-semibold">Fläche</th>
-                  <th className="px-4 py-3 font-semibold">Festpreis (von – bis)</th>
+                  <th className="px-4 py-3 font-semibold">Entsorgungsvolumen</th>
+                  <th className="px-4 py-3 font-semibold">Team</th>
                   <th className="px-4 py-3 font-semibold">Dauer</th>
                 </tr>
               </thead>
               <tbody>
-                {PRICE_TABLE.map((row) => (
+                {EFFORT_TABLE.map((row) => (
                   <tr key={row.size} className="border-t border-border">
                     <td className="px-4 py-3 font-medium">{row.size}</td>
                     <td className="px-4 py-3 text-muted-foreground">{row.sqm}</td>
-                    <td className="px-4 py-3 font-semibold text-primary">{row.price}</td>
+                    <td className="px-4 py-3 font-semibold text-primary">{row.volume}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.team}</td>
                     <td className="px-4 py-3 text-muted-foreground">{row.days}</td>
                   </tr>
                 ))}
@@ -167,11 +173,12 @@ function KostenBochumGuide() {
             </table>
           </div>
           <p className="text-sm text-muted-foreground mt-3">
-            Preise inkl. Personal, Fahrzeuge, Containermiete, USB-Deponiegebühren
-            und besenreine Übergabe. Stand: Juni 2026, gültig für Bochum und das
+            Im Festpreis enthalten: Personal, Fahrzeuge, Containermiete,
+            USB-Deponiegebühren und besenreine Übergabe. Gültig für Bochum und das
             gesamte Ruhrgebiet.
           </p>
         </section>
+
 
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
@@ -216,34 +223,35 @@ function KostenBochumGuide() {
           </ul>
           <p className="text-muted-foreground leading-relaxed">
             Der ermittelte Restwert wird <strong>direkt vom Angebot abgezogen</strong>.
-            In Einzelfällen reduziert sich der Endpreis um 30–60 % – bei
-            nachlassreichen Haushalten in Bochum gelegentlich sogar auf 0 €.
+            Bei nachlassreichen Haushalten in Bochum kann das den Endpreis deutlich
+            senken – in seltenen Fällen bis zur vollständigen Verrechnung.
           </p>
         </section>
 
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-            Typische Zusatzkosten in Bochum – und wie Sie sie vermeiden
+            Typische Zusatzposten in Bochum – und wie Sie sie vermeiden
           </h2>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Sondermüll:</span>
               <span className="text-muted-foreground">
-                Farben, Lacke, Altöl, Asbest – ca. 1,50–4 € pro Kilo, Abgabe am
-                USB-Wertstoffhof Bochum.
+                Farben, Lacke, Altöl, Asbest – gesonderte Abgabe am
+                USB-Wertstoffhof Bochum, wird nach Menge und Stoffart berechnet.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Elektrogroßgeräte:</span>
               <span className="text-muted-foreground">
-                Kühlschrank, Waschmaschine: 25–60 € pro Gerät bei separater Entsorgung.
+                Kühlschrank, Waschmaschine &amp; Co. erfordern getrennte, fachgerechte
+                Entsorgung.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Schwerlasten:</span>
               <span className="text-muted-foreground">
-                Klavier, Tresor, Wasserbett: 150–400 € je nach Stockwerk &amp; Demontage –
-                in Bochumer Altbauten ohne Aufzug öfter relevant.
+                Klavier, Tresor, Wasserbett: zusätzlicher Demontage- und
+                Trageaufwand – in Bochumer Altbauten ohne Aufzug öfter relevant.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -255,11 +263,12 @@ function KostenBochumGuide() {
             <li className="flex items-start gap-3">
               <span className="font-semibold text-primary min-w-[180px]">Halteverbotszone:</span>
               <span className="text-muted-foreground">
-                In engen Straßen (z. B. Bermuda3Eck, Innenstadt) ca. 80–150 € –
-                wir kümmern uns um die Beantragung beim Ordnungsamt Bochum.
+                In engen Straßen (z. B. Bermuda3Eck, Innenstadt) nötig – wir
+                kümmern uns um die Beantragung beim Ordnungsamt Bochum.
               </span>
             </li>
           </ul>
+
         </section>
 
         <section className="mb-12">
