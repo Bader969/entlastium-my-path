@@ -80,9 +80,9 @@ export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung-bochum")(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: "Haushaltsauflösung Bochum: Was kostet sie 2026?",
+          headline: "Bochum | Entlastium Entrümpelung & Haushaltsauflösungen",
           description:
-            "Transparenter Preisguide 2026 für Haushaltsauflösungen und Entrümpelungen in Bochum.",
+            "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.",
           author: { "@type": "Organization", name: "Entlastium" },
           publisher: {
             "@type": "Organization",
