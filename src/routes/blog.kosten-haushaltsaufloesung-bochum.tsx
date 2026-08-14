@@ -6,20 +6,21 @@ import { CheckCircle, Euro, Home, Truck, Recycle, MapPin, ArrowRight } from "luc
 
 const CANONICAL = "https://entlastium.de/blog/kosten-haushaltsaufloesung-bochum";
 
-const PRICE_TABLE = [
-  { size: "1-Zimmer-Wohnung", sqm: "ca. 20–35 m²", price: "590 – 1.290 €", days: "1 Tag" },
-  { size: "2-Zimmer-Wohnung", sqm: "ca. 40–60 m²", price: "990 – 1.890 €", days: "1 Tag" },
-  { size: "3-Zimmer-Wohnung", sqm: "ca. 65–85 m²", price: "1.490 – 2.690 €", days: "1–2 Tage" },
-  { size: "4-Zimmer-Wohnung", sqm: "ca. 85–110 m²", price: "1.990 – 3.490 €", days: "2 Tage" },
-  { size: "Einfamilienhaus", sqm: "ab 120 m² + Keller", price: "2.890 – 5.900 €", days: "2–4 Tage" },
+const EFFORT_TABLE = [
+  { size: "1-Zimmer-Wohnung", sqm: "ca. 20–35 m²", volume: "kleiner Container", days: "1 Tag", team: "2 Personen" },
+  { size: "2-Zimmer-Wohnung", sqm: "ca. 40–60 m²", volume: "mittlerer Container", days: "1 Tag", team: "2–3 Personen" },
+  { size: "3-Zimmer-Wohnung", sqm: "ca. 65–85 m²", volume: "großer Container", days: "1–2 Tage", team: "3 Personen" },
+  { size: "4-Zimmer-Wohnung", sqm: "ca. 85–110 m²", volume: "großer Container", days: "2 Tage", team: "3–4 Personen" },
+  { size: "Einfamilienhaus", sqm: "ab 120 m² + Keller", volume: "mehrere Container", days: "2–4 Tage", team: "4+ Personen" },
 ];
 
 const FACTORS = [
   { icon: Home, title: "Wohnungsgröße & Stockwerk", text: "Altbauten in Bochum-Ehrenfeld oder im Stahlhauser Viertel haben oft kein Aufzug – das erhöht Personal- und Zeitaufwand." },
-  { icon: Truck, title: "Müllmenge & Containergröße", text: "Die Entsorgungsmenge bestimmt Containermiete sowie Gebühren beim USB Bochum – oft 20–35 % der Endkosten." },
+  { icon: Truck, title: "Müllmenge & Containergröße", text: "Die Entsorgungsmenge bestimmt Containermiete sowie Gebühren beim USB Bochum – einer der größten Einzelposten." },
   { icon: Recycle, title: "Sondermüll & Sperrgut", text: "Elektrogeräte, Farben, Öle oder Klaviere müssen über zertifizierte Entsorger im Ruhrgebiet fachgerecht entsorgt werden." },
-  { icon: Euro, title: "Wertanrechnung", text: "Verwertbare Möbel, Antiquitäten oder Elektronik reduzieren Ihren Endpreis in Bochum – oft um mehrere hundert Euro." },
+  { icon: Euro, title: "Wertanrechnung", text: "Verwertbare Möbel, Antiquitäten oder Elektronik reduzieren Ihren Endpreis in Bochum spürbar." },
 ];
+
 
 const BOCHUM_DISTRICTS = [
   "Bochum-Mitte", "Wattenscheid", "Langendreer", "Werne", "Querenburg",
