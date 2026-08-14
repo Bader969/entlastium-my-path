@@ -88,7 +88,7 @@ function StadtPage() {
     },
     {
       q: `Was kostet eine Haushaltsauflösung in ${city.name}?`,
-      a: `Die Kosten richten sich nach Größe und Aufwand des Objekts. Eine 3-Zimmer-Wohnung in ${city.name} liegt typischerweise zwischen 800 € und 2.500 € — bei Wertanrechnung verwertbarer Gegenstände auch deutlich günstiger.`,
+      a: `Die Kosten richten sich nach Größe, Menge und Zugänglichkeit des Objekts in ${city.name}. Nach der kostenlosen Besichtigung erhalten Sie ein verbindliches Festpreisangebot – bei Wertanrechnung verwertbarer Gegenstände auch günstiger.`,
     },
     {
       q: `Welche Stadtteile von ${city.name} bedienen Sie?`,
