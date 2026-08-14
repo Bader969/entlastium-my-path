@@ -44,18 +44,18 @@ export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung")({
   component: KostenGuide,
   head: () => ({
     meta: [
-      { title: "Was kostet eine Wohnungsauflösung? Preise 2026 in NRW" },
+      { title: "Preise 2026 | Entlastium Entrümpelung & Haushaltsauflösungen" },
       {
         name: "description",
         content:
-          "Preisguide 2026: Was kostet eine Wohnungs- oder Haushaltsauflösung in NRW? Festpreise nach Wohnungsgröße, Kostenfaktoren & Wertanrechnung.",
+          "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.",
 
       },
-      { property: "og:title", content: "Was kostet eine Wohnungsauflösung? Preise 2026 in NRW" },
+      { property: "og:title", content: "Preise 2026 | Entlastium Entrümpelung & Haushaltsauflösungen" },
       {
         property: "og:description",
         content:
-          "Festpreise nach Wohnungsgröße, alle Kostenfaktoren und wie die Wertanrechnung Ihren Preis senkt – der Ratgeber von Entlastium.",
+          "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: CANONICAL },
@@ -67,9 +67,9 @@ export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: "Was kostet eine Wohnungsauflösung? Preise 2026 in NRW",
+          headline: "Preise 2026 | Entlastium Entrümpelung & Haushaltsauflösungen",
           description:
-            "Transparenter Preisguide 2026 für Wohnungsauflösungen und Haushaltsauflösungen in NRW.",
+            "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.",
           author: { "@type": "Organization", name: "Entlastium" },
           publisher: {
             "@type": "Organization",

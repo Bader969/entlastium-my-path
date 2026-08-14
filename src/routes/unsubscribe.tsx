@@ -5,18 +5,18 @@ export const Route = createFileRoute('/unsubscribe')({
   component: UnsubscribePage,
   head: () => ({
     meta: [
-      { title: 'Abmelden – Entlastium' },
+      { title: 'Abmelden | Entlastium Entrümpelung & Haushaltsauflösungen' },
       {
         name: 'description',
         content:
-          'Melden Sie sich sicher von E-Mail-Benachrichtigungen von Entlastium ab. Bestätigen Sie Ihre Abmeldung über den Link in Ihrer E-Mail.',
+          'Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.',
       },
       { name: 'robots', content: 'noindex,nofollow' },
-      { property: 'og:title', content: 'Abmelden – Entlastium' },
+      { property: 'og:title', content: 'Abmelden | Entlastium Entrümpelung & Haushaltsauflösungen' },
       {
         property: 'og:description',
         content:
-          'Melden Sie sich von E-Mail-Benachrichtigungen von Entlastium ab.',
+          'Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.',
       },
       { property: 'og:url', content: 'https://entlastium.de/unsubscribe' },
     ],

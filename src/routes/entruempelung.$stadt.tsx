@@ -17,8 +17,9 @@ export const Route = createFileRoute("/entruempelung/$stadt")({
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
     const { city } = loaderData;
-    const title = `Entrümpelung ${city.name} ab 250 € – Entlastium`;
-    const description = `Professionelle Entrümpelung & Haushaltsauflösung in ${city.name}. ✓ Kostenlose Besichtigung ✓ Faire Festpreise ✓ Wertanrechnung ✓ 24h erreichbar. Jetzt anfragen!`;
+    const title = `Entrümpelung ${city.name} | Entlastium Entrümpelung & Haushaltsauflösungen`;
+    const description =
+      "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.";
     const url = `${BASE_URL}/entruempelung/${params.stadt}`;
     return {
       meta: [

@@ -6,9 +6,9 @@ const BASE_URL = "https://entlastium.de";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => {
-    const title = "Kontakt – Kostenlose Besichtigung anfragen | Entlastium";
+    const title = "Kontakt | Entlastium Entrümpelung & Haushaltsauflösungen";
     const description =
-      "Kontaktieren Sie Entlastium für Ihre Entrümpelung in NRW. Telefon, E-Mail oder Online-Formular. Wir antworten innerhalb von 24 Stunden.";
+      "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.";
     const url = `${BASE_URL}/kontakt`;
     return {
       meta: [
