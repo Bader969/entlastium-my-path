@@ -45,14 +45,14 @@ export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung")({
   component: KostenGuide,
   head: () => ({
     meta: [
-      { title: "Preise 2026 | Entlastium Entrümpelung & Haushaltsauflösungen" },
+      { title: "Preise 2026 | Entlastium" },
       {
         name: "description",
         content:
           "Ratgeber: Was beeinflusst den Aufwand einer Haushaltsauflösung in NRW? Fläche, Entsorgungsvolumen, Teamgröße und Dauer im Überblick – plus Wertanrechnung.",
 
       },
-      { property: "og:title", content: "Preise 2026 | Entlastium Entrümpelung & Haushaltsauflösungen" },
+      { property: "og:title", content: "Preise 2026 | Entlastium" },
       {
         property: "og:description",
         content:
@@ -68,7 +68,7 @@ export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: "Preise 2026 | Entlastium Entrümpelung & Haushaltsauflösungen",
+          headline: "Preise 2026 | Entlastium",
           description:
             "Ratgeber: Was beeinflusst den Aufwand einer Haushaltsauflösung in NRW? Fläche, Entsorgungsvolumen, Teamgröße und Dauer im Überblick – plus Wertanrechnung.",
           author: { "@type": "Organization", name: "Entlastium" },
