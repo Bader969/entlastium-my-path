@@ -59,14 +59,14 @@ export const Route = createFileRoute("/blog/kosten-haushaltsaufloesung-bochum")(
   component: KostenBochumGuide,
   head: () => ({
     meta: [
-      { title: "Bochum | Entlastium Entrümpelung & Haushaltsauflösungen" },
+      { title: "Haushaltsauflösung Bochum: Kosten & Aufwand | Entlastium" },
       {
         name: "description",
         content:
           "Ratgeber für Bochum: Aufwand einer Haushaltsauflösung realistisch einschätzen – Objektgrößen, Entsorgungswege, Teamgröße, Dauer und Wertanrechnung.",
 
       },
-      { property: "og:title", content: "Bochum | Entlastium Entrümpelung & Haushaltsauflösungen" },
+      { property: "og:title", content: "Haushaltsauflösung Bochum: Kosten & Aufwand im Überblick" },
       {
         property: "og:description",
         content:
