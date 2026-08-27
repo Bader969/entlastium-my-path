@@ -8,7 +8,7 @@ const BASE_URL = "https://entlastium.de";
 
 export const Route = createFileRoute("/staedte")({
   head: () => {
-    const title = "Städte | Entlastium Entrümpelung & Haushaltsauflösungen";
+    const title = "Städte | Entlastium";
     const description =
       "Übersicht aller Städte in NRW, in denen Entlastium Entrümpelungen und Haushaltsauflösungen durchführt – mit Direktlink zu Ihrer Stadt.";
     const url = `${BASE_URL}/staedte`;

@@ -7,7 +7,7 @@ const BASE_URL = "https://entlastium.de";
 
 export const Route = createFileRoute("/faq")({
   head: () => {
-    const title = "FAQ | Entlastium Entrümpelung & Haushaltsauflösungen";
+    const title = "FAQ | Entlastium";
     const description =
       "Antworten auf häufige Fragen zu Entrümpelung und Haushaltsauflösung: Ablauf, Termine, Wertanrechnung, Entsorgung von Sondermüll und besenreine Übergabe.";
     const url = `${BASE_URL}/faq`;

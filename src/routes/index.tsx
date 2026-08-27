@@ -13,9 +13,9 @@ const FAQS = [
 
 export const Route = createFileRoute("/")({
   head: () => {
-    const title = "Entlastium Entrümpelung & Haushaltsauflösungen";
+    const title = "Entlastium | Entrümpelung & Haushaltsauflösung NRW";
     const description =
-      "Professionelle Entrümpelung mit System & Erfahrung Wir sind ein dynamisches Unternehmen, das frischen Wind in die Branche bringt – fundiert durch langjährige Erfahrung und tiefe Fachkenntnis im Bereich der Entrümpelung. Unser Team besteht aus eingespielten Profis, die wissen, worauf es ankommt: Diskretion, Schnelligkeit und absolute Zuverlässigkeit. Wir schaffen Raum für das, was zählt – professionell, termingerecht und mit höchster Sorgfalt.";
+      "Professionelle Entrümpelung & Haushaltsauflösung in Nordrhein-Westfalen. Kostenlose Besichtigung, transparenter Festpreis, besenreine Übergabe.";
     return {
       links: [
         { rel: "canonical", href: "https://entlastium.de/" },

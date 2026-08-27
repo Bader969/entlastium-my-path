@@ -7,7 +7,7 @@ const BASE_URL = "https://entlastium.de";
 
 export const Route = createFileRoute("/leistungen")({
   head: () => {
-    const title = "Leistungen | Entlastium Entrümpelung & Haushaltsauflösungen";
+    const title = "Leistungen | Entlastium";
     const description =
       "Alle Leistungen von Entlastium im Überblick: Entrümpelung, Haushaltsauflösung, Kellerräumung, Gartenräumung, Endreinigung und Wohnungsübergabe in NRW.";
     const url = `${BASE_URL}/leistungen`;
