@@ -6,7 +6,7 @@ const BASE_URL = "https://entlastium.de";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => {
-    const title = "Kontakt | Entlastium Entrümpelung & Haushaltsauflösungen";
+    const title = "Kontakt | Entlastium";
     const description =
       "Kontakt zu Entlastium: kostenlose Besichtigung anfragen, telefonisch oder per Formular. Adlerstr. 14, 44577 Castrop-Rauxel – Mo–Fr 8–18 Uhr, Sa 10–14 Uhr.";
     const url = `${BASE_URL}/kontakt`;

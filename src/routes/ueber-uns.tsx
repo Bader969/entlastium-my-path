@@ -6,7 +6,7 @@ const BASE_URL = "https://entlastium.de";
 
 export const Route = createFileRoute("/ueber-uns")({
   head: () => {
-    const title = "Über uns | Entlastium Entrümpelung & Haushaltsauflösungen";
+    const title = "Über uns | Entlastium";
     const description =
       "Wer hinter Entlastium steht: eingespieltes Team, eigene Fahrzeuge, Diskretion und termingerechte Abwicklung von Entrümpelungen in NRW.";
     const url = `${BASE_URL}/ueber-uns`;

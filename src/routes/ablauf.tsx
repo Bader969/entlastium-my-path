@@ -6,7 +6,7 @@ const BASE_URL = "https://entlastium.de";
 
 export const Route = createFileRoute("/ablauf")({
   head: () => {
-    const title = "Ablauf | Entlastium Entrümpelung & Haushaltsauflösungen";
+    const title = "Ablauf | Entlastium";
     const description =
       "So läuft Ihre Entrümpelung ab: kostenlose Besichtigung, Festpreisangebot, Räumung mit eigenem Team und besenreine Übergabe – Schritt für Schritt erklärt.";
     const url = `${BASE_URL}/ablauf`;
