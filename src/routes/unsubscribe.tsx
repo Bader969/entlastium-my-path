@@ -5,14 +5,14 @@ export const Route = createFileRoute('/unsubscribe')({
   component: UnsubscribePage,
   head: () => ({
     meta: [
-      { title: 'Abmelden | Entlastium Entrümpelung & Haushaltsauflösungen' },
+      { title: 'Abmelden | Entlastium' },
       {
         name: 'description',
         content:
           'E-Mail-Benachrichtigungen von Entlastium abbestellen – Abmeldung vom Versand in wenigen Sekunden.',
       },
       { name: 'robots', content: 'noindex,nofollow' },
-      { property: 'og:title', content: 'Abmelden | Entlastium Entrümpelung & Haushaltsauflösungen' },
+      { property: 'og:title', content: 'Abmelden | Entlastium' },
       {
         property: 'og:description',
         content:

@@ -17,7 +17,7 @@ export const Route = createFileRoute("/entruempelung/$stadt")({
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
     const { city } = loaderData;
-    const title = `Entrümpelung ${city.name} | Entlastium Entrümpelung & Haushaltsauflösungen`;
+    const title = `Entrümpelung ${city.name} | Entlastium`;
     const description = `Entrümpelung & Haushaltsauflösung in ${city.name} (PLZ ${city.plzPrefix}): kostenlose Besichtigung, transparentes Festpreisangebot, Wertanrechnung und besenreine Übergabe – lokales Team im ${city.region}.`;
     const url = `${BASE_URL}/entruempelung/${params.stadt}`;
     return {
