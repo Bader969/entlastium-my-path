@@ -7,7 +7,7 @@ import { NRW_CITIES } from "@/data/nrw-cities";
 const BASE_URL = "https://entlastium.de";
 
 export function buildServiceHead(service: ServiceData) {
-  const title = `${service.title} | Entlastium Entrümpelung & Haushaltsauflösungen`;
+  const title = `${service.title} | Entlastium`;
   const description = `${service.title} von Entlastium: ${service.description} Kostenlose Besichtigung, Festpreisangebot und fachgerechte Entsorgung in NRW.`;
   const url = `${BASE_URL}/leistungen/${service.slug}`;
   return {
