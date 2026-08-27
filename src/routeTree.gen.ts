@@ -22,6 +22,7 @@ import { Route as AgbRouteImport } from './routes/agb'
 import { Route as AblaufRouteImport } from './routes/ablauf'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LeistungenWohnungsuebergabeRouteImport } from './routes/leistungen.wohnungsuebergabe'
+import { Route as LeistungenWohnungsaufloesungRouteImport } from './routes/leistungen.wohnungsaufloesung'
 import { Route as LeistungenKellerraeumungRouteImport } from './routes/leistungen.kellerraeumung'
 import { Route as LeistungenHaushaltsaufloesungRouteImport } from './routes/leistungen.haushaltsaufloesung'
 import { Route as LeistungenGartenraeumungRouteImport } from './routes/leistungen.gartenraeumung'
@@ -101,6 +102,12 @@ const LeistungenWohnungsuebergabeRoute =
   LeistungenWohnungsuebergabeRouteImport.update({
     id: '/wohnungsuebergabe',
     path: '/wohnungsuebergabe',
+    getParentRoute: () => LeistungenRoute,
+  } as any)
+const LeistungenWohnungsaufloesungRoute =
+  LeistungenWohnungsaufloesungRouteImport.update({
+    id: '/wohnungsaufloesung',
+    path: '/wohnungsaufloesung',
     getParentRoute: () => LeistungenRoute,
   } as any)
 const LeistungenKellerraeumungRoute =
@@ -204,6 +211,7 @@ export interface FileRoutesByFullPath {
   '/leistungen/gartenraeumung': typeof LeistungenGartenraeumungRoute
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
   '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
+  '/leistungen/wohnungsaufloesung': typeof LeistungenWohnungsaufloesungRoute
   '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
   '/api/public/contact-submit': typeof ApiPublicContactSubmitRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -233,6 +241,7 @@ export interface FileRoutesByTo {
   '/leistungen/gartenraeumung': typeof LeistungenGartenraeumungRoute
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
   '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
+  '/leistungen/wohnungsaufloesung': typeof LeistungenWohnungsaufloesungRoute
   '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
   '/api/public/contact-submit': typeof ApiPublicContactSubmitRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -263,6 +272,7 @@ export interface FileRoutesById {
   '/leistungen/gartenraeumung': typeof LeistungenGartenraeumungRoute
   '/leistungen/haushaltsaufloesung': typeof LeistungenHaushaltsaufloesungRoute
   '/leistungen/kellerraeumung': typeof LeistungenKellerraeumungRoute
+  '/leistungen/wohnungsaufloesung': typeof LeistungenWohnungsaufloesungRoute
   '/leistungen/wohnungsuebergabe': typeof LeistungenWohnungsuebergabeRoute
   '/api/public/contact-submit': typeof ApiPublicContactSubmitRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -294,6 +304,7 @@ export interface FileRouteTypes {
     | '/leistungen/gartenraeumung'
     | '/leistungen/haushaltsaufloesung'
     | '/leistungen/kellerraeumung'
+    | '/leistungen/wohnungsaufloesung'
     | '/leistungen/wohnungsuebergabe'
     | '/api/public/contact-submit'
     | '/lovable/email/suppression'
@@ -323,6 +334,7 @@ export interface FileRouteTypes {
     | '/leistungen/gartenraeumung'
     | '/leistungen/haushaltsaufloesung'
     | '/leistungen/kellerraeumung'
+    | '/leistungen/wohnungsaufloesung'
     | '/leistungen/wohnungsuebergabe'
     | '/api/public/contact-submit'
     | '/lovable/email/suppression'
@@ -352,6 +364,7 @@ export interface FileRouteTypes {
     | '/leistungen/gartenraeumung'
     | '/leistungen/haushaltsaufloesung'
     | '/leistungen/kellerraeumung'
+    | '/leistungen/wohnungsaufloesung'
     | '/leistungen/wohnungsuebergabe'
     | '/api/public/contact-submit'
     | '/lovable/email/suppression'
@@ -477,6 +490,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LeistungenWohnungsuebergabeRouteImport
       parentRoute: typeof LeistungenRoute
     }
+    '/leistungen/wohnungsaufloesung': {
+      id: '/leistungen/wohnungsaufloesung'
+      path: '/wohnungsaufloesung'
+      fullPath: '/leistungen/wohnungsaufloesung'
+      preLoaderRoute: typeof LeistungenWohnungsaufloesungRouteImport
+      parentRoute: typeof LeistungenRoute
+    }
     '/leistungen/kellerraeumung': {
       id: '/leistungen/kellerraeumung'
       path: '/kellerraeumung'
@@ -584,6 +604,7 @@ interface LeistungenRouteChildren {
   LeistungenGartenraeumungRoute: typeof LeistungenGartenraeumungRoute
   LeistungenHaushaltsaufloesungRoute: typeof LeistungenHaushaltsaufloesungRoute
   LeistungenKellerraeumungRoute: typeof LeistungenKellerraeumungRoute
+  LeistungenWohnungsaufloesungRoute: typeof LeistungenWohnungsaufloesungRoute
   LeistungenWohnungsuebergabeRoute: typeof LeistungenWohnungsuebergabeRoute
 }
 
@@ -593,6 +614,7 @@ const LeistungenRouteChildren: LeistungenRouteChildren = {
   LeistungenGartenraeumungRoute: LeistungenGartenraeumungRoute,
   LeistungenHaushaltsaufloesungRoute: LeistungenHaushaltsaufloesungRoute,
   LeistungenKellerraeumungRoute: LeistungenKellerraeumungRoute,
+  LeistungenWohnungsaufloesungRoute: LeistungenWohnungsaufloesungRoute,
   LeistungenWohnungsuebergabeRoute: LeistungenWohnungsuebergabeRoute,
 }
 
