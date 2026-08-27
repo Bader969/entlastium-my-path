@@ -33,6 +33,30 @@ export const SERVICES: ServiceData[] = [
     ],
   },
   {
+    slug: "wohnungsaufloesung",
+    title: "Wohnungsauflösung",
+    shortTitle: "Wohnungsauflösung",
+    description:
+      "Vollständige Wohnungsauflösung für Mietwohnungen und Eigentumswohnungen — inklusive Entsorgung, Wertanrechnung und besenreiner Übergabe.",
+    intro:
+      "Eine Wohnungsauflösung steht meist unter Zeitdruck: Kündigungsfrist, Pflegeheim-Umzug oder Erbfall. Wir lösen Mietwohnungen und Eigentumswohnungen komplett auf — inklusive Keller, Dachbodenabteil und Tiefgaragenstellplatz. Aufzugslose Altbauten, engen Treppenhäusern und Halteverbotszonen begegnen wir mit eigener Ausrüstung und Erfahrung, damit die Wohnung fristgerecht an Vermieter, Hausverwaltung oder Käufer übergeben werden kann.",
+    features: [
+      "Auflösung von Miet- und Eigentumswohnungen inkl. Nebenräumen",
+      "Räumung ohne Aufzug und in engen Treppenhäusern",
+      "Auf Wunsch Halteverbotszone und Container organisiert",
+      "Wertanrechnung für Möbel, Elektrogeräte und Sammlerstücke",
+      "Fachgerechte Entsorgung von Sperr-, Elektro- und Sondermüll",
+      "Besenreine Übergabe, auf Wunsch mit Endreinigung",
+    ],
+    faq: [
+      { q: "Was ist der Unterschied zwischen Wohnungsauflösung und Haushaltsauflösung?", a: "Bei einer Wohnungsauflösung geht es um eine einzelne Wohnung samt Nebenräumen — eine Haushaltsauflösung umfasst häufig ein komplettes Haus mit Garage, Garten und Dachboden. Der Ablauf ist gleich, der Aufwand unterscheidet sich." },
+      { q: "Was kostet eine Wohnungsauflösung?", a: "Die Kosten hängen von Wohnfläche, Füllgrad, Etage und Zugänglichkeit ab. Nach der kostenlosen Besichtigung erhalten Sie ein verbindliches Festpreisangebot; verwertbare Gegenstände können angerechnet werden." },
+      { q: "Können Sie die Wohnung fristgerecht bis zum Mietende räumen?", a: "Ja. Nennen Sie uns Ihr Übergabedatum — bei kurzen Fristen planen wir größere Teams ein, in dringenden Fällen ist ein Termin binnen 48 Stunden möglich." },
+      { q: "Übernehmen Sie auch die Übergabe an den Vermieter?", a: "Auf Wunsch koordinieren wir den Übergabetermin, erstellen ein Protokoll und übergeben mit Vollmacht in Ihrem Namen." },
+    ],
+  },
+  {
+
     slug: "entruempelung",
     title: "Entrümpelung",
     shortTitle: "Entrümpelung",
