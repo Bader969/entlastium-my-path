@@ -99,7 +99,7 @@ const Header = () => {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-[64px] bottom-0 bg-primary transition-all duration-300 ${
+        className={`lg:hidden fixed inset-x-0 top-[64px] bottom-0 z-40 bg-primary transition-all duration-300 ${
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
