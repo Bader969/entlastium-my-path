@@ -28,6 +28,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
+    <>
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md">
       <div className="container-custom px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex items-center justify-between gap-4">
@@ -94,6 +95,7 @@ const Header = () => {
           </button>
         </div>
       </div>
+    </header>
 
       {/* Mobile Navigation Overlay */}
       <div
