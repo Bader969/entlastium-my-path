@@ -26,8 +26,24 @@ export function buildServiceHead(service: ServiceData) {
           "@context": "https://schema.org",
           "@type": "Service",
           name: service.title,
+          serviceType: service.title,
           description,
-          provider: { "@type": "LocalBusiness", name: "Entlastium" },
+          provider: {
+            "@type": "LocalBusiness",
+            "@id": `${BASE_URL}/#localbusiness`,
+            name: "Entlastium",
+            url: BASE_URL,
+            telephone: "+49 163 7948428",
+            image: `${BASE_URL}/favicon.png`,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Adlerstr. 14",
+              postalCode: "44577",
+              addressLocality: "Castrop-Rauxel",
+              addressRegion: "NRW",
+              addressCountry: "DE",
+            },
+          },
           areaServed: { "@type": "State", name: "Nordrhein-Westfalen" },
           url,
         }),
@@ -78,6 +94,17 @@ export function ServicePage({ service }: { service: ServiceData }) {
       </section>
 
       <section className="mb-12">
+        <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">So läuft Ihre {service.shortTitle} ab</h2>
+        <ol className="space-y-4 text-muted-foreground leading-relaxed">
+          <li><strong className="text-foreground">Kostenlose Besichtigung:</strong> Wir sehen uns die Räume vor Ort an, besprechen Ihre Wünsche und klären, welche Gegenstände bleiben, verwertet oder entsorgt werden sollen.</li>
+          <li><strong className="text-foreground">Verbindliches Festpreisangebot:</strong> Sie erhalten ein schriftliches Angebot ohne versteckte Kosten. Wertvolle Gegenstände können auf Wunsch angerechnet werden.</li>
+          <li><strong className="text-foreground">Durchführung durch unser Team:</strong> Zum vereinbarten Termin arbeiten wir sorgfältig und zügig, schützen Böden und Treppenhäuser und sortieren alles nach Wertstoffen.</li>
+          <li><strong className="text-foreground">Fachgerechte Entsorgung:</strong> Sperrmüll, Elektrogeräte und Sonderabfälle bringen wir zu zertifizierten Entsorgungsbetrieben – umweltgerecht und nach den gesetzlichen Vorgaben.</li>
+          <li><strong className="text-foreground">Besenreine Übergabe:</strong> Zum Abschluss übergeben wir Ihnen die Räume besenrein, auf Wunsch mit Endreinigung und Begleitung bei der Wohnungsübergabe.</li>
+        </ol>
+      </section>
+
+      <section className="mb-12">
         <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">Häufige Fragen</h2>
         <div className="space-y-4">
           {service.faq.map((f) => (
@@ -110,7 +137,7 @@ export function ServicePage({ service }: { service: ServiceData }) {
             href="/staedte"
             className="px-3 py-1.5 rounded-full bg-primary/10 text-primary hover:bg-primary/20 text-sm font-medium transition-colors"
           >
-            Alle Städte →
+            Alle Einsatzorte in NRW →
           </a>
         </div>
       </section>
@@ -125,7 +152,7 @@ export function ServicePage({ service }: { service: ServiceData }) {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Button variant="accent" size="lg" asChild>
             <a href="/kontakt">
-              Jetzt anfragen <ArrowRight className="ml-2 h-4 w-4" />
+              {service.shortTitle} anfragen <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
           <Button variant="outline-light" size="lg" asChild>
