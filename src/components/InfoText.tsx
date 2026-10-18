@@ -18,7 +18,47 @@ export default function InfoText({ blocks }: { blocks: Block[] }) {
 }
 
 export const INFO_TEXTS = {
+  staedte: [
+    {
+      heading: "Entrümpelung in ganz Nordrhein-Westfalen",
+      paragraphs: [
+        "Unser Team ist von Castrop-Rauxel aus in allen Regionen von NRW unterwegs: im Ruhrgebiet, im Rheinland, im Bergischen Land, im Münsterland, in Ostwestfalen-Lippe, im Sauerland und am Niederrhein. Auf jeder Städteseite finden Sie Informationen zu unseren Leistungen vor Ort.",
+        "Ihre Stadt ist nicht dabei? Sprechen Sie uns trotzdem an. Wir prüfen gern, ob wir auch in Ihrem Ort eine kostenlose Besichtigung anbieten können.",
+      ],
+    },
+    {
+      heading: "Gleiche Qualität an jedem Einsatzort",
+      paragraphs: [
+        "Egal ob Großstadt oder kleinere Gemeinde: Sie erhalten überall dieselbe sorgfältige Arbeit, ein transparentes Festpreisangebot nach der Besichtigung und eine besenreine Übergabe. Wir arbeiten mit eigenem Team und eigenen Fahrzeugen und entsorgen alles fachgerecht bei regionalen Entsorgungsbetrieben.",
+      ],
+    },
+  ],
+  impressum: [
+    {
+      heading: "Über dieses Angebot",
+      paragraphs: [
+        "Entlastium ist ein Dienstleister für Entrümpelung, Haushaltsauflösung, Wohnungsauflösung, Kellerräumung, Gartenräumung, Endreinigung und Wohnungsübergabe in Nordrhein-Westfalen. Der Firmensitz befindet sich in Castrop-Rauxel.",
+        "Für Anfragen, Rückfragen zu Angeboten oder Hinweise zu dieser Website erreichen Sie uns telefonisch, per E-Mail oder über das Kontaktformular. Wir antworten so schnell wie möglich.",
+      ],
+    },
+  ],
+  start: [
+    {
+      heading: "Entrümpelung und Haushaltsauflösung mit Verlass",
+      paragraphs: [
+        "Eine Haushaltsauflösung oder Entrümpelung ist oft mehr als nur Arbeit. Häufig stehen persönliche Veränderungen dahinter, ein Umzug, ein Erbfall oder ein neuer Lebensabschnitt. Wir nehmen Ihnen diese Last ab: von der kostenlosen Besichtigung über das transparente Festpreisangebot bis zur besenreinen Übergabe.",
+        "Unser Team arbeitet sorgfältig, diskret und termingerecht. Wiederverwertbares führen wir dem Recycling zu, brauchbare Gegenstände werden nach Absprache angerechnet oder gespendet, und Sondermüll entsorgen wir nach den gesetzlichen Vorgaben.",
+      ],
+    },
+  ],
+
   ablauf: [
+    {
+      heading: "Warum ein fester Ablauf wichtig ist",
+      paragraphs: [
+        "Ein klarer Ablauf schafft Sicherheit. Sie wissen jederzeit, was als Nächstes passiert, wer Ihr Ansprechpartner ist und wann die Räume frei sind. Termine stimmen wir verbindlich mit Ihnen ab, auch mit Vermietern, Hausverwaltungen oder Nachlassverwaltern, wenn Sie das wünschen. So vermeiden wir Überraschungen und halten Fristen zuverlässig ein.",
+      ],
+    },
     {
       heading: "Was Sie vorbereiten können",
       paragraphs: [
@@ -36,6 +76,12 @@ export const INFO_TEXTS = {
   ],
   faq: [
     {
+      heading: "Rund um Entsorgung und Wertanrechnung",
+      paragraphs: [
+        "Viele Fragen drehen sich darum, was mit Möbeln, Elektrogeräten und Erinnerungsstücken passiert. Wir trennen alles sorgfältig: Brauchbares wird nach Absprache verkauft, gespendet oder angerechnet, Wertstoffe gehen ins Recycling, und Sondermüll entsorgen wir fachgerecht nach den gesetzlichen Vorgaben. Persönliche Dokumente und Fotos legen wir für Sie beiseite.",
+      ],
+    },
+    {
       heading: "Ihre Frage ist nicht dabei?",
       paragraphs: [
         "Jede Entrümpelung und jede Haushaltsauflösung ist anders. Deshalb beantworten wir Ihre individuellen Fragen gern persönlich, telefonisch, per WhatsApp oder über unser Kontaktformular. Wir erklären Ihnen verständlich, wie wir vorgehen und worauf Sie achten sollten.",
@@ -49,6 +95,12 @@ export const INFO_TEXTS = {
     },
   ],
   kontakt: [
+    {
+      heading: "Welche Angaben uns helfen",
+      paragraphs: [
+        "Für eine schnelle Einschätzung helfen uns ein paar Angaben: Art des Objekts, ungefähre Größe, Stockwerk und Aufzug, gewünschter Zeitraum und ob Keller, Dachboden oder Garten dazugehören. Fotos sind willkommen, aber kein Muss. Alles Weitere klären wir gemeinsam bei der kostenlosen Besichtigung vor Ort, ohne Verpflichtung für Sie.",
+      ],
+    },
     {
       heading: "So geht es nach Ihrer Anfrage weiter",
       paragraphs: [
@@ -64,6 +116,12 @@ export const INFO_TEXTS = {
     },
   ],
   leistungen: [
+    {
+      heading: "Alles aus einer Hand",
+      paragraphs: [
+        "Statt mehrere Firmen zu beauftragen, erhalten Sie bei uns Räumung, Entsorgung, Reinigung und Übergabe aus einer Hand. Das spart Zeit und Abstimmung. Sie haben einen festen Ansprechpartner, ein verbindliches Festpreisangebot nach der Besichtigung und die Gewissheit, dass alles termingerecht und sauber erledigt wird, in ganz Nordrhein-Westfalen.",
+      ],
+    },
     {
       heading: "Welche Leistung passt zu Ihnen?",
       paragraphs: [

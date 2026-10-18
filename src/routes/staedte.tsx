@@ -1,3 +1,4 @@
+import InfoText, { INFO_TEXTS } from "@/components/InfoText";
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Search } from "lucide-react";
 import { useMemo, useState } from "react";
@@ -97,12 +98,12 @@ function StaedtePage() {
                   <a
                     key={c.slug}
                     href={`/entruempelung/${c.slug}`}
-                    className="block rounded-lg border border-border bg-card px-4 py-3 hover:border-accent hover:shadow-sm transition-all"
+                    className="city-card"
                   >
-                    <div className="font-medium text-foreground">{c.name}</div>
-                    <div className="text-xs text-muted-foreground">
+                    <b>{c.name}</b>
+                    <small>
                       PLZ {c.plzPrefix} · {c.einwohner.toLocaleString("de-DE")} Einw.
-                    </div>
+                    </small>
                   </a>
                 ))}
               </div>
@@ -110,6 +111,7 @@ function StaedtePage() {
           ))}
         </div>
       )}
+      <InfoText blocks={INFO_TEXTS.staedte} />
     </PageLayout>
   );
 }

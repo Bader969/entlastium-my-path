@@ -5,6 +5,7 @@ import ServicesDashboard from "@/components/ServicesDashboard";
 import ProcessTimeline from "@/components/ProcessTimeline";
 
 import AboutUs from "@/components/AboutUs";
+import InfoText, { INFO_TEXTS } from "@/components/InfoText";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
@@ -20,6 +21,9 @@ const Index = () => {
         <ProcessTimeline />
         
         <AboutUs />
+        <div className="container mx-auto px-4">
+          <InfoText blocks={INFO_TEXTS.start} />
+        </div>
         <FAQ />
         <ContactForm />
       </main>

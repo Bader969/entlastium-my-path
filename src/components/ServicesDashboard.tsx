@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   Zap, Euro, Calendar, Leaf, Users, Shield,
   Home, Trash2, Paintbrush, Wrench, TreePine, Building, Key, Layers, Plug,
-  ChevronDown, CheckCircle2,
+  ChevronDown,
 } from "lucide-react";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 import imgHaushalt from "@/assets/service-haushalt.jpg";
@@ -246,7 +246,7 @@ const ServicesDashboard = () => {
                           <ul className="space-y-2">
                             {s.features.map((f) => (
                               <li key={f} className="flex items-center gap-2 text-sm text-foreground">
-                                <CheckCircle2 className="h-4 w-4 text-secondary flex-shrink-0" />
+                                <span aria-hidden="true" className="check-dot" />
                                 {f}
                               </li>
                             ))}
