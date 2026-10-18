@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Instagram, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-PLACEHOLDER
+const logo = "/brand/logo-128.webp";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

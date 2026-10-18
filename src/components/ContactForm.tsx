@@ -8,7 +8,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
-import { toast } from "sonner";
+const toast = {
+  error: (...a: Parameters<typeof import("sonner").toast.error>) => import("sonner").then((m) => m.toast.error(...a)),
+  success: (...a: Parameters<typeof import("sonner").toast.success>) => import("sonner").then((m) => m.toast.success(...a)),
+};
 
 const ContactForm = () => {
   
