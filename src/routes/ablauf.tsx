@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import PageLayout from "@/components/PageLayout";
+import InfoText, { INFO_TEXTS } from "@/components/InfoText";
 
 const BASE_URL = "https://entlastium.de";
 
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/ablauf")({
       breadcrumbs={[{ label: "Start", href: "/" }, { label: "Ablauf" }]}
     >
       <ProcessTimeline />
+      <InfoText blocks={INFO_TEXTS.ablauf} />
     </PageLayout>
   ),
 });
