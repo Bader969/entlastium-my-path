@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/PageLayout";
 import { getCityBySlug, getNeighborCities, NRW_CITIES } from "@/data/nrw-cities";
 import { SERVICES } from "@/data/services";
+import { getCityText } from "@/data/city-texts";
 
 const BASE_URL = "https://entlastium.de";
 
@@ -17,8 +18,7 @@ export const Route = createFileRoute("/entruempelung/$stadt")({
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [] };
     const { city } = loaderData;
-    const title = `Entrümpelung ${city.name} | Entlastium`;
-    const description = `Entrümpelung & Haushaltsauflösung in ${city.name} (PLZ ${city.plzPrefix}): kostenlose Besichtigung, transparentes Festpreisangebot, Wertanrechnung und besenreine Übergabe – lokales Team im ${city.region}.`;
+    const { title, description } = getCityText(city);
     const url = `${BASE_URL}/entruempelung/${params.stadt}`;
     return {
       meta: [
@@ -95,6 +95,7 @@ export const Route = createFileRoute("/entruempelung/$stadt")({
 
 function StadtPage() {
   const { city, neighbors } = Route.useLoaderData();
+  const cityText = getCityText(city);
 
   const localFaq = [
     {
@@ -139,6 +140,17 @@ function StadtPage() {
             <p className="text-sm text-muted-foreground">{u.text}</p>
           </div>
         ))}
+      </section>
+
+      {/* Individueller Stadttext */}
+      <section className="mb-16 rounded-2xl bg-card border border-border p-6 md:p-8">
+        <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">{cityText.heading}</h2>
+        {cityText.paragraphs.map((p) => (
+          <p key={p} className="text-muted-foreground leading-relaxed mb-4">{p}</p>
+        ))}
+        <p className="font-semibold text-foreground">
+          <a href="tel:+491637948428" className="hover:underline">{cityText.cta}</a>
+        </p>
       </section>
 
       {/* Long-form copy */}
