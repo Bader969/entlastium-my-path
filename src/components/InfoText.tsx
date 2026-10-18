@@ -144,6 +144,19 @@ export const INFO_TEXTS = {
         "Bei der Besichtigung schauen wir uns alle Räume in Ruhe an, auch Keller, Dachboden und Nebengebäude. Wir besprechen, welche Möbel und Gegenstände bleiben, welche verkauft oder gespendet werden können und was entsorgt werden soll. So entsteht ein klares Bild vom Aufwand, und das Angebot passt genau zu Ihrem Auftrag. Sie gehen dabei keinerlei Verpflichtung ein und entscheiden in Ruhe, ob Sie uns beauftragen möchten.",
       ],
     },
+    {
+      heading: "Wenn es schnell gehen muss",
+      paragraphs: [
+        "Manchmal drängt die Zeit, etwa wenn eine Wohnung zum Monatsende übergeben werden muss oder ein Nachlass zügig geregelt werden soll. Teilen Sie uns Ihre Frist bei der Anfrage einfach mit. Wir prüfen dann, wie wir Besichtigung und Räumung möglichst zeitnah einplanen können, und sagen Ihnen offen, was realistisch ist.",
+        "Sie müssen vor der Besichtigung nichts aufräumen oder vorsortieren. Wir sehen uns die Räume so an, wie sie sind, und besprechen gemeinsam mit Ihnen die nächsten Schritte.",
+      ],
+    },
+    {
+      heading: "Klare Absprachen statt Überraschungen",
+      paragraphs: [
+        "Unser Festpreisangebot basiert auf dem, was wir bei der Besichtigung gemeinsam festgehalten haben. Anfahrt, Arbeitszeit, Abtransport und Entsorgung sind darin bereits berücksichtigt. So wissen Sie vorab genau, woran Sie sind, und können den Auftrag in Ruhe planen.",
+      ],
+    },
   ],
   leistungen: [
     {
