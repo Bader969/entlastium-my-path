@@ -231,6 +231,18 @@
 .shadow-custom-md { box-shadow: var(--shadow-md); }
 .shadow-custom-lg { box-shadow: var(--shadow-lg); }
 
+.city-card {
+  display: block;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+}
+.city-card:hover { border-color: var(--accent); box-shadow: 0 1px 2px rgb(0 0 0 / 0.05); }
+.city-card b { display: block; font-weight: 500; color: var(--foreground); }
+.city-card small { display: block; font-size: 0.75rem; color: var(--muted-foreground); }
+
 .check-dot {
   display: inline-block;
   flex-shrink: 0;

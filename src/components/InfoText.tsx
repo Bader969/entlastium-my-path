@@ -54,6 +54,12 @@ export const INFO_TEXTS = {
 
   ablauf: [
     {
+      heading: "Warum ein fester Ablauf wichtig ist",
+      paragraphs: [
+        "Ein klarer Ablauf schafft Sicherheit. Sie wissen jederzeit, was als Nächstes passiert, wer Ihr Ansprechpartner ist und wann die Räume frei sind. Termine stimmen wir verbindlich mit Ihnen ab, auch mit Vermietern, Hausverwaltungen oder Nachlassverwaltern, wenn Sie das wünschen. So vermeiden wir Überraschungen und halten Fristen zuverlässig ein.",
+      ],
+    },
+    {
       heading: "Was Sie vorbereiten können",
       paragraphs: [
         "Eine gute Vorbereitung ist nicht nötig, macht die Räumung aber noch entspannter. Legen Sie persönliche Unterlagen, Dokumente, Fotos und Erinnerungsstücke beiseite, die Sie behalten möchten. Markieren Sie Möbel oder Gegenstände, die mitgenommen, verkauft oder gespendet werden sollen.",
@@ -70,6 +76,12 @@ export const INFO_TEXTS = {
   ],
   faq: [
     {
+      heading: "Rund um Entsorgung und Wertanrechnung",
+      paragraphs: [
+        "Viele Fragen drehen sich darum, was mit Möbeln, Elektrogeräten und Erinnerungsstücken passiert. Wir trennen alles sorgfältig: Brauchbares wird nach Absprache verkauft, gespendet oder angerechnet, Wertstoffe gehen ins Recycling, und Sondermüll entsorgen wir fachgerecht nach den gesetzlichen Vorgaben. Persönliche Dokumente und Fotos legen wir für Sie beiseite.",
+      ],
+    },
+    {
       heading: "Ihre Frage ist nicht dabei?",
       paragraphs: [
         "Jede Entrümpelung und jede Haushaltsauflösung ist anders. Deshalb beantworten wir Ihre individuellen Fragen gern persönlich, telefonisch, per WhatsApp oder über unser Kontaktformular. Wir erklären Ihnen verständlich, wie wir vorgehen und worauf Sie achten sollten.",
@@ -83,6 +95,12 @@ export const INFO_TEXTS = {
     },
   ],
   kontakt: [
+    {
+      heading: "Welche Angaben uns helfen",
+      paragraphs: [
+        "Für eine schnelle Einschätzung helfen uns ein paar Angaben: Art des Objekts, ungefähre Größe, Stockwerk und Aufzug, gewünschter Zeitraum und ob Keller, Dachboden oder Garten dazugehören. Fotos sind willkommen, aber kein Muss. Alles Weitere klären wir gemeinsam bei der kostenlosen Besichtigung vor Ort, ohne Verpflichtung für Sie.",
+      ],
+    },
     {
       heading: "So geht es nach Ihrer Anfrage weiter",
       paragraphs: [
@@ -98,6 +116,12 @@ export const INFO_TEXTS = {
     },
   ],
   leistungen: [
+    {
+      heading: "Alles aus einer Hand",
+      paragraphs: [
+        "Statt mehrere Firmen zu beauftragen, erhalten Sie bei uns Räumung, Entsorgung, Reinigung und Übergabe aus einer Hand. Das spart Zeit und Abstimmung. Sie haben einen festen Ansprechpartner, ein verbindliches Festpreisangebot nach der Besichtigung und die Gewissheit, dass alles termingerecht und sauber erledigt wird, in ganz Nordrhein-Westfalen.",
+      ],
+    },
     {
       heading: "Welche Leistung passt zu Ihnen?",
       paragraphs: [
