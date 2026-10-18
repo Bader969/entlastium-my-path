@@ -231,6 +231,15 @@
 .shadow-custom-md { box-shadow: var(--shadow-md); }
 .shadow-custom-lg { box-shadow: var(--shadow-lg); }
 
+.check-dot {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--secondary);
+}
+
 .hover-lift {
   transition:
     box-shadow 0.35s var(--transition-smooth),

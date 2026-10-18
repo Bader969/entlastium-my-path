@@ -1,3 +1,4 @@
+import InfoText, { INFO_TEXTS } from "@/components/InfoText";
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Search } from "lucide-react";
 import { useMemo, useState } from "react";
@@ -110,6 +111,7 @@ function StaedtePage() {
           ))}
         </div>
       )}
+      <InfoText blocks={INFO_TEXTS.staedte} />
     </PageLayout>
   );
 }

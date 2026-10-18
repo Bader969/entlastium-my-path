@@ -142,6 +142,27 @@ export function ServicePage({ service }: { service: ServiceData }) {
         </div>
       </section>
 
+      <section className="mb-12 grid gap-8 md:grid-cols-2">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">Worauf wir bei {service.shortTitle} achten</h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">
+            Jeder Auftrag beginnt mit einem persönlichen Gespräch. Wir möchten verstehen, was mit den Räumen geschehen soll, welche Gegenstände Ihnen wichtig sind und bis wann alles erledigt sein muss. Auf dieser Grundlage planen wir Team, Fahrzeuge und Ablauf so, dass Sie sich um nichts weiter kümmern müssen.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Während der Arbeiten behandeln wir Ihr Eigentum mit Respekt. Persönliche Unterlagen, Fotos und Erinnerungsstücke legen wir beiseite, damit nichts Wichtiges verloren geht. Treppenhäuser und Böden schützen wir, und gegenüber Nachbarn treten wir zurückhaltend auf.
+          </p>
+        </div>
+        <div>
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">Für wen sich {service.shortTitle} eignet</h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">
+            Unsere Kunden sind Privatpersonen, Erben, Vermieter, Hausverwaltungen und Makler. Häufige Anlässe sind ein Umzug, ein Todesfall, der Wechsel in eine Pflegeeinrichtung, ein Verkauf oder schlicht der Wunsch nach mehr Platz und Ordnung.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Gern kombinieren wir {service.shortTitle} mit weiteren Leistungen wie Endreinigung oder Wohnungsübergabe. So haben Sie einen festen Ansprechpartner von der Besichtigung bis zur Schlüsselübergabe und sparen Zeit, Wege und Abstimmung mit mehreren Firmen.
+          </p>
+        </div>
+      </section>
+
       <section className="rounded-2xl bg-primary p-8 md:p-12 text-primary-foreground text-center">
         <h2 className="text-2xl md:text-3xl font-serif font-bold mb-3">
           Kostenloses Angebot für {service.shortTitle}

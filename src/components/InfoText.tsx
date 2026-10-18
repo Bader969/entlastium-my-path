@@ -18,6 +18,40 @@ export default function InfoText({ blocks }: { blocks: Block[] }) {
 }
 
 export const INFO_TEXTS = {
+  staedte: [
+    {
+      heading: "Entrümpelung in ganz Nordrhein-Westfalen",
+      paragraphs: [
+        "Unser Team ist von Castrop-Rauxel aus in allen Regionen von NRW unterwegs: im Ruhrgebiet, im Rheinland, im Bergischen Land, im Münsterland, in Ostwestfalen-Lippe, im Sauerland und am Niederrhein. Auf jeder Städteseite finden Sie Informationen zu unseren Leistungen vor Ort.",
+        "Ihre Stadt ist nicht dabei? Sprechen Sie uns trotzdem an. Wir prüfen gern, ob wir auch in Ihrem Ort eine kostenlose Besichtigung anbieten können.",
+      ],
+    },
+    {
+      heading: "Gleiche Qualität an jedem Einsatzort",
+      paragraphs: [
+        "Egal ob Großstadt oder kleinere Gemeinde: Sie erhalten überall dieselbe sorgfältige Arbeit, ein transparentes Festpreisangebot nach der Besichtigung und eine besenreine Übergabe. Wir arbeiten mit eigenem Team und eigenen Fahrzeugen und entsorgen alles fachgerecht bei regionalen Entsorgungsbetrieben.",
+      ],
+    },
+  ],
+  impressum: [
+    {
+      heading: "Über dieses Angebot",
+      paragraphs: [
+        "Entlastium ist ein Dienstleister für Entrümpelung, Haushaltsauflösung, Wohnungsauflösung, Kellerräumung, Gartenräumung, Endreinigung und Wohnungsübergabe in Nordrhein-Westfalen. Der Firmensitz befindet sich in Castrop-Rauxel.",
+        "Für Anfragen, Rückfragen zu Angeboten oder Hinweise zu dieser Website erreichen Sie uns telefonisch, per E-Mail oder über das Kontaktformular. Wir antworten so schnell wie möglich.",
+      ],
+    },
+  ],
+  start: [
+    {
+      heading: "Entrümpelung und Haushaltsauflösung mit Verlass",
+      paragraphs: [
+        "Eine Haushaltsauflösung oder Entrümpelung ist oft mehr als nur Arbeit. Häufig stehen persönliche Veränderungen dahinter, ein Umzug, ein Erbfall oder ein neuer Lebensabschnitt. Wir nehmen Ihnen diese Last ab: von der kostenlosen Besichtigung über das transparente Festpreisangebot bis zur besenreinen Übergabe.",
+        "Unser Team arbeitet sorgfältig, diskret und termingerecht. Wiederverwertbares führen wir dem Recycling zu, brauchbare Gegenstände werden nach Absprache angerechnet oder gespendet, und Sondermüll entsorgen wir nach den gesetzlichen Vorgaben.",
+      ],
+    },
+  ],
+
   ablauf: [
     {
       heading: "Was Sie vorbereiten können",
