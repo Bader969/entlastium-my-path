@@ -5,7 +5,7 @@ import { SERVICES } from "@/data/services";
 
 const BASE_URL = "https://entlastium.de";
 
-export const Route = createFileRoute("/leistungen")({
+export const Route = createFileRoute("/leistungen/")({
   head: () => {
     const title = "Leistungen | Entlastium";
     const description =
