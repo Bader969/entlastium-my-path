@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
     return {
       links: [
         { rel: "canonical", href: "https://entlastium.de/" },
-        { rel: "preload", as: "image", href: "/brand/mark-640.webp", fetchpriority: "high" },
+        { rel: "preload", as: "image", href: "/brand/mark-640.webp", imageSrcSet: "/brand/mark-400.webp 400w, /brand/mark-640.webp 640w", imageSizes: "(max-width: 640px) 320px, 640px", fetchpriority: "high" },
       ],
       meta: [
         { title },
