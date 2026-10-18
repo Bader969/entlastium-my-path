@@ -72,7 +72,7 @@ export function ServicePage({ service }: { service: ServiceData }) {
       title={`${service.title} in ganz Nordrhein-Westfalen`}
       intro={service.description}
       breadcrumbs={[
-        { label: "Start", href: "/" },
+        { label: "Entlastium", href: "/" },
         { label: "Leistungen", href: "/leistungen" },
         { label: service.shortTitle },
       ]}

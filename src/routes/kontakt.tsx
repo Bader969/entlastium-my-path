@@ -27,7 +27,7 @@ export const Route = createFileRoute("/kontakt")({
       eyebrow="Kontakt"
       title="Lassen Sie uns reden"
       intro="Wir freuen uns auf Ihre Anfrage. Kostenlose Besichtigung in ganz NRW."
-      breadcrumbs={[{ label: "Start", href: "/" }, { label: "Kontakt" }]}
+      breadcrumbs={[{ label: "Entlastium", href: "/" }, { label: "Kontakt" }]}
     >
       <ContactForm />
       <InfoText blocks={INFO_TEXTS.kontakt} />

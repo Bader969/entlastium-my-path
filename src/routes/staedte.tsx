@@ -53,7 +53,7 @@ function StaedtePage() {
       eyebrow="Einsatzgebiet"
       title="Entrümpelung in ganz Nordrhein-Westfalen"
       intro={`Wir sind in über ${NRW_CITIES.length} Städten in NRW aktiv — mit kurzen Anfahrtswegen, lokaler Marktkenntnis und festen Festpreisen.`}
-      breadcrumbs={[{ label: "Start", href: "/" }, { label: "Städte" }]}
+      breadcrumbs={[{ label: "Entlastium", href: "/" }, { label: "Städte" }]}
     >
       {/* Such-Filter */}
       <div className="mb-10">

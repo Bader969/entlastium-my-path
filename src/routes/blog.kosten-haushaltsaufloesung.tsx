@@ -105,7 +105,7 @@ function KostenGuide() {
       title="Was kostet eine Wohnungsauflösung? Preise 2026 in NRW"
       intro="Transparenter Preisguide: Festpreise nach Wohnungsgröße, die wichtigsten Kostenfaktoren und wie die Wertanrechnung Ihren Endpreis spürbar senkt."
       breadcrumbs={[
-        { label: "Start", href: "/" },
+        { label: "Entlastium", href: "/" },
         { label: "Blog" },
         { label: "Kosten Haushaltsauflösung" },
       ]}

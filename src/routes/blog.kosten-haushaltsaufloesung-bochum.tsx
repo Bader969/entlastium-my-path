@@ -120,7 +120,7 @@ function KostenBochumGuide() {
       title="Haushaltsauflösung Bochum: Was kostet sie 2026?"
       intro="Transparente Festpreise für Haushaltsauflösung und Entrümpelung in Bochum – inklusive Kostenfaktoren, USB-Gebühren und Wertanrechnung verwertbarer Gegenstände."
       breadcrumbs={[
-        { label: "Start", href: "/" },
+        { label: "Entlastium", href: "/" },
         { label: "Blog" },
         { label: "Kosten Haushaltsauflösung Bochum" },
       ]}

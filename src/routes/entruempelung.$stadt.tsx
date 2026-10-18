@@ -76,7 +76,7 @@ export const Route = createFileRoute("/entruempelung/$stadt")({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Start", item: BASE_URL },
+              { "@type": "ListItem", position: 1, name: "Entlastium", item: BASE_URL },
               { "@type": "ListItem", position: 2, name: "Städte", item: `${BASE_URL}/staedte` },
               { "@type": "ListItem", position: 3, name: city.name, item: url },
             ],
@@ -121,7 +121,7 @@ function StadtPage() {
       title={`Entrümpelung & Haushaltsauflösung in ${city.name}`}
       intro={`Professionell, fair und nachhaltig — Ihr lokaler Partner für Entrümpelung in ${city.name} (PLZ ${city.plzPrefix}, ${city.einwohner.toLocaleString("de-DE")} Einwohner). Kostenlose Besichtigung, transparente Festpreise, Wertanrechnung möglich.`}
       breadcrumbs={[
-        { label: "Start", href: "/" },
+        { label: "Entlastium", href: "/" },
         { label: "Städte", href: "/staedte" },
         { label: city.name },
       ]}
