@@ -141,6 +141,7 @@ export const INFO_TEXTS = {
       paragraphs: [
         "Sie erreichen uns telefonisch zu unseren Geschäftszeiten, per WhatsApp oder jederzeit über das Kontaktformular. Anfragen, die außerhalb der Geschäftszeiten eingehen, bearbeiten wir am nächsten Werktag. Gern rufen wir Sie auch zu einer Uhrzeit zurück, die Ihnen besser passt.",
         "Wenn Sie für Angehörige, einen Nachlass oder als Vermieter anfragen, sagen Sie uns einfach, wer vor Ort Ansprechpartner ist. Wir stimmen Besichtigung und Räumung dann direkt mit der richtigen Person ab.",
+        "Bei der Besichtigung schauen wir uns alle Räume in Ruhe an, auch Keller, Dachboden und Nebengebäude. Wir besprechen, welche Möbel und Gegenstände bleiben, welche verkauft oder gespendet werden können und was entsorgt werden soll. So entsteht ein klares Bild vom Aufwand, und das Angebot passt genau zu Ihrem Auftrag. Sie gehen dabei keinerlei Verpflichtung ein und entscheiden in Ruhe, ob Sie uns beauftragen möchten.",
       ],
     },
   ],
