@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle, ShieldCheck, Leaf, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoMark from "@/assets/logo-mark.png.asset.json";
+import logoMark from "@/assets/logo-mark.webp.asset.json";
 
 const logoIcon = logoMark.url;
 
@@ -38,7 +38,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container-custom section-padding">
         <div className="max-w-2xl xl:max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-primary-foreground/10 border border-secondary/40 mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-primary-foreground/10 border border-secondary/40 mb-6">
             <span className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-primary-foreground text-xs sm:text-sm font-medium tracking-wide">
               Ihr Partner für stressfreie Entrümpelung
