@@ -352,3 +352,17 @@
   }
   .hover-lift:hover { transform: none; }
 }
+
+.acc-chev {
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 0.25rem 0.25rem 0.75rem;
+  border-right: 2px solid var(--muted-foreground);
+  border-bottom: 2px solid var(--muted-foreground);
+  transform: rotate(45deg);
+  transition: transform 200ms;
+}
+.acc-trigger[data-state="open"] > .acc-chev {
+  transform: translateY(0.25rem) rotate(-135deg);
+}
