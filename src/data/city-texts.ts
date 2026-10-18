@@ -100,7 +100,7 @@ const OPENERS = [
   (c: string, t: string) => `Ob Wohnung in ${t}: Wir räumen in ${c} zuverlässig und besichtigen vorher kostenlos.`,
   (c: string, t: string) => `Sie möchten in ${c} Wohnung, Keller oder Haus räumen lassen? Wir sind unter anderem in ${t} für Sie da.`,
   (c: string, t: string) => `In ${c} – etwa in ${t} – übernehmen wir Entrümpelungen und Haushaltsauflösungen zum Festpreis.`,
-  (c: string, t: string) => `Von ${t}: Wir kommen in ${c} persönlich zur kostenlosen Besichtigung.`,
+  (c: string, t: string) => `Ob in ${t}: Wir kommen in ${c} persönlich zur kostenlosen Besichtigung.`,
 ];
 
 const EXAMPLES = [
