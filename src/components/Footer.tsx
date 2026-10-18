@@ -1,9 +1,6 @@
 import { Mail, Phone, MapPin, Instagram, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/logo-full.png.asset.json";
-import { NRW_CITIES } from "@/data/nrw-cities";
-import { SERVICES } from "@/data/services";
-const logo = logoAsset.url;
+PLACEHOLDER
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,7 +23,12 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <img
                 src={logo}
+                srcSet="/brand/logo-128.webp 1x, /brand/logo-256.webp 2x"
                 alt="Entlastium Entrümpelung Logo"
+                width={48}
+                height={48}
+                loading="lazy"
+                decoding="async"
                 className="h-12 w-12 rounded-full object-cover"
               />
               <div>
