@@ -1,3 +1,4 @@
+import InfoText, { INFO_TEXTS } from "@/components/InfoText";
 import LegalPageLayout from "@/components/LegalPageLayout";
 import { Building2, Phone, Mail, Scale, Globe } from "lucide-react";
 
@@ -132,6 +133,7 @@ const Impressum = () => {
           </div>
         </div>
       </div>
+      <InfoText blocks={INFO_TEXTS.impressum} />
     </LegalPageLayout>
   );
 };
