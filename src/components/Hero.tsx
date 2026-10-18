@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none">
         <img
           src={logoIcon}
-          srcSet="/brand/mark-400.webp 400w, /brand/mark-640.webp 640w"
+          srcSet="/brand/mark-320.webp 320w, /brand/mark-640.webp 640w"
           sizes="(max-width: 640px) 320px, 640px"
           alt=""
           aria-hidden="true"
