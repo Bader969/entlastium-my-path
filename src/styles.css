@@ -50,6 +50,8 @@
   --color-sand-light: var(--sand-light);
   --color-cream: var(--cream);
   --color-warm-white: var(--warm-white);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
 
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -100,6 +102,8 @@
   --sand-light: oklch(0.86 0.06 80);
   --cream: oklch(0.95 0.018 85);
   --warm-white: oklch(0.971 0.012 85);
+  --whatsapp: oklch(0.62 0.17 150);
+  --whatsapp-foreground: oklch(1 0 0);
 
   --gradient-hero: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, var(--teal) 100%);
   --gradient-card: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.97 0.02 80) 100%);
