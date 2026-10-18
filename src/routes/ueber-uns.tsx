@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import AboutUs from "@/components/AboutUs";
 import PageLayout from "@/components/PageLayout";
+import InfoText, { INFO_TEXTS } from "@/components/InfoText";
 
 const BASE_URL = "https://entlastium.de";
 
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/ueber-uns")({
       breadcrumbs={[{ label: "Start", href: "/" }, { label: "Über uns" }]}
     >
       <AboutUs />
+      <InfoText blocks={INFO_TEXTS.ueberUns} />
     </PageLayout>
   ),
 });

@@ -35,6 +35,8 @@ export default function WhatsAppButton() {
   const { pathname } = useLocation();
   const href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildWhatsAppMessage(pathname))}`;
   const [bubble, setBubble] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (localStorage.getItem(STORAGE_KEY)) return;
@@ -46,6 +48,8 @@ export default function WhatsAppButton() {
     setBubble(false);
     localStorage.setItem(STORAGE_KEY, "1");
   };
+
+  if (!mounted) return null;
 
   return (
     <>

@@ -244,7 +244,7 @@ function StadtPage() {
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Button variant="accent" size="lg" asChild>
-            <a href={`/kontakt?stadt=${encodeURIComponent(city.name)}`} rel="nofollow">
+            <a href="/kontakt">
               Entrümpelung in {city.name} anfragen <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>

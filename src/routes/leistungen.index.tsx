@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
+import InfoText, { INFO_TEXTS } from "@/components/InfoText";
 import { SERVICES } from "@/data/services";
 
 const BASE_URL = "https://entlastium.de";
@@ -50,6 +51,7 @@ function LeistungenPage() {
           </a>
         ))}
       </div>
+      <InfoText blocks={INFO_TEXTS.leistungen} />
     </PageLayout>
   );
 }
