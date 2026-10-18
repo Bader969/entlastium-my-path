@@ -1,5 +1,8 @@
 import { Mail, Phone, MapPin, Instagram, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { SERVICES } from "@/data/services";
+import { NRW_CITIES } from "@/data/nrw-cities";
+
 const logo = "/brand/logo-128.webp";
 
 const Footer = () => {
