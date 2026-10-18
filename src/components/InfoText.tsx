@@ -50,7 +50,22 @@ export const INFO_TEXTS = {
         "Unser Team arbeitet sorgfältig, diskret und termingerecht. Wiederverwertbares führen wir dem Recycling zu, brauchbare Gegenstände werden nach Absprache angerechnet oder gespendet, und Sondermüll entsorgen wir nach den gesetzlichen Vorgaben.",
       ],
     },
+    {
+      heading: "Für Privatpersonen, Erben und Vermieter",
+      paragraphs: [
+        "Wir unterstützen Familien bei der Auflösung des Elternhauses, Erben bei der Räumung eines Nachlasses und Vermieter oder Hausverwaltungen bei der Übergabe von Wohnungen. Auch Senioren, die in eine kleinere Wohnung oder ein Pflegeheim ziehen, begleiten wir mit Ruhe und Verständnis.",
+        "Jeder Auftrag beginnt mit einem persönlichen Gespräch. Wir hören zu, klären Ihre Wünsche und planen die Räumung so, dass sie zu Ihrem Zeitplan passt. Was Sie behalten möchten, legen wir sorgfältig beiseite.",
+      ],
+    },
+    {
+      heading: "Räumung, Entsorgung und Reinigung aus einer Hand",
+      paragraphs: [
+        "Ob Wohnung, Haus, Keller, Dachboden, Garage oder Garten: Wir übernehmen die komplette Räumung mit eigenem Team und eigenen Fahrzeugen. Möbel werden abgebaut, Gegenstände sortiert und alles fachgerecht entsorgt oder wiederverwertet.",
+        "Auf Wunsch reinigen wir die Räume anschließend gründlich und begleiten die Übergabe an Vermieter oder Käufer. So haben Sie einen festen Ansprechpartner für alle Schritte und sparen sich die Abstimmung mit mehreren Firmen.",
+      ],
+    },
   ],
+
 
   ablauf: [
     {
@@ -73,7 +88,14 @@ export const INFO_TEXTS = {
         "Alle mitgenommenen Gegenstände werden sortiert und fachgerecht entsorgt oder wiederverwertet. Verwertbares wird nach Absprache angerechnet. So haben Sie nach der Übergabe keine weiteren Wege und keinen zusätzlichen Aufwand.",
       ],
     },
+    {
+      heading: "Persönliche Begleitung in jeder Phase",
+      paragraphs: [
+        "Von der ersten Anfrage bis zur Übergabe haben Sie einen festen Ansprechpartner. Er kennt Ihr Objekt, Ihre Wünsche und alle Absprachen. Fragen beantworten wir telefonisch, per WhatsApp oder per E-Mail, und Änderungen am Zeitplan stimmen wir flexibel mit Ihnen ab.",
+      ],
+    },
   ],
+
   faq: [
     {
       heading: "Rund um Entsorgung und Wertanrechnung",
@@ -112,6 +134,13 @@ export const INFO_TEXTS = {
       heading: "Unser Einsatzgebiet in NRW",
       paragraphs: [
         "Von unserem Standort in Castrop-Rauxel sind wir in ganz Nordrhein-Westfalen für Sie da, im Ruhrgebiet ebenso wie im Rheinland, im Münsterland, in Ostwestfalen und im Sauerland. Ob Wohnung, Haus, Keller, Dachboden oder Garten: Wir übernehmen Räumungen für Privatpersonen, Erben, Vermieter und Hausverwaltungen.",
+      ],
+    },
+    {
+      heading: "Erreichbarkeit und Rückmeldung",
+      paragraphs: [
+        "Sie erreichen uns telefonisch zu unseren Geschäftszeiten, per WhatsApp oder jederzeit über das Kontaktformular. Anfragen, die außerhalb der Geschäftszeiten eingehen, bearbeiten wir am nächsten Werktag. Gern rufen wir Sie auch zu einer Uhrzeit zurück, die Ihnen besser passt.",
+        "Wenn Sie für Angehörige, einen Nachlass oder als Vermieter anfragen, sagen Sie uns einfach, wer vor Ort Ansprechpartner ist. Wir stimmen Besichtigung und Räumung dann direkt mit der richtigen Person ab.",
       ],
     },
   ],
