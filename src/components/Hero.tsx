@@ -1,8 +1,6 @@
 import { ArrowRight, CheckCircle, ShieldCheck, Leaf, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoMark from "@/assets/logo-mark.webp.asset.json";
-
-const logoIcon = logoMark.url;
+const logoIcon = "/brand/mark-640.webp";
 
 const Hero = () => {
   const benefits = [

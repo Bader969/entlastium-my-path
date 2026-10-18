@@ -2,7 +2,9 @@ import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-r
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/sonner";
+import { lazy, Suspense } from "react";
+import { ClientOnly } from "@tanstack/react-router";
+const Toaster = lazy(() => import("@/components/ui/sonner").then((m) => ({ default: m.Toaster })));
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 import appCss from "../styles.css?url";
@@ -141,7 +143,11 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster richColors />
+        <ClientOnly>
+          <Suspense fallback={null}>
+            <Toaster richColors />
+          </Suspense>
+        </ClientOnly>
         <Outlet />
         <WhatsAppButton />
       </TooltipProvider>

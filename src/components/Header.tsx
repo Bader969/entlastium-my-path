@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/logo-full.png.asset.json";
-const logo = logoAsset.url;
+const logo = "/brand/logo-128.webp";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,10 +39,11 @@ const Header = () => {
           >
             <img
               src={logo}
+              srcSet="/brand/logo-128.webp 1x, /brand/logo-256.webp 2x"
               alt="Entlastium Entrümpelung Logo"
-              width={817}
-              height={959}
-              fetchPriority="high"
+              width={128}
+              height={150}
+              decoding="async"
               className="shrink-0 h-14 w-14 sm:h-16 sm:w-16 object-contain"
             />
             <div className="min-w-0">

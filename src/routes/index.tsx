@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Index from "@/pages/Index";
-import logoMark from "@/assets/logo-mark.webp.asset.json";
 
 const FAQS = [
   ["Was kostet eine Entrümpelung oder Haushaltsauflösung?", "Die Kosten variieren je nach Objektgröße, Menge des zu entsorgenden Materials und Zugänglichkeit. Nach einer kostenlosen Vor-Ort-Besichtigung erstellen wir Ihnen ein transparentes Festpreisangebot – ohne versteckte Kosten."],
@@ -19,7 +18,7 @@ export const Route = createFileRoute("/")({
     return {
       links: [
         { rel: "canonical", href: "https://entlastium.de/" },
-        { rel: "preload", as: "image", href: logoMark.url, fetchpriority: "high" },
+        { rel: "preload", as: "image", href: "/brand/mark-640.webp", fetchpriority: "high" },
       ],
       meta: [
         { title },
