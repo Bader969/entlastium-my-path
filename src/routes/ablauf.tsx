@@ -26,7 +26,7 @@ export const Route = createFileRoute("/ablauf")({
     <PageLayout
       eyebrow="Ablauf"
       title="In 4 Schritten zur entrümpelten Immobilie"
-      breadcrumbs={[{ label: "Start", href: "/" }, { label: "Ablauf" }]}
+      breadcrumbs={[{ label: "Entlastium", href: "/" }, { label: "Ablauf" }]}
     >
       <ProcessTimeline />
       <InfoText blocks={INFO_TEXTS.ablauf} />

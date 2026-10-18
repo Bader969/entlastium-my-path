@@ -26,7 +26,7 @@ export const Route = createFileRoute("/ueber-uns")({
     <PageLayout
       eyebrow="Über uns"
       title="Erfahrung, Diskretion und Zuverlässigkeit"
-      breadcrumbs={[{ label: "Start", href: "/" }, { label: "Über uns" }]}
+      breadcrumbs={[{ label: "Entlastium", href: "/" }, { label: "Über uns" }]}
     >
       <AboutUs />
       <InfoText blocks={INFO_TEXTS.ueberUns} />

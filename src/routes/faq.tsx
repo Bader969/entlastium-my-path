@@ -44,7 +44,7 @@ export const Route = createFileRoute("/faq")({
     <PageLayout
       eyebrow="FAQ"
       title="Häufig gestellte Fragen"
-      breadcrumbs={[{ label: "Start", href: "/" }, { label: "FAQ" }]}
+      breadcrumbs={[{ label: "Entlastium", href: "/" }, { label: "FAQ" }]}
     >
       <FAQ />
       <InfoText blocks={INFO_TEXTS.faq} />

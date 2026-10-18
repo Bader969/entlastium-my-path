@@ -32,7 +32,7 @@ function LeistungenPage() {
       eyebrow="Leistungen"
       title="Professionelle Entrümpelung aus einer Hand"
       intro="Sechs spezialisierte Leistungen — von der Erstbesichtigung bis zur besenreinen Übergabe. Alles aus einer Hand, in ganz Nordrhein-Westfalen."
-      breadcrumbs={[{ label: "Start", href: "/" }, { label: "Leistungen" }]}
+      breadcrumbs={[{ label: "Entlastium", href: "/" }, { label: "Leistungen" }]}
     >
       <div className="grid md:grid-cols-2 gap-6">
         {SERVICES.map((s) => (
