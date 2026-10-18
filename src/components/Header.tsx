@@ -43,6 +43,7 @@ const Header = () => {
               alt="Entlastium Entrümpelung Logo"
               width={128}
               height={150}
+              loading="lazy"
               decoding="async"
               className="shrink-0 h-14 w-14 sm:h-16 sm:w-16 object-contain"
             />
