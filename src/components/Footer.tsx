@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/logo-full.png.asset.json";
 import { NRW_CITIES } from "@/data/nrw-cities";
@@ -39,9 +39,6 @@ const Footer = () => {
               Schnell, fair und nachhaltig.
             </p>
             <div className="flex gap-4">
-              <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-secondary/30 transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
               <a href="https://www.instagram.com/entlastium/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-secondary/30 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>

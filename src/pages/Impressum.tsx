@@ -85,17 +85,9 @@ const Impressum = () => {
               EU-Streitschlichtung
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-              <a 
-                href="https://ec.europa.eu/consumers/odr/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-secondary hover:underline break-all"
-              >
-                https://ec.europa.eu/consumers/odr/
-              </a>
-              <br />
-              Unsere E-Mail-Adresse finden Sie oben im Impressum.
+              Die frühere EU-Plattform zur Online-Streitbeilegung (OS) wurde von der Europäischen
+              Kommission zum 20. Juli 2025 eingestellt. Bei Fragen oder Beschwerden wenden Sie sich
+              bitte direkt an uns – unsere Kontaktdaten finden Sie oben im Impressum.
             </p>
           </div>
         </section>

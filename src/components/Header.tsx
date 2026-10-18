@@ -79,7 +79,7 @@ const Header = () => {
               </span>
             </a>
             <Button variant="accent" size="default" asChild>
-              <a href="/kontakt">Anfragen</a>
+              <a href="/kontakt">Kostenlos anfragen</a>
             </Button>
           </div>
 
