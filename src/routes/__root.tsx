@@ -32,7 +32,6 @@ function NotFoundComponent() {
 export const Route = createRootRoute({
   head: () => ({
     meta: [
-      { title: "Entlastium | Entrümpelung & Haushaltsauflösung NRW" },
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Entlastium" },
