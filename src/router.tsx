@@ -9,6 +9,9 @@ function DefaultErrorComponent({ error, reset }: ErrorComponentProps) {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      {/* Keep transient error screens out of search snippets */}
+      <meta name="robots" content="noindex, nosnippet" />
+      <meta name="googlebot" content="noindex, nosnippet" />
       <div className="max-w-md text-center">
         <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-destructive/10">
           <svg
